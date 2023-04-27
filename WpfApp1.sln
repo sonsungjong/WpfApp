@@ -5,13 +5,13 @@ VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WPFApplication", "WPFApplication\WPFApplication.csproj", "{F655A3C9-73E6-4A93-B395-66A2EAE4BAB8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfCtrl01Grid", "WpfCtrl01Grid\WpfCtrl01Grid.csproj", "{0813ABBF-58C6-47EF-B6E2-813879A4A577}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfCtrl01Grid", "WpfCtrl01Grid\WpfCtrl01Grid.csproj", "{0813ABBF-58C6-47EF-B6E2-813879A4A577}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfCtrl02StackPanel", "WpfCtrl02StackPanel\WpfCtrl02StackPanel.csproj", "{35F0AC3D-9D92-4ACB-AD9E-13ABFCFB888C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfCtrl02StackPanel", "WpfCtrl02StackPanel\WpfCtrl02StackPanel.csproj", "{35F0AC3D-9D92-4ACB-AD9E-13ABFCFB888C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfCtrl03WrapPanel", "WpfCtrl03WrapPanel\WpfCtrl03WrapPanel.csproj", "{D44BB599-8C7A-441E-AA9B-0A1611A56682}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfCtrl03WrapPanel", "WpfCtrl03WrapPanel\WpfCtrl03WrapPanel.csproj", "{D44BB599-8C7A-441E-AA9B-0A1611A56682}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfDashboard", "WpfDashboard\WpfDashboard.csproj", "{506D59AE-C2FB-4847-839D-908FEF8B90E5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfMVVM01", "WpfMVVM01\WpfMVVM01.csproj", "{A206E62B-DCC0-4B7F-9DEA-1DFFF60AC29A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{D44BB599-8C7A-441E-AA9B-0A1611A56682}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D44BB599-8C7A-441E-AA9B-0A1611A56682}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D44BB599-8C7A-441E-AA9B-0A1611A56682}.Release|Any CPU.Build.0 = Release|Any CPU
-		{506D59AE-C2FB-4847-839D-908FEF8B90E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{506D59AE-C2FB-4847-839D-908FEF8B90E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{506D59AE-C2FB-4847-839D-908FEF8B90E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{506D59AE-C2FB-4847-839D-908FEF8B90E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A206E62B-DCC0-4B7F-9DEA-1DFFF60AC29A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A206E62B-DCC0-4B7F-9DEA-1DFFF60AC29A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A206E62B-DCC0-4B7F-9DEA-1DFFF60AC29A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A206E62B-DCC0-4B7F-9DEA-1DFFF60AC29A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
