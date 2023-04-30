@@ -4,13 +4,10 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfMVVM01"
-        mc:Ignorable="d"
-        Title="SingletonSean WPF MVVM TUTORIAL" Height="450" Width="800">
-    <!--    Hotel -> Reservation Book -> Reservation -> Room ID    -->
-    
-    <!--    User -> Make Reservation -> Display Reservation Conflict Error -->
-    <!--    User -> View Reservations    -->
-    <Grid>
-        
+        xmlns:views="clr-namespace:WpfMVVM01.Views"
+        mc:Ignorable="d" Title="WPF MVVM Reservoom" Width="800" Height="450" FontSize="14">
+    <!-- 메인 윈도우 -->
+    <Grid MaxWidth="600" Margin="20 10">
+        <views:MakeReservationView />
     </Grid>
 </Window>
