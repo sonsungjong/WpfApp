@@ -8,6 +8,6 @@
         mc:Ignorable="d" Title="WPF MVVM Reservoom" Width="800" Height="450" FontSize="14">
     <!-- 메인 윈도우 -->
     <Grid MaxWidth="600" Margin="20 10">
-        <views:MakeReservationView />
+        <views:ReservationListingView DataContext="{Binding CurrentViewModel}"/>
     </Grid>
 </Window>
