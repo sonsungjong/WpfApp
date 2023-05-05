@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using WpfMVVM01.Commands;
 using WpfMVVM01.Models;
 
 namespace WpfMVVM01.ViewModels
@@ -18,6 +19,8 @@ namespace WpfMVVM01.ViewModels
         public ReservationListingViewModel()
         {
             _reservations = new ObservableCollection<ReservationViewModel>();
+
+            MakeReservationCommand = new NavigateCommand();
 
             _reservations.Add(new ReservationViewModel(new Reservation(new RoomID(1, 2), "Sung", DateTime.Now, DateTime.Now)));
             _reservations.Add(new ReservationViewModel(new Reservation(new RoomID(3, 2), "Jong", DateTime.Now, DateTime.Now)));

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using WpfMVVM01.Commands;
+using WpfMVVM01.Models;
 
 namespace WpfMVVM01.ViewModels
 {
@@ -46,7 +48,7 @@ namespace WpfMVVM01.ViewModels
             }
         }
 
-        private DateTime _startDate;
+        private DateTime _startDate = new DateTime(2021,1,1);
         public DateTime StartDate
         {
             get { return _startDate; }
@@ -57,7 +59,7 @@ namespace WpfMVVM01.ViewModels
             }
         }
 
-        private DateTime _endDate;
+        private DateTime _endDate = new DateTime(2021, 1, 8);
         public DateTime EndDate
         {
             get { return _endDate; }
@@ -68,7 +70,17 @@ namespace WpfMVVM01.ViewModels
             }
         }
 
+        // Submit버튼 동작 : Commands 의 MakeReservationCommand.cs
         public ICommand SubmitCommand { get; }
+
+        // Cancel버튼 동작 : Commands 의 CancelMakeReservationCommand.cs
         public ICommand CancelCommand { get; }
+
+        public MakeReservationViewModel(Hotel hotel)
+        {
+            // 생성자
+            SubmitCommand = new MakeReservationCommand(this, hotel);            // submit 버튼 동작 클래스 객체화
+            CancelCommand = new CancelMakeReservationCommand();                 // cancel 버튼 동작 클래스 객체화
+        }
     }
 }
