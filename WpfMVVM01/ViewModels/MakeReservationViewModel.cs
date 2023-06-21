@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using WpfMVVM01.Commands;
 using WpfMVVM01.Models;
+using WpfMVVM01.Services;
+using WpfMVVM01.Stores;
 
 namespace WpfMVVM01.ViewModels
 {
@@ -76,11 +78,11 @@ namespace WpfMVVM01.ViewModels
         // Cancel버튼 동작 : Commands 의 CancelMakeReservationCommand.cs
         public ICommand CancelCommand { get; }
 
-        public MakeReservationViewModel(Hotel hotel)
+        public MakeReservationViewModel(Hotel hotel, NavigationService reservationViewNavigationService)
         {
             // 생성자
-            SubmitCommand = new MakeReservationCommand(this, hotel);            // submit 버튼 동작 클래스 객체화
-            CancelCommand = new CancelMakeReservationCommand();                 // cancel 버튼 동작 클래스 객체화
+            SubmitCommand = new MakeReservationCommand(this, hotel, reservationViewNavigationService);            // submit 버튼 동작 클래스 객체화
+            CancelCommand = new NavigateCommand(reservationViewNavigationService);                 // cancel 버튼 동작 클래스 객체화
         }
     }
 }
