@@ -40,5 +40,30 @@ namespace WPF_RJ.View
         {
             this.MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
         }
+
+        private void btnClose_Click(object sender, RoutedEventArgs e)
+        {
+            // 닫기버튼
+            Application.Current.Shutdown();
+        }
+
+        private void btnMaximize_Click(object sender, RoutedEventArgs e)
+        {
+            // 최대화 버튼
+            if(this.WindowState == WindowState.Normal)
+            {
+                this.WindowState = WindowState.Maximized;
+            }
+            else
+            {
+                this.WindowState = WindowState.Normal;
+            }
+        }
+
+        private void btnMinimize_Click(object sender, RoutedEventArgs e)
+        {
+            // 최소화 버튼
+            this.WindowState = WindowState.Minimized;
+        }
     }
 }
