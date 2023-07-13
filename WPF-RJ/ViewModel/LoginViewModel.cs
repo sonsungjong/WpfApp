@@ -71,7 +71,7 @@ namespace WPF_RJ.ViewModel
             bool validData;
             if(string.IsNullOrWhiteSpace(Username) || Username.Length < 3 || Password == null || Password.Length < 3)
             {
-                validData = true;
+                validData = false;
             }
             else
             {
