@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -44,7 +45,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="p047_Form.cs" />
+    <Compile Include="P032_Main.cs" />
+    <Compile Include="P047_Form.cs" />
+    <Compile Include="P055_Label.cs" />
+    <Compile Include="P057_PictureBox.cs" />
+    <Compile Include="P062_.cs" />
+    <Compile Include="P066_Property.cs" />
+    <Compile Include="P088_.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
