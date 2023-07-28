@@ -19,7 +19,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF-RJ", "WPF-RJ\WPF-RJ.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp", "ConsoleApp\ConsoleApp.csproj", "{2C2F367C-0F80-4F33-B0D2-4423FF6BD348}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RemoteCtrl", "RemoteCtrl\RemoteCtrl.csproj", "{C60BCED5-DF9A-4757-94FF-7C33AA97866A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RemoteCtrl", "RemoteCtrl\RemoteCtrl.csproj", "{C60BCED5-DF9A-4757-94FF-7C33AA97866A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSAccessDB1", "MSAccessDB1\MSAccessDB1.csproj", "{F10D855E-2EFA-4085-8432-3EC8522FCBAD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{C60BCED5-DF9A-4757-94FF-7C33AA97866A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C60BCED5-DF9A-4757-94FF-7C33AA97866A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C60BCED5-DF9A-4757-94FF-7C33AA97866A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F10D855E-2EFA-4085-8432-3EC8522FCBAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F10D855E-2EFA-4085-8432-3EC8522FCBAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F10D855E-2EFA-4085-8432-3EC8522FCBAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F10D855E-2EFA-4085-8432-3EC8522FCBAD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

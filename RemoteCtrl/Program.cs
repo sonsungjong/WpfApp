@@ -82,15 +82,16 @@ namespace RemoteCtrl
         // UTC 시간을 얻는다
         public void GetTime()
         {
-            SYSTEMTIME st = new SYSTEMTIME();
-            GetSystemTime(ref st);
+            //SYSTEMTIME st = new SYSTEMTIME();
+            //GetSystemTime(ref st);
 
-            Console.WriteLine("년도: " + st.wYear);
-            Console.WriteLine("Month: " + st.wMonth);
-            Console.WriteLine("Day: " + st.wDay);
-            Console.WriteLine("Hour: " + (st.wHour+9));
-            Console.WriteLine("Minute: " + st.wMinute);
-            Console.WriteLine("Second: " + st.wSecond);
+            // YYYY-MM-DD HH:mm:SS
+            // 한국시간이기 때문에 +9
+            //string time = string.Format("{0:D4}-{1:D2}-{2:D2} {3:D2}:{4:D2}:{5:D2}", st.wYear, st.wMonth, st.wDay, (st.wHour + 9) % 24, st.wMinute, st.wSecond);
+            string time = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+
+            // 출력
+            Console.WriteLine(time);
         }
     }
 }
