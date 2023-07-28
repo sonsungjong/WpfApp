@@ -1,17 +1,48 @@
 ﻿using System;
 using System.Data.OleDb;            // NuGet 패키지 관리자에서 설치
+using System.Reflection;
 
 namespace MSAccess
 {
     public class MSDB
     {
+        private List<string> id = new List<string>();
+        private List<string> password = new List<string>();
+        private List<string> name = new List<string>();
+
         public static void Main()
         {
+            string dll_path = @"D:\csharp\WpfApp1\MSAccessDB1\DbLib.dll";
+            Assembly assembly = Assembly.LoadFile(dll_path);
+            Type type = assembly.GetType("DbLib.DbUse");
+            object db_lib = Activator.CreateInstance(type);
+
             MSDB db_access = new MSDB();
-            db_access.QueryAccessDatabase();
+            type.GetMethod("UserSelectAll").Invoke(db_lib, new object[] { db_access.id, db_access.password, db_access.name });           // 메서드 호출
+            //db_access.QueryAccessDatabase(db_access.id, db_access.password, db_access.name);
+
+            // 테스트용 코드
+            Console.WriteLine("IDs:");
+            foreach (string element in db_access.id)
+            {
+                Console.WriteLine(element);
+            }
+
+            Console.WriteLine("\nPasswords:");
+            foreach (string element in db_access.password)
+            {
+                Console.WriteLine(element);
+            }
+
+            Console.WriteLine("\nNames:");
+            foreach (string element in db_access.name)
+            {
+                Console.WriteLine(element);
+            }
+
         }
 
-        public void QueryAccessDatabase()
+        public void QueryAccessDatabase(List<string> _id, List<string> _password, List<string> _name)
         {
             // 데이터베이스 파일의 경로 지정
             string db_path = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\sungjong.son\Documents\test.accdb;";
@@ -32,9 +63,9 @@ namespace MSAccess
                     {
                         while (reader.Read())
                         {
-                            string key = reader.GetString(0);
-                            string value = reader.GetString(1);
-                            Console.WriteLine(key + ":" +  value);
+                            _id.Add(reader.GetString(0));
+                            _password.Add(reader.GetString(1));
+                            _name.Add(reader.GetString(2));
                         }
                     }
                 }
