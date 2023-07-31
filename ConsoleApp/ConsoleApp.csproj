@@ -52,6 +52,14 @@
     <Compile Include="P062_.cs" />
     <Compile Include="P066_Property.cs" />
     <Compile Include="P088_.cs" />
+    <Compile Include="P108_if.cs" />
+    <Compile Include="P111_for.cs" />
+    <Compile Include="P119_Array.cs" />
+    <Compile Include="P121_Array.cs" />
+    <Compile Include="P125_Array2.cs" />
+    <Compile Include="P128_Array2.cs" />
+    <Compile Include="P132_Array2.cs" />
+    <Compile Include="P132_Loop.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

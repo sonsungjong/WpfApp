@@ -9,7 +9,7 @@ namespace ConsoleApp
 {
     public class P088_
     {
-        public static void Main()
+        public static void Main088()
         {
             Form fm = new Form();
             fm.Text = "샘플";
