@@ -23,7 +23,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RemoteCtrl", "RemoteCtrl\Re
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MSAccessDB1", "MSAccessDB1\MSAccessDB1.csproj", "{F10D855E-2EFA-4085-8432-3EC8522FCBAD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbLib", "DbLib\DbLib.csproj", "{EDDFB7F5-7F4F-42D0-976A-A0015420E447}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DbLib", "DbLib\DbLib.csproj", "{EDDFB7F5-7F4F-42D0-976A-A0015420E447}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileLog", "FileLog\FileLog.csproj", "{95FA9CBD-03E0-4F56-9BB1-4A38FD4033B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogLib", "LogLib\LogLib.csproj", "{27C7BF6D-47AF-49CB-A981-29C5C0BF73C9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +79,14 @@ Global
 		{EDDFB7F5-7F4F-42D0-976A-A0015420E447}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EDDFB7F5-7F4F-42D0-976A-A0015420E447}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EDDFB7F5-7F4F-42D0-976A-A0015420E447}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95FA9CBD-03E0-4F56-9BB1-4A38FD4033B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95FA9CBD-03E0-4F56-9BB1-4A38FD4033B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95FA9CBD-03E0-4F56-9BB1-4A38FD4033B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95FA9CBD-03E0-4F56-9BB1-4A38FD4033B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27C7BF6D-47AF-49CB-A981-29C5C0BF73C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27C7BF6D-47AF-49CB-A981-29C5C0BF73C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27C7BF6D-47AF-49CB-A981-29C5C0BF73C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27C7BF6D-47AF-49CB-A981-29C5C0BF73C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

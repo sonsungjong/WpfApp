@@ -60,6 +60,9 @@
     <Compile Include="P128_Array2.cs" />
     <Compile Include="P132_Array2.cs" />
     <Compile Include="P132_Loop.cs" />
+    <Compile Include="P139_Class.cs" />
+    <Compile Include="P158_static.cs" />
+    <Compile Include="P169_extend.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
