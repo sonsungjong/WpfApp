@@ -29,9 +29,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FileLog", "FileLog\FileLog.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogLib", "LogLib\LogLib.csproj", "{27C7BF6D-47AF-49CB-A981-29C5C0BF73C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UDPServer", "UDPServer\UDPServer.csproj", "{2A65D29F-AF0C-42BC-80E7-D3C4AD534A6A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UDPServer", "UDPServer\UDPServer.csproj", "{2A65D29F-AF0C-42BC-80E7-D3C4AD534A6A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UDPClient", "UDPClient\UDPClient.csproj", "{92470B63-3D9D-4224-A7B1-4B004F836E67}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UDPClient", "UDPClient\UDPClient.csproj", "{92470B63-3D9D-4224-A7B1-4B004F836E67}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFControlVisibilityApp", "WPFControlVisibilityApp\WPFControlVisibilityApp.csproj", "{A0D300D0-F1A9-40AB-8F11-00FEA5EC5CBF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -99,6 +101,10 @@ Global
 		{92470B63-3D9D-4224-A7B1-4B004F836E67}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{92470B63-3D9D-4224-A7B1-4B004F836E67}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{92470B63-3D9D-4224-A7B1-4B004F836E67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0D300D0-F1A9-40AB-8F11-00FEA5EC5CBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0D300D0-F1A9-40AB-8F11-00FEA5EC5CBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0D300D0-F1A9-40AB-8F11-00FEA5EC5CBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0D300D0-F1A9-40AB-8F11-00FEA5EC5CBF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
