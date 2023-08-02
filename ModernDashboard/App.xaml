@@ -1,0 +1,16 @@
+﻿<Application x:Class="ModernDashboard.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ModernDashboard"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        
+        <!-- 미리 만들어둔 설정용 xaml을 로드한다 -->
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+        
+    </Application.Resources>
+</Application>
