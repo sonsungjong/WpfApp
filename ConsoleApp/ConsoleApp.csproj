@@ -63,6 +63,13 @@
     <Compile Include="P139_Class.cs" />
     <Compile Include="P158_static.cs" />
     <Compile Include="P169_extend.cs" />
+    <Compile Include="P181_Ball.cs" />
+    <Compile Include="P181_WhiteLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="P187_Event.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

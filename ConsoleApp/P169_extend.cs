@@ -11,7 +11,7 @@ namespace ConsoleApp169
 {
     public class P169_extend
     {
-        public static void Main()
+        public static void Main169()
         {
             Form fm = new Form();
             fm.Text = "샘플";
