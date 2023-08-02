@@ -56,7 +56,17 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="RelayCommand.cs" />
+    <Compile Include="ViewModel\DesktopViewModel.cs" />
+    <Compile Include="ViewModel\DocumentViewModel.cs" />
+    <Compile Include="ViewModel\DownloadViewModel.cs" />
+    <Compile Include="ViewModel\HomeViewModel.cs" />
+    <Compile Include="ViewModel\MovieViewModel.cs" />
+    <Compile Include="ViewModel\MusicViewModel.cs" />
     <Compile Include="ViewModel\NavigationViewModel.cs" />
+    <Compile Include="ViewModel\PCViewModel.cs" />
+    <Compile Include="ViewModel\PictureViewModel.cs" />
+    <Compile Include="ViewModel\StartupViewModel.cs" />
+    <Compile Include="ViewModel\TrashViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
