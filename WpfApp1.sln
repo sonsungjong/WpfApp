@@ -37,6 +37,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFControlVisibilityApp", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModernDashboard", "ModernDashboard\ModernDashboard.csproj", "{A4573194-01A2-4069-AC08-CA2592D371B5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsService472", "WindowsService472\WindowsService472.csproj", "{6F731782-B740-4C3E-BCD4-8CE30427745B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkerService7", "WorkerService7\WorkerService7.csproj", "{86B18525-EA2F-4A98-B0CE-5825FCF4F769}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +115,14 @@ Global
 		{A4573194-01A2-4069-AC08-CA2592D371B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4573194-01A2-4069-AC08-CA2592D371B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4573194-01A2-4069-AC08-CA2592D371B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F731782-B740-4C3E-BCD4-8CE30427745B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F731782-B740-4C3E-BCD4-8CE30427745B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F731782-B740-4C3E-BCD4-8CE30427745B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F731782-B740-4C3E-BCD4-8CE30427745B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86B18525-EA2F-4A98-B0CE-5825FCF4F769}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86B18525-EA2F-4A98-B0CE-5825FCF4F769}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86B18525-EA2F-4A98-B0CE-5825FCF4F769}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86B18525-EA2F-4A98-B0CE-5825FCF4F769}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
