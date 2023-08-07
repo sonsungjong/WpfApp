@@ -168,5 +168,8 @@
   <ItemGroup>
     <Resource Include="Images\dashboard-template.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\loginview_back.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
