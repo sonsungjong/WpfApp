@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using UITCC.View;
 
 namespace UITCC
 {
@@ -12,19 +13,17 @@ namespace UITCC
     {
         protected void ApplicationStart(object sender, StartupEventArgs e)
         {
-            /*
             var login_view = new LoginView();
             login_view.Show();
             login_view.IsVisibleChanged += (s, ev) =>
             {
-                if(login_view.IsVisible == false && login_view.IsLoaded)
+                if (login_view.IsVisible == false && login_view.IsLoaded)
                 {
-                    var select_mode_view = new select_mode_view();
+                    var select_mode_view = new SelectModeView();
                     select_mode_view.Show();
                     login_view.Close();
                 }
             };
-            */
         }
     }
 }

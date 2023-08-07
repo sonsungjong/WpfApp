@@ -5,34 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UITCC.View"
         mc:Ignorable="d"
-        Title="MyLogin" Height="450" Width="800"
+        Title="LoginView" Height="450" Width="800"
         WindowStyle="None" ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen" MouseDown="Window_MouseDown"
         Background="Transparent" AllowsTransparency="True">
 
-    <Border CornerRadius="50">
+    <Border CornerRadius="27">
         <Border.Background>
-            <ImageBrush ImageSource="/loginview_back.jpg" Stretch="None" />
+            <ImageBrush ImageSource="/Images/loginview_back.jpg" Stretch="Fill"/>
         </Border.Background>
 
-        <Border CornerRadius="50"
-                BorderThickness="2"
-                Opacity="0.95">
+        <Border CornerRadius="25" BorderThickness="2" Opacity="0.90">
             <Border.BorderBrush>
-                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                    <GradientStop Color="#472AD8" Offset="0"/>
-                    <GradientStop Color="#DA34AE" Offset="0.75"/>
-                    <GradientStop Color="#8A16C1" Offset="1"/>
+                <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                    <GradientStop Color="#462AD8" Offset="0"/>
+                    <GradientStop Color="#DA34AE" Offset="0.25"/>
+                    <GradientStop Color="#8A16C1" Offset="0.25"/>
                 </LinearGradientBrush>
             </Border.BorderBrush>
 
             <Border.Background>
-                <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
-                    <GradientStop Color="#060531" Offset="0"/>
-                    <GradientStop Color="#1B1448" Offset="0.75"/>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#FF0000" Offset="0"/>
+                    <GradientStop Color="#008000" Offset="0.2"/>
+                    <GradientStop Color="#FFFFFF" Offset="0.8"/>
+                    <GradientStop Color="#000000" Offset="1"/>
                 </LinearGradientBrush>
             </Border.Background>
         </Border>
+        
     </Border>
     
 </Window>

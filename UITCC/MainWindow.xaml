@@ -6,9 +6,7 @@
         xmlns:local="clr-namespace:UITCC"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Border>
-        <Border.Background>
-            <ImageBrush ImageSource="/user-icon.png"/>
-        </Border.Background>
-    </Border>
+    <Grid>
+        
+    </Grid>
 </Window>

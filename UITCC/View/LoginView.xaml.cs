@@ -14,9 +14,6 @@ using System.Windows.Shapes;
 
 namespace UITCC.View
 {
-    /// <summary>
-    /// Interaction logic for LoginView.xaml
-    /// </summary>
     public partial class LoginView : Window
     {
         public LoginView()
@@ -26,10 +23,12 @@ namespace UITCC.View
 
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            if (e.LeftButton == MouseButtonState.Pressed)
+            if(e.LeftButton == MouseButtonState.Pressed)
             {
                 DragMove();
             }
         }
+
+
     }
 }
