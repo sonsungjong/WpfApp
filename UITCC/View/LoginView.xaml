@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UITCC.View"
         mc:Ignorable="d"
-        Title="LoginView" Height="450" Width="800"
+        Title="LoginView" Height="550" Width="800"
         WindowStyle="None" ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen" MouseDown="Window_MouseDown"
         Background="Transparent" AllowsTransparency="True">
@@ -15,7 +15,7 @@
             <ImageBrush ImageSource="/Images/loginview_back.jpg" Stretch="Fill"/>
         </Border.Background>
 
-        <Border CornerRadius="25" BorderThickness="2" Opacity="0.90">
+        <Border CornerRadius="25" BorderThickness="2" Opacity="0.96">
             <Border.BorderBrush>
                 <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
                     <GradientStop Color="#462AD8" Offset="0"/>
@@ -26,10 +26,9 @@
 
             <Border.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                    <GradientStop Color="#FF0000" Offset="0"/>
-                    <GradientStop Color="#008000" Offset="0.2"/>
-                    <GradientStop Color="#FFFFFF" Offset="0.8"/>
-                    <GradientStop Color="#000000" Offset="1"/>
+                    <GradientStop Color="Khaki" Offset="0"/>
+                    <GradientStop Color="DarkKhaki" Offset="0.25"/>
+                    <GradientStop Color="#B8860B" Offset="0.75"/>
                 </LinearGradientBrush>
             </Border.Background>
 
@@ -42,7 +41,7 @@
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition />
-                        <ColumnDefinition Width="180"/>
+                        <ColumnDefinition Width="120"/>
                         <ColumnDefinition Width="5"/>
                     </Grid.ColumnDefinitions>
 
@@ -52,17 +51,16 @@
                             FontSize="18"
                             Cursor="Hand"
                             Grid.Column="1"
-                            Click="btnClose_Click"
-                            >
+                            Click="btnClose_Click">
                         <StackPanel Orientation="Horizontal">
                             <Image Name="btnCloseImage" Source="/Images/user-icon.png" Stretch="None"></Image>
-                            <TextBlock Text="Exit" Height="22">
+                            <TextBlock Text=" Exit" Height="26">
                                 <TextBlock.Style>
                                     <Style TargetType="TextBlock">
                                         <Style.Triggers>
                                             <Trigger Property="IsMouseOver" Value="True">
                                                 <Setter Property="Foreground" Value="#FF0000"/>
-                                            </Trigger> 
+                                            </Trigger>
                                         </Style.Triggers>
                                     </Style>
                                 </TextBlock.Style>
@@ -79,20 +77,122 @@
                                 </Style.Triggers>
                             </Style>
                         </Button.Style>
-                        
+
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
-                                <Border Width="50" Background="{TemplateBinding Background}">
+                                <Border Width="60" Background="{TemplateBinding Background}">
                                     <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" />
                                 </Border>
                             </ControlTemplate>
                         </Button.Template>
-                        
                     </Button>
-                    
-                    
-                    
                 </Grid>
+
+                <StackPanel Grid.Row="2"
+                            Width="400"
+                            Orientation="Vertical"
+                            Margin="0, 65, 0, 0">
+
+                    <TextBlock Text="철매-II 성능개량 훈련장비 LOGIN"
+                               Foreground="Black"
+                               FontSize="32"
+                               FontWeight="Bold"
+                               TextWrapping="Wrap"
+                               TextAlignment="Center"
+                               />
+
+                    <TextBlock Text="2023/08/08 16:24:33"
+                               Foreground="LightGray"
+                               FontSize="14"
+                               FontWeight="Medium"
+                               TextWrapping="Wrap"
+                               TextAlignment="Center"
+                               Margin="0,5,0,0"/>
+
+                    <TextBlock Text="USER ID"
+                               Foreground="DarkBlue"
+                               FontSize="12"
+                               FontWeight="Medium"
+                               Margin="0, 35, 0, 0"
+                               />
+
+                    <TextBox x:Name="txtUser"
+                             FontSize="13"
+                             FontWeight="Medium"
+                             Foreground="White"
+                             CaretBrush="LightGray"
+                             BorderBrush="Black"
+                             BorderThickness="0,0,0,1"
+                             Height="28"
+                             VerticalContentAlignment="Center"
+                             Margin="0,5,0,0"
+                             Padding="20,0,0,0"
+                             >
+                        <TextBox.Background>
+                            <ImageBrush ImageSource="/Images/user-icon.png"
+                                        Stretch="None"
+                                        AlignmentX="Left"/>
+                        </TextBox.Background>
+                    </TextBox>
+
+                    <TextBlock Text="USER PW"
+                               Foreground="DarkBlue"
+                               FontWeight="Medium"
+                               FontSize="12"
+                               Margin="0, 35, 0, 0"
+                               />
+
+                    <PasswordBox x:Name="txtPass"
+                             FontSize="13"
+                             FontWeight="Medium"
+                             Foreground="White"
+                             CaretBrush="LightGray"
+                             BorderBrush="Black"
+                             BorderThickness="0,0,0,1"
+                             Height="28"
+                             VerticalContentAlignment="Center"
+                             Margin="0,5,0,0"
+                             Padding="20,0,0,0"
+                             >
+                        <PasswordBox.Background>
+                            <ImageBrush ImageSource="/Images/key-icon.png"
+                                        Stretch="None"
+                                        AlignmentX="Left"/>
+                        </PasswordBox.Background>
+                    </PasswordBox>
+
+                    <Button x:Name="btnLogin"
+                            BorderThickness="0"
+                            Content="LOG IN"
+                            Foreground="White"
+                            FontSize="18"
+                            Cursor="Hand"
+                            Grid.Column="2"
+                            Margin="0,50,0,0"
+                            Click="btnLogin_Click">
+                        
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#462AD8"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="SkyBlue"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="150" Height="40" CornerRadius="20" Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" />
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+                </StackPanel>
+                
             </Grid>
         
         </Border>

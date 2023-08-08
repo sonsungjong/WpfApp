@@ -33,5 +33,10 @@ namespace UITCC.View
         {
             Application.Current.Shutdown();
         }
+
+        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
