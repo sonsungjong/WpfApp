@@ -4,11 +4,24 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UITCC.View"
+        xmlns:viewModel="clr-namespace:UITCC.ViewModel"
         mc:Ignorable="d"
         Title="LoginView" Height="550" Width="800"
         WindowStyle="None" ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen" MouseDown="Window_MouseDown"
         Background="Transparent" AllowsTransparency="True">
+
+    <Window.DataContext>
+        <viewModel:LoginViewModel/>
+    </Window.DataContext>
+
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibility"/>
+    </Window.Resources>
+
+    <Window.Visibility>
+        <Binding Path="Visible" Mode="TwoWay" Converter="{StaticResource BooleanToVisibility}"/>
+    </Window.Visibility>
 
     <Border CornerRadius="27">
         <Border.Background>
@@ -117,6 +130,7 @@
                                />
 
                     <TextBox x:Name="txtUser"
+                             Text="{Binding UserId}"
                              FontSize="13"
                              FontWeight="Medium"
                              Foreground="White"
@@ -143,6 +157,7 @@
                                />
 
                     <PasswordBox x:Name="txtPass"
+                                 
                              FontSize="13"
                              FontWeight="Medium"
                              Foreground="White"
@@ -161,14 +176,22 @@
                         </PasswordBox.Background>
                     </PasswordBox>
 
+                    <TextBlock Text="{Binding ErrMsg}"
+                               Foreground="#D7596D"
+                               FontSize="12"
+                               FontWeight="Medium"
+                               Margin="0,10,0,0"
+                               TextWrapping="Wrap"/>
+
                     <Button x:Name="btnLogin"
+                            Command="{Binding LoginCommand}"
                             BorderThickness="0"
                             Content="LOG IN"
                             Foreground="White"
                             FontSize="18"
                             Cursor="Hand"
                             Grid.Column="2"
-                            Margin="0,50,0,0"
+                            Margin="0,30,0,0"
                             Click="btnLogin_Click">
                         
                         <Button.Style>
