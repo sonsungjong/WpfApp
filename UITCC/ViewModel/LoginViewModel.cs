@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.OleDb;
+using System.Globalization;
 using System.Linq;
 using System.Net;
+using System.Security.Cryptography;
 using System.Security.Principal;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using System.Windows.Threading;
 
 namespace UITCC.ViewModel
 {
@@ -17,6 +21,8 @@ namespace UITCC.ViewModel
         public string m_user_pw;
         public string m_err_msg;
         public bool m_visible = true;
+        private string m_current_time;
+        private DispatcherTimer m_timer;
 
         // Properties
         public string UserId
@@ -70,45 +76,80 @@ namespace UITCC.ViewModel
             }
         }
 
+        public string CurrentTime
+        {
+            get { return m_current_time; }
+            set
+            {
+                m_current_time = value;
+                OnPropertyChanged(nameof(CurrentTime));
+            }
+        }
+
         // Command
-        public ICommand LoginCommand { get; }
+        public ICommand LoginCommand { get; set; }
         
         // 생성자
         public LoginViewModel()
         {
             LoginCommand = new ViewModelCommand(ExecuteLoginCommand, CanExecuteLoginCommand);
+
+            m_timer = new DispatcherTimer
+            {
+                Interval = TimeSpan.FromSeconds(1)
+            };
+
+            m_timer.Tick += Timer_Tick;
+            m_timer.Start();
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            CurrentTime = DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss", CultureInfo.InvariantCulture);
         }
 
         private bool CanExecuteLoginCommand(object obj)
         {
-            bool valid_data;
-
-            // 3글자 이상, 비어있지 않게
-            if (string.IsNullOrWhiteSpace(UserId) || UserId.Length < 3 || UserPw == null || UserPw.Length < 3)
-            {
-                valid_data = false;
-            }
-            else
-            {
-                valid_data = true;          // 타당한 계정정보
-            }
-
-            return valid_data;          // bool 결과 리턴
+            return !string.IsNullOrEmpty(UserId) && !string.IsNullOrEmpty(UserPw);
         }
 
         private void ExecuteLoginCommand(object obj)
         {
-            //var isValidUser = userRepository.AuthenticateUser(new NetworkCredential(Username, Password));
-            //if (isValidUser)
-            //{
-            //    Thread.CurrentPrincipal = new GenericPrincipal(
-            //        new GenericIdentity(Username), null);
-            //    IsViewVisible = false;
-            //}
-            //else
-            //{
-            //    ErrorMessage = "* Invalid username or password";
-            //}
+            // 데이터베이스(x64)의 사용자와 일치하면 로그인 화면을 비활성화 시킨다
+            string db_path = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\sungjong.son\Documents\test.accdb;";
+
+            using (OleDbConnection db_conn = new OleDbConnection(db_path))
+            {
+                db_conn.Open();
+                string select_all_user_query = "SELECT * FROM [user]";
+                using (OleDbCommand db_command = new OleDbCommand(select_all_user_query, db_conn))
+                {
+                    bool result = false;
+                    // OleDBDataReader를 사용하여 쿼리 결과를 얻는다
+                    using (OleDbDataReader reader = db_command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            if(reader.GetString(0) == UserId && reader.GetString(1) == UserPw)
+                            {
+                                result = true;
+                                break;
+                            }
+                        }
+                    }
+
+                    if (result == true)
+                    {
+                        // 일치하는 사용자 찾음
+                        Visible = false;
+                    }
+                    else
+                    {
+                        // 일치하는 사용자 없음
+                        ErrMsg = "Invalid user ID or password!";
+                    }
+                }
+            }
         }
     }
 }

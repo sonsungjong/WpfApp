@@ -114,7 +114,7 @@
                                TextAlignment="Center"
                                />
 
-                    <TextBlock Text="2023/08/08 16:24:33"
+                    <TextBlock Text="{Binding CurrentTime}"
                                Foreground="LightGray"
                                FontSize="14"
                                FontWeight="Medium"
@@ -130,7 +130,7 @@
                                />
 
                     <TextBox x:Name="txtUser"
-                             Text="{Binding UserId}"
+                             Text="{Binding UserId, UpdateSourceTrigger=PropertyChanged}"
                              FontSize="13"
                              FontWeight="Medium"
                              Foreground="White"
@@ -157,7 +157,7 @@
                                />
 
                     <PasswordBox x:Name="txtPass"
-                                 
+                             PasswordChanged="txtPass_PasswordChanged"
                              FontSize="13"
                              FontWeight="Medium"
                              Foreground="White"

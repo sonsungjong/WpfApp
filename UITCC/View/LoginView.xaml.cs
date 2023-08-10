@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using UITCC.ViewModel;
 
 namespace UITCC.View
 {
@@ -37,6 +38,15 @@ namespace UITCC.View
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void txtPass_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            var viewModel = DataContext as LoginViewModel;
+            if (viewModel != null)
+            {
+                viewModel.UserPw = txtPass.Password;
+            }
         }
     }
 }
