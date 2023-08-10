@@ -11,6 +11,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Windows.Threading;
+using UITCC.Model;
 
 namespace UITCC.ViewModel
 {
@@ -23,6 +24,7 @@ namespace UITCC.ViewModel
         public bool m_visible = true;
         private string m_current_time;
         private DispatcherTimer m_timer;
+        public UserModel m_user => UserModel.Instance;
 
         // Properties
         public string UserId
@@ -117,39 +119,60 @@ namespace UITCC.ViewModel
         {
             // 데이터베이스(x64)의 사용자와 일치하면 로그인 화면을 비활성화 시킨다
             string db_path = @"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\sungjong.son\Documents\test.accdb;";
+            bool result = false;
 
-            using (OleDbConnection db_conn = new OleDbConnection(db_path))
-            {
-                db_conn.Open();
-                string select_all_user_query = "SELECT * FROM [user]";
-                using (OleDbCommand db_command = new OleDbCommand(select_all_user_query, db_conn))
+            try { 
+                using (OleDbConnection db_conn = new OleDbConnection(db_path))
                 {
-                    bool result = false;
-                    // OleDBDataReader를 사용하여 쿼리 결과를 얻는다
-                    using (OleDbDataReader reader = db_command.ExecuteReader())
+                    db_conn.Open();
+                    string select_all_user_query = "SELECT * FROM [user]";
+                    using (OleDbCommand db_command = new OleDbCommand(select_all_user_query, db_conn))
                     {
-                        while (reader.Read())
+                        // OleDBDataReader를 사용하여 쿼리 결과를 얻는다
+                        using (OleDbDataReader reader = db_command.ExecuteReader())
                         {
-                            if(reader.GetString(0) == UserId && reader.GetString(1) == UserPw)
+                            while (reader.Read())
                             {
-                                result = true;
-                                break;
+                                if(reader.GetString(0) == UserId && reader.GetString(1) == UserPw)
+                                {
+                                    m_user.UserId = reader.GetString(0);
+                                    m_user.UserPw = reader.GetString(1);
+                                    result = true;
+                                    break;
+                                }
                             }
                         }
                     }
-
-                    if (result == true)
-                    {
-                        // 일치하는 사용자 찾음
-                        Visible = false;
-                    }
-                    else
-                    {
-                        // 일치하는 사용자 없음
-                        ErrMsg = "Invalid user ID or password!";
-                    }
                 }
             }
+            catch (Exception)
+            {
+                /* no actions */
+            }
+
+            if (result == true)
+            {
+                // 일치하는 사용자 찾음
+                Visible = false;
+            }
+            else
+            {
+                // 데이터베이스와 무관하게 관리자 로그인
+                if(UserId == "admin" && UserPw == "admin")
+                {
+                    m_user.UserId = "admin";
+                    m_user.UserPw = "admin";
+                    Visible = false;
+                }
+                else
+                {
+                    // 일치하는 사용자 없음
+                    ErrMsg = "Invalid user ID or password!";
+                }
+            }
+
         }
+
+
     }
 }

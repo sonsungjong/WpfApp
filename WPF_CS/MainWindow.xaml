@@ -19,16 +19,51 @@
         WindowState="Maximized"
         Topmost="False"
         ShowInTaskbar="False"
+        MinWidth="200" MinHeight="200"
         >
 
-    <Grid>
-        <Button Content="cccccccc"
+    <Grid Background="#FFADD1A0" Cursor="Hand" MinWidth="100" Visibility="Visible">
+        <Button Content="Hello World!"
                 HorizontalAlignment="Left"
-                Margin="113,104,0,0"
+                Margin="7,17,0,0"
                 VerticalAlignment="Top"
-                Height="116"
-                Width="337"
+                Height="50"
+                Width="300"
+                Background="YellowGreen"
+                BorderBrush="Crimson"
+                BorderThickness="12,8,4,1"
+                Cursor="Help"
                 Click="Button_Click" />
+
+        <Button Content="Hello World!"
+                HorizontalAlignment="Left"
+                Margin="7,87,0,0"
+                VerticalAlignment="Top"
+                Height="50"
+                Width="300"
+                Foreground="BlueViolet"
+                Background="YellowGreen"
+                BorderBrush="Crimson"
+                BorderThickness="12,8,4,1"
+                Cursor="Help"
+                FlowDirection="RightToLeft"
+                Visibility="Visible"
+                />
+
+        <Button Content="Disable Button"
+                Height="50" Width="300"
+                Margin="7, 107, 0, 0"
+                IsEnabled="False"
+                />
+
+        <Label Content="First Name: " HorizontalAlignment="Left" Margin="0,160,0,0" VerticalAlignment="Top"
+               Foreground="Blue"
+               Background="#FFB8F5C0" BorderBrush="#FF150202"  BorderThickness="1" Width="317"/>
+
+        <TextBox HorizontalAlignment="Left" Height="23" Width="120" TextWrapping="Wrap" Text="txtBox"
+                 VerticalAlignment="Top" Margin="138, 290, 0, 0" CaretBrush="Red" />
+        
+        
 
     </Grid>
 </Window>

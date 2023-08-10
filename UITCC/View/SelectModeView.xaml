@@ -5,8 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UITCC.View"
         mc:Ignorable="d"
-        Title="SelectModeView" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="SelectModeView" WindowState="Maximized" Width="1920" Height="1080"
+        WindowStyle="None" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Background="Transparent" AllowsTransparency="True">
+
+    <Border>
+        <Border.Background>
+            <ImageBrush ImageSource="/Images/loginview_back.jpg" Stretch="Fill"/>
+        </Border.Background>
+
+        <Border Opacity="0.94">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="Khaki" Offset="0"/>
+                    <GradientStop Color="DarkKhaki" Offset="0.25"/>
+                    <GradientStop Color="#B8860B" Offset="0.75"/>
+                </LinearGradientBrush>
+            </Border.Background>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+            </Grid>
+            
+            
+            
+        </Border>
+    </Border>
 </Window>
