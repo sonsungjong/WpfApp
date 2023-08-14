@@ -71,5 +71,61 @@ namespace ModernDashboard.ViewModel
                 e.Accepted = false;
             }
         }
+
+        // Select ViewModel
+        private object _selectedViewModel;
+        public object SelectedViewModel
+        {
+            get => _selectedViewModel;
+            set
+            {
+                _selectedViewModel = value;
+                OnPropertyChanged("SelectedViewModel");
+            }
+        }
+
+        // Switch Views
+        public void SwitchViews(object parameter)
+        {
+            switch(parameter)
+            {
+                case "Home":
+                    SelectedViewModel = new HomeViewModel();
+                    break;
+                case "Desktop":
+                    SelectedViewModel = new DesktopViewModel();
+                    break;
+                case "Documents":
+                    SelectedViewModel = new DocumentViewModel();
+                    break;
+                case "Downloads":
+                    SelectedViewModel = new DownloadViewModel();
+                    break;
+                case "Pictures":
+                    SelectedViewModel = new PictureViewModel();
+                    break;
+                case "Music":
+                    SelectedViewModel = new MusicViewModel();
+                    break;
+                case "Movies":
+                    SelectedViewModel = new MovieViewModel();
+                    break;
+                case "Trash":
+                    SelectedViewModel = new TrashViewModel();
+                    break;
+                default:
+                    SelectedViewModel = new HomeViewModel();
+                    break;
+            }
+        }
+
+        // Show PC View
+        public void PCView()
+        {
+            SelectedViewModel = new PCViewModel();
+        }
+
+        // This PC button Command
+
     }
 }

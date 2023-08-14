@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="ModernDashboard.View.DownloadView"
+﻿<UserControl x:Class="ModernDashboard.View.MusicView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -13,8 +13,13 @@
                 <EventTrigger RoutedEvent="UserControl.Loaded">
                     <BeginStoryboard>
                         <Storyboard>
-                            <DoubleAnimation Storyboard.TargetProperty="Opacity"
-                                             From="0.0" To="1.0" Duration="0:0:0.5"/>
+                            <DoubleAnimation
+                                Storyboard.TargetProperty="Opacity"
+                                From="0.0"
+                                To="1.0"
+                                Duration="0:0:0.5"
+                                >
+                            </DoubleAnimation>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
@@ -23,38 +28,44 @@
     </UserControl.Style>
     
     <Grid Background="#303030">
-        <TextBlock Text="Downloads" FontSize="24"
+        <TextBlock Text="Music"
+                   FontSize="24"
                    FontFamily="/Fonts/OpenSans-Regular.ttf"
                    Foreground="#DDDDDD"
                    HorizontalAlignment="Left"
                    VerticalAlignment="Top"
-                   Margin="5,12,0,0"/>
-        <Grid Height="40"
-              Width="180"
+                   Margin="5,12,0,0"
+                />
+
+        <Grid Height="40" Width="180"
               HorizontalAlignment="Right"
               VerticalAlignment="Top"
-              Margin="0,10,15,0">
+              Margin="0,10,15,0"
+            >
 
-            <TextBox x:Name="SearchBox" Text="{Binding FilterText, UpdateSourceTrigger=PropertyChanged}"
+            <TextBox x:Name="SearchBox"
+                     Text="{Binding FilterText, UpdateSourceTrigger=PropertyChanged}"
                      Style="{StaticResource SearchBoxStyle}"/>
 
             <TextBlock Text="Search" Style="{StaticResource SearchTextStyle}"/>
 
         </Grid>
 
-        <ItemsControl ItemsSource="{Binding DownloadSourceCollection}"
-                      Height="285" Width="650" HorizontalAlignment="Center" Margin="0,0,0,20">
+        <ItemsControl ItemsSource="{Binding MusicSourceCollection}"
+                      Height="380" Width="650" HorizontalAlignment="Center" Margin="0,70,0,0"
+                      >
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <RadioButton Content="{Binding DownloadName}"
-                                 Tag="{Binding DownloadImage}"
-                                 Style="{StaticResource DownloadButtonStyle}"
-                                 GroupName="DesktopGroup"/>
+                    <RadioButton Content="{Binding MusicName}"
+                                 Tag="{Binding MusicImage}"
+                                 Style="{StaticResource MusicButtonStyle}"
+                                 GroupName="DesktopGroup"
+                                 />
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <UniformGrid Columns="2" Rows="4"/>
+                    <UniformGrid Columns="4" Rows="3"/>
                 </ItemsPanelTemplate>
             </ItemsControl.ItemsPanel>
         </ItemsControl>
