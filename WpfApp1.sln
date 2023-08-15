@@ -49,6 +49,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UITCC", "UITCC\UITCC.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MSAessDB2", "MSAessDB2\MSAessDB2.csproj", "{2BD77B83-D22A-4A78-B62A-6E1300E0E106}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PageNavigationApp7", "PageNavigationApp7\PageNavigationApp7.csproj", "{EEC7BE7C-189B-47D8-B924-56367CFE2DCF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -241,6 +243,14 @@ Global
 		{2BD77B83-D22A-4A78-B62A-6E1300E0E106}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2BD77B83-D22A-4A78-B62A-6E1300E0E106}.Release|x64.ActiveCfg = Release|x64
 		{2BD77B83-D22A-4A78-B62A-6E1300E0E106}.Release|x64.Build.0 = Release|x64
+		{EEC7BE7C-189B-47D8-B924-56367CFE2DCF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEC7BE7C-189B-47D8-B924-56367CFE2DCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEC7BE7C-189B-47D8-B924-56367CFE2DCF}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{EEC7BE7C-189B-47D8-B924-56367CFE2DCF}.Debug|x64.Build.0 = Debug|Any CPU
+		{EEC7BE7C-189B-47D8-B924-56367CFE2DCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEC7BE7C-189B-47D8-B924-56367CFE2DCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEC7BE7C-189B-47D8-B924-56367CFE2DCF}.Release|x64.ActiveCfg = Release|Any CPU
+		{EEC7BE7C-189B-47D8-B924-56367CFE2DCF}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -48,6 +48,7 @@ namespace WPF_RJ.Repositories
             throw new NotImplementedException();
         }
 
+        // DB에서 유저이름을 가져온다
         public UserModel GetByUsername(string username)
         {
             UserModel user = null;

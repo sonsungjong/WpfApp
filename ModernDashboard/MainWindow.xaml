@@ -12,6 +12,7 @@
         ResizeMode="NoResize"
         Background="Transparent"
         AllowsTransparency="True"
+        MouseDown="DashboardWindow_MouseDown"
         >
     
     
@@ -102,6 +103,8 @@
                             <StackPanel>
                                 <RadioButton Content="{Binding MenuName}"
                                              Tag="{Binding MenuImage}"
+                                             CommandParameter="{Binding MenuName}"
+                                             Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type ItemsControl}}, Path=DataContext.MenuCommand}"
                                              Style="{StaticResource MenuButtonStyle}"
                                              GroupName="MenuGroup" />
                             </StackPanel>
@@ -111,8 +114,27 @@
                 
             </Grid>
             
+            <!-- Page Comtainer -->
+            <Grid Grid.Row="2"
+                  Grid.Column="3"
+                  Grid.RowSpan="2"
+                  Background="Transparent">
+                
+                <ContentControl x:Name="Pages" Content="{Binding SelectedViewModel}"/>
+                
+            </Grid>
+            
         </Grid>
         
+        <!-- Close Button -->
+        <Button Height="50" Width="50"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Top"
+                Command="{Binding CloseAppCommand}"
+                CommandParameter="{Binding ElementName=DashboardWindow}"
+                Margin="0,5,20,0"
+                Style="{StaticResource CloseBtn_Style}"/>
+
     </Grid>
     
 </Window>

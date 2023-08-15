@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ModernDashboard
+namespace PageNavigationApp7
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -25,12 +25,9 @@ namespace ModernDashboard
             InitializeComponent();
         }
 
-        private void DashboardWindow_MouseDown(object sender, MouseButtonEventArgs e)
+        private void CloseApp_Click(object sender, RoutedEventArgs e)
         {
-            if(e.LeftButton == MouseButtonState.Pressed)
-            {
-                DragMove();
-            }
+            Close();
         }
     }
 }

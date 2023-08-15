@@ -5,10 +5,11 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         
-        <!-- 미리 만들어둔 설정용 xaml을 로드한다 -->
+        <!-- 미리 만들어둔 xaml을 로드한다 -->
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Styles.xaml" />
+                <ResourceDictionary Source="DataTemplates.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
         

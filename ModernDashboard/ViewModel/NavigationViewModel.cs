@@ -31,6 +31,9 @@ namespace ModernDashboard.ViewModel
 
             MenuItemsCollection = new CollectionViewSource { Source = menuItems };
             MenuItemsCollection.Filter += MenuItems_Filter;
+
+            // Set Startup Page
+            SelectedViewModel = new StartupViewModel();
         }
 
         // Implement interface member for INotifyPropertyChanged.
@@ -119,6 +122,20 @@ namespace ModernDashboard.ViewModel
             }
         }
 
+        // Menu Button Command
+        private ICommand _menucommand;
+        public ICommand MenuCommand
+        {
+            get
+            {
+                if(_menucommand == null)
+                {
+                    _menucommand = new RelayCommand(param => SwitchViews(param));
+                }
+                return _menucommand;
+            }
+        }
+
         // Show PC View
         public void PCView()
         {
@@ -126,6 +143,58 @@ namespace ModernDashboard.ViewModel
         }
 
         // This PC button Command
+        private ICommand _pccommand;
+        public ICommand ThisPCCommand
+        {
+            get
+            {
+                if(_pccommand == null)
+                {
+                    _pccommand = new RelayCommand(param => PCView());
+                }
+                return _pccommand;
+            }
+        }
 
+        // Show Home View
+        private void ShowHome()
+        {
+            SelectedViewModel = new HomeViewModel();
+        }
+
+        // Back button Command
+        private ICommand _backHomeCommand;
+        public ICommand BackHomeCommand
+        {
+            get
+            {
+                if(_backHomeCommand == null)
+                {
+                    _backHomeCommand = new RelayCommand(p => ShowHome());
+                }
+                return _backHomeCommand;
+            }
+        }
+
+        // Close App
+        public void CloseApp(object obj)
+        {
+            MainWindow win = obj as MainWindow;
+            win.Close();
+        }
+
+        // Close App Command
+        private ICommand _closeCommand;
+        public ICommand CloseAppCommand
+        {
+            get
+            {
+                if(_closeCommand == null)
+                {
+                    _closeCommand = new RelayCommand(p => CloseApp(p));
+                }
+                return _closeCommand;
+            }
+        }
     }
 }

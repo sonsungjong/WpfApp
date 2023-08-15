@@ -21,8 +21,7 @@ namespace WPF_RJ.CustomControls
     /// </summary>
     public partial class BindablePasswordBox : UserControl
     {
-        public static readonly DependencyProperty PasswordProperty =
-            DependencyProperty.Register("Password", typeof(SecureString), typeof(BindablePasswordBox));
+        public static readonly DependencyProperty PasswordProperty = DependencyProperty.Register("Password", typeof(SecureString), typeof(BindablePasswordBox));
 
         public SecureString Password
         {

@@ -83,11 +83,9 @@ namespace WPF_RJ.ViewModel
             var user = userRepository.GetByUsername(Thread.CurrentPrincipal.Identity.Name);
             if(user != null)
             {
-
                 CurrentUserAccount.Username = user.Username;
                 CurrentUserAccount.DisplayName = $"{user.Name} {user.LastName}";
                 CurrentUserAccount.ProfilePicture = null;
-                
             }
             else
             {
