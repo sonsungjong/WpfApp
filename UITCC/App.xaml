@@ -4,6 +4,13 @@
              xmlns:local="clr-namespace:UITCC"
              Startup="ApplicationStart">
     <Application.Resources>
+
+        <!-- 미리 만들어놓은 xaml을 로드 -->
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Styles/Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
          
     </Application.Resources>
 </Application>

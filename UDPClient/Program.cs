@@ -10,7 +10,7 @@ namespace NS_UDPClient
         public static void Main()
         {
             int port = 12345;
-            string serverAddress = "172.16.1.175"; // 서버의 IP 주소
+            string serverAddress = "172.16.1.157"; // 서버의 IP 주소
 
             UdpClient udpClient = new UdpClient();
             IPEndPoint serverEP = new IPEndPoint(IPAddress.Parse(serverAddress), port);

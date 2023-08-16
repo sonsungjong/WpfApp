@@ -77,9 +77,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\ConnectionStatusModel.cs" />
     <Compile Include="Model\SelectModeModel.cs" />
     <Compile Include="Model\UserModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
+    <Compile Include="ViewModel\SelectModeViewModel.cs" />
+    <Compile Include="ViewModel\SystemManageViewModel.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
     <Compile Include="ViewModel\ViewModelCommand.cs" />
     <Compile Include="View\BooleanToVisibilityConverter.cs" />
@@ -104,6 +107,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Styles\Styles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\LoginView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -145,6 +152,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="CustomControls\" />
+    <Folder Include="Fonts\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\key-icon.png" />

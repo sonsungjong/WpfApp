@@ -41,5 +41,6 @@ namespace UITCC.View
                 //this.Height = screen.WorkingArea.Height;
             }
         }
+
     }
 }

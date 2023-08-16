@@ -4,9 +4,48 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UITCC.View"
+        xmlns:viewModel="clr-namespace:UITCC.ViewModel"
         mc:Ignorable="d"
-        Title="SystemManageView" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="SystemManageView" WindowState="Maximized" Width="1920" Height="1080"
+        WindowStyle="None" ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Background="Transparent" AllowsTransparency="True">
+
+    <Window.DataContext>
+        <viewModel:SystemManageViewModel />
+    </Window.DataContext>
+    <Border Background="#ECF0F1">
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="180"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="180"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Header -->
+            <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                Background="#5C5C5C"
+                VerticalAlignment="Stretch"
+                HorizontalAlignment="Stretch"
+                CornerRadius="0,0,100,0">
+                <TextBlock Text="철매-II 성능개량 훈련장비" FontSize="40" Foreground="#CBD5DA"
+                   HorizontalAlignment="Left" VerticalAlignment="Center" Margin="25,0,0,25"/>
+            </Border>
+            
+            <!-- Menu -->
+            
+            
+            <!-- Body -->
+            <Border Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
+                    Background="Green" />
+
+        </Grid>
+
+    </Border>
 </Window>

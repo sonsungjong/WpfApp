@@ -5,12 +5,14 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using UITCC.Model;
 using UITCC.View;
 
 namespace UITCC
 {
     public partial class App : Application
     {
+
         protected void ApplicationStart(object sender, StartupEventArgs e)
         {
             var login_view = new LoginView();
@@ -24,6 +26,15 @@ namespace UITCC
                     login_view.Close();
                 }
             };
+        }
+
+        // 앱 실행시
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+
+            // 연결상태 체크
+            ConnectionStatusModel.Instance.StartUDPServer();
         }
     }
 }

@@ -4,12 +4,17 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:UITCC.View"
+        xmlns:viewModel="clr-namespace:UITCC.ViewModel"
         mc:Ignorable="d"
         Title="SelectModeView" WindowState="Maximized" Width="1920" Height="1080"
         WindowStyle="None" ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
         Background="Transparent" AllowsTransparency="True">
 
+    <Window.DataContext>
+        <viewModel:SelectModeViewModel />
+    </Window.DataContext>
+    
     <Border>
         <Border.Background>
             <ImageBrush ImageSource="/Images/loginview_back.jpg" Stretch="Fill"/>
@@ -26,13 +31,54 @@
 
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="50"/>
-                    <RowDefinition />
+                    <RowDefinition Height="10*"/>
+                    <RowDefinition Height="20*"/>
+                    <RowDefinition Height="40*"/>
+                    <RowDefinition Height="30*"/>
                 </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20*"/>
+                    <ColumnDefinition Width="20*"/>
+                    <ColumnDefinition Width="20*"/>
+                    <ColumnDefinition Width="20*"/>
+                    <ColumnDefinition Width="20*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Command="{Binding EngagementControlCommand}"
+                    Grid.Row="2" Grid.Column="1" Foreground="White" Cursor="Hand" Margin="10,0,10,0">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Images/loginview_back.jpg" Stretch="Fill" Opacity="0.94"/>
+                    </Button.Background>
+
+                    <TextBlock FontSize="40" TextAlignment="Center" Foreground="Blue" FontWeight="UltraBold"
+                               Text="{Binding EngagementText}" TextWrapping="Wrap"/>
+                </Button>
+
+                <Button Command="{Binding OperationControlCommand}"
+                    Grid.Row="2" Grid.Column="2" Foreground="White" Cursor="Hand" Margin="10,0,10,0">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Images/loginview_back.jpg" Stretch="Fill" Opacity="0.94"/>
+                    </Button.Background>
+
+                    <TextBlock FontSize="40" TextAlignment="Center" Foreground="Blue" FontWeight="UltraBold" 
+                               Text="{Binding OperationText}" TextWrapping="Wrap"/>
+
+                </Button>
+
+                <Button Command="{Binding TeamTrainingCommand}"
+                    Grid.Row="2" Grid.Column="3" Foreground="White" Cursor="Hand" Margin="10,0,10,0">
+                    <Button.Background>
+                        <ImageBrush ImageSource="/Images/loginview_back.jpg" Stretch="Fill" Opacity="0.94"/>
+                    </Button.Background>
+
+                    <TextBlock FontSize="40" TextAlignment="Center" Foreground="Blue" FontWeight="UltraBold"
+                               Text="{Binding TeamText}" TextWrapping="Wrap"/>
+                </Button>
+
+
             </Grid>
-            
-            
-            
+
+
         </Border>
     </Border>
 </Window>
