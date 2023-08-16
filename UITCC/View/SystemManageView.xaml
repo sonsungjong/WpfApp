@@ -18,17 +18,18 @@
 
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="180"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="180"/>
+                <ColumnDefinition Width="0.1*"/>
+                <ColumnDefinition Width="0.75*"/>
+                <ColumnDefinition Width="0.15*"/>
             </Grid.ColumnDefinitions>
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="80"/>
                 <RowDefinition Height="*"/>
+                <RowDefinition Height="160"/>
             </Grid.RowDefinitions>
 
-            <!-- Header -->
+            <!-- Header(제목/시간) -->
             <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
                 Background="#5C5C5C"
                 VerticalAlignment="Stretch"
@@ -38,12 +39,25 @@
                    HorizontalAlignment="Left" VerticalAlignment="Center" Margin="25,0,0,25"/>
             </Border>
             
-            <!-- Menu -->
-            
-            
-            <!-- Body -->
+            <!-- Header2(종료) -->
+            <Border Grid.Row="0" Grid.Column="2"
+                    Background="Brown" />
+
+            <!-- Menu(아이콘메뉴) -->
+            <Border Grid.Row="1" Grid.Column="0" Grid.RowSpan="2"
+                    Background="BlueViolet" />
+
+            <!-- Body(메인화면/대화상자) -->
             <Border Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
                     Background="Green" />
+
+            <!-- footer(기본메뉴) -->
+            <Border Grid.Row="2" Grid.Column="1" 
+                    Background="Beige" />
+            
+            <!-- footer2(학생장비상태) -->
+            <Border Grid.Row="2" Grid.Column="2"
+                    Background="Cyan" />
 
         </Grid>
 
