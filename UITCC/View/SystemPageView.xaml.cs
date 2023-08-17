@@ -10,19 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace UITCC.View
 {
     /// <summary>
-    /// Interaction logic for SystemManageView.xaml
+    /// Interaction logic for SystemPageView.xaml
     /// </summary>
-    public partial class SystemManageView : Window
+    public partial class SystemPageView : UserControl
     {
-        public SystemManageView()
+        public SystemPageView()
         {
             InitializeComponent();
         }
-
     }
 }

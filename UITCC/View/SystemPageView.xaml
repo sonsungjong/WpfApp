@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="UITCC.View.SystemPageView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UITCC.View"
+             mc:Ignorable="d" 
+             HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+             d:DesignHeight="920" d:DesignWidth="1728">
+    <Grid>
+        <Border Background="#103050">
+            <Canvas>
+                <Polyline Points="640,420 740,420 740,200 1040,200" Stroke="Red" StrokeThickness="6"/>
+                <Line X1="640" Y1="460" X2="1040" Y2="460" Stroke="Red" StrokeThickness="6"/>
+                <Polyline Points="640,500 740,500 740,720 1040,720" Stroke="Red" StrokeThickness="6"/>
+            </Canvas>
+        </Border>
+    </Grid>
+</UserControl>

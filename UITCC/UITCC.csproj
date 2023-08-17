@@ -83,6 +83,7 @@
     <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\SelectModeViewModel.cs" />
     <Compile Include="ViewModel\SystemManageViewModel.cs" />
+    <Compile Include="ViewModel\SystemPageViewModel.cs" />
     <Compile Include="ViewModel\ViewModelBase.cs" />
     <Compile Include="ViewModel\ViewModelCommand.cs" />
     <Compile Include="View\BooleanToVisibilityConverter.cs" />
@@ -94,6 +95,9 @@
     </Compile>
     <Compile Include="View\SystemManageView.xaml.cs">
       <DependentUpon>SystemManageView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SystemPageView.xaml.cs">
+      <DependentUpon>SystemPageView.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -120,6 +124,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\SystemManageView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SystemPageView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -164,6 +172,29 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\off16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\img_customer.png" />
+    <Resource Include="Images\img_home.png" />
+    <Resource Include="Images\img_order.png" />
+    <Resource Include="Images\img_product.png" />
+    <Resource Include="Images\img_setting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\itcc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\scenario_manager.png" />
+    <Resource Include="Images\system_manager.png" />
+    <Resource Include="Images\training_manager.png" />
+    <Resource Include="Images\user_manager.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\menu_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\close_icon.png" />
+    <Resource Include="Images\close_mo_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
