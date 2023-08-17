@@ -26,7 +26,6 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="80"/>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="80"/>
             </Grid.RowDefinitions>
 
             <!-- Header(제목/시간) -->
@@ -41,10 +40,10 @@
             
             <!-- Header2(종료) -->
             <Border Grid.Row="0" Grid.Column="2"
-                    Background="Brown" />
+                    Background="White" />
 
             <!-- Menu(메뉴) -->
-            <Border Grid.Row="1" Grid.Column="0" Grid.RowSpan="2">
+            <Border Grid.Row="1" Grid.Column="0">
                 <Border.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1, 0.7">
                         <GradientStop Color="#24105F" Offset="0" />
@@ -117,9 +116,6 @@
             <!-- Body(메인화면/대화상자) -->
             <local:SystemPageView Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" />
 
-            <!-- footer(훈련 기능) -->
-            <Border Grid.Row="2" Grid.Column="1" 
-                    Background="Beige" />
 
         </Grid>
 
