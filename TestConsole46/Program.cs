@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net.NetworkInformation;
-using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
-using MetsaKuur;
+using CsClassLib;
 
 namespace TestConsole46
 {
@@ -15,43 +11,10 @@ namespace TestConsole46
     {
         static void Main(string[] args)
         {
-            MKAuthenticator mkAuthenticator = new MKAuthenticator();
+            MyDll dll = new MyDll();
+            string str = dll.Func1("hello world");
+            Console.WriteLine(str);
+            dll.Func2();
         }
-
-
-
-
-        //static void MKAuth()
-        //{
-        //    MKAuthenticator mkAuthenticator = new MKAuthenticator();
-        //    mkAuthenticator.TopMost = true;
-        //
-        //    if (!mkAuthenticator.IsCamOpened())
-        //    {
-        //        Console.WriteLine("throw Init Device Failed");
-        //    }
-        //
-        //    if (!mkAuthenticator.StartCapture(10000))
-        //    {
-        //        Console.WriteLine("throw Start Capture Failed");
-        //    }
-        //}
-
-        //static void MKRegi()
-        //{
-        //    MKRegister mkRegister = new MKRegister();
-        //    mkRegister.TopMost = true;
-        //    if (!mkRegister.IsCamOpened())
-        //    {
-        //        Console.WriteLine("throw StartFailed");
-        //    }
-        //
-        //    if (!mkRegister.StartCapture(10000))
-        //    {
-        //        Console.WriteLine("throw CaptureFailed");
-        //    }
-        //
-        //    
-        //}
     }
 }
