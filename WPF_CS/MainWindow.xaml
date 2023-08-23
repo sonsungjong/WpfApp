@@ -64,7 +64,18 @@
                  VerticalAlignment="Top" Margin="85,392,0,0" CaretBrush="Red" 
                  IsUndoEnabled="True"/>
 
+        <ComboBox HorizontalAlignment="Left" Margin="138,233,0,0" VerticalAlignment="Top" Width="150" Height="24" Background="#FFEAA0A0" Cursor="Hand" Text="Select Item..." IsEditable="True">
+            <ComboBoxItem Content="Male" HorizontalAlignment="Left" Width="148" Foreground="Red" IsSelected="True" HorizontalContentAlignment="Center" Height="24"/>
+            <ComboBoxItem Content="Female" HorizontalAlignment="Left" Width="148"/>
+            <ComboBoxItem Content="Girl" HorizontalAlignment="Left" Width="148"/>
+            <ComboBoxItem Content="Boy" HorizontalAlignment="Left" Width="148"/>
+        </ComboBox>
+        <ComboBox HorizontalAlignment="Left" Margin="311,233,0,0" VerticalAlignment="Top" Width="150" Height="24" Background="#FFEAA0A0" Cursor="Hand" FlowDirection="RightToLeft" 
+                  Text="TextComboBox" IsEditable="True">
+            <Button Content="Btn"/>
+            <CheckBox />
+            <ComboBoxItem Content="Hello"/>
+        </ComboBox>
         
-
     </Grid>
 </Window>

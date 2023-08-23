@@ -1,0 +1,35 @@
+﻿<Window x:Class="WPF_CS.app_settings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_CS"
+        mc:Ignorable="d"
+        Title="Application Settings" Height="400" Width="400"
+        Icon="/global.png" WindowStartupLocation="CenterScreen" WindowState="Normal" WindowStyle="SingleBorderWindow"
+        ResizeMode="NoResize">
+    <Grid>
+        <Label Content="Company Title:" Margin="20, 30, 0, 0" Height="30" VerticalAlignment="Top"/>
+        <Label Content="Manager:" Margin="20, 60, 0, 0"  Height="30" VerticalAlignment="Top"/>
+        <Label Content="Ads:" Margin="20, 90, 0, 0"  Height="30" VerticalAlignment="Top"/>
+        <Label Content="Tel:" Margin="20, 120, 0, 0"  Height="30" VerticalAlignment="Top"/>
+        <Label Content="Cell:" Margin="20, 150, 0, 0"  Height="30" VerticalAlignment="Top"/>
+        <Label Content="Fax:" Margin="20, 180, 0, 0"  Height="30" VerticalAlignment="Top"/>
+        <Label Content="Activity:" Margin="20, 210, 0, 0"  Height="30" VerticalAlignment="Top"/>
+        <Label Content="Email:" Margin="20, 240, 0, 0"  Height="30" VerticalAlignment="Top"/>
+        <Label Content="Web Site:" Margin="20, 270, 0, 0"  Height="30" VerticalAlignment="Top"/>
+        <Label Content="Address:" Margin="20, 300, 0, 0"  Height="30" VerticalAlignment="Top"/>
+
+        <TextBox Height="20" Width="240" Margin="80,35,0,0" VerticalAlignment="Top"/>
+        <TextBox Height="20" Width="240" Margin="80,65,0,0" VerticalAlignment="Top"/>
+        <TextBox Height="20" Width="240" Margin="80,95,0,0" VerticalAlignment="Top"/>
+        <TextBox Height="20" Width="240" Margin="80,125,0,0" VerticalAlignment="Top"/>
+        <TextBox Height="20" Width="240" Margin="80,155,0,0" VerticalAlignment="Top"/>
+        <TextBox Height="20" Width="240" Margin="80,185,0,0" VerticalAlignment="Top"/>
+        <TextBox Height="20" Width="240" Margin="80,215,0,0" VerticalAlignment="Top"/>
+        <TextBox Height="20" Width="240" Margin="80,245,0,0" VerticalAlignment="Top"/>
+        <TextBox Height="20" Width="240" Margin="80,275,0,0" VerticalAlignment="Top"/>
+        <TextBox Height="20" Width="240" Margin="80,305,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
