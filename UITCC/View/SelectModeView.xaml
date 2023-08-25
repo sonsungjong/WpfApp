@@ -23,9 +23,10 @@
         <Border Opacity="0.94">
             <Border.Background>
                 <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                    <GradientStop Color="Khaki" Offset="0"/>
-                    <GradientStop Color="DarkKhaki" Offset="0.25"/>
-                    <GradientStop Color="#B8860B" Offset="0.75"/>
+                    <GradientStop Color="#716B49" Offset="0"/>
+                    <GradientStop Color="#CDC07E" Offset="0.15"/>
+                    <GradientStop Color="#CDC07E" Offset="0.8"/>
+                    <GradientStop Color="#716B49" Offset="1"/>
                 </LinearGradientBrush>
             </Border.Background>
 
@@ -47,11 +48,11 @@
                 <Button Command="{Binding EngagementControlCommand}"
                     Grid.Row="2" Grid.Column="1" Foreground="White" Cursor="Hand" Margin="10,0,10,0">
                     <Button.Background>
-                        <ImageBrush ImageSource="/Images/loginview_back.jpg" Stretch="Fill" Opacity="0.94"/>
+                        <ImageBrush ImageSource="/Images/loginview_back.jpg" Stretch="Fill" Opacity="0.90"/>
                     </Button.Background>
 
-                    <TextBlock FontSize="40" TextAlignment="Center" Foreground="Blue" FontWeight="UltraBold"
-                               Text="{Binding EngagementText}" TextWrapping="Wrap"/>
+                    <TextBlock FontSize="36" TextAlignment="Center" Foreground="Blue" FontWeight="UltraBold"
+                               Text="{Binding EngagementText}" TextWrapping="Wrap" FontFamily="Arial"/>
                 </Button>
 
                 <Button Command="{Binding OperationControlCommand}"
@@ -60,8 +61,8 @@
                         <ImageBrush ImageSource="/Images/loginview_back.jpg" Stretch="Fill" Opacity="0.94"/>
                     </Button.Background>
 
-                    <TextBlock FontSize="40" TextAlignment="Center" Foreground="Blue" FontWeight="UltraBold" 
-                               Text="{Binding OperationText}" TextWrapping="Wrap"/>
+                    <TextBlock FontSize="36" TextAlignment="Center" Foreground="Blue" FontWeight="UltraBold" 
+                               Text="{Binding OperationText}" TextWrapping="Wrap" FontFamily="Arial"/>
 
                 </Button>
 
@@ -71,8 +72,8 @@
                         <ImageBrush ImageSource="/Images/loginview_back.jpg" Stretch="Fill" Opacity="0.94"/>
                     </Button.Background>
 
-                    <TextBlock FontSize="40" TextAlignment="Center" Foreground="Blue" FontWeight="UltraBold"
-                               Text="{Binding TeamText}" TextWrapping="Wrap"/>
+                    <TextBlock FontSize="36" TextAlignment="Center" Foreground="Blue" FontWeight="UltraBold"
+                               Text="{Binding TeamText}" TextWrapping="Wrap" FontFamily="Arial"/>
                 </Button>
 
 

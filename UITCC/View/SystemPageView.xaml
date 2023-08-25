@@ -15,7 +15,7 @@
             <RowDefinition Height="60" />
         </Grid.RowDefinitions>
 
-        <Border Grid.Row="0" Background="Navy">
+        <Border Grid.Row="0" Background="DarkGray">
             <TextBlock Text="정상              비정상" Width="400" Background="LightGray" 
                        HorizontalAlignment="Right" Foreground="Black" FontSize="28"
                        TextAlignment="Right" FontWeight="Bold"/>
@@ -25,7 +25,7 @@
             <Line X1="1550" X2="1630" Y1="25" Y2="25" Stroke="Red" StrokeThickness="6"/>
         </Canvas>
         
-        <Border Background="#103050" Grid.Row="1">
+        <Border Background="#282828" Grid.Row="1">
             <Canvas>
                 <Polyline Points="640,420 740,420 740,200 1040,200" Stroke="Red" StrokeThickness="6"/>
                 <Line X1="640" Y1="460" X2="1040" Y2="460" Stroke="Red" StrokeThickness="6"/>
@@ -33,7 +33,7 @@
             </Canvas>
         </Border>
 
-        <Border Grid.Row="2" Background="Silver">
+        <Border Grid.Row="2" Background="DarkGray">
             
         </Border>
 

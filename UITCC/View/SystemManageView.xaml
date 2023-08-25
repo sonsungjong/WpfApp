@@ -14,7 +14,7 @@
     <Window.DataContext>
         <viewModel:SystemManageViewModel />
     </Window.DataContext>
-    <Border Background="#ECF0F1">
+    <Border Background="#171717">
 
         <Grid>
             <Grid.ColumnDefinitions>
@@ -30,7 +30,7 @@
 
             <!-- Header(제목/시간) -->
             <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
-                Background="#5C5C5C"
+                Background="#716B49"
                 VerticalAlignment="Stretch"
                 HorizontalAlignment="Stretch"
                 CornerRadius="0,0,100,0">
@@ -40,16 +40,10 @@
             
             <!-- Header2(종료) -->
             <Border Grid.Row="0" Grid.Column="2"
-                    Background="White" />
+                    Background="#171717" />
 
             <!-- Menu(메뉴) -->
-            <Border Grid.Row="1" Grid.Column="0">
-                <Border.Background>
-                    <LinearGradientBrush StartPoint="0,0" EndPoint="1, 0.7">
-                        <GradientStop Color="#24105F" Offset="0" />
-                        <GradientStop Color="#210F55" Offset="1" />
-                    </LinearGradientBrush>
-                </Border.Background>
+            <Border Grid.Row="1" Grid.Column="0" Background="#111111">
 
                 <StackPanel>
                     <TextBlock Text="Invididual Training    Engagement Control" Foreground="White" Style="{StaticResource Text_Style}"

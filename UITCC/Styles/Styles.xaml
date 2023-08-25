@@ -12,6 +12,7 @@
     <Style x:Key="Text_Style" TargetType="TextBlock">
         <Setter Property="Foreground" Value="{Binding Path=Foreground, RelativeSource={RelativeSource AncestorType=RadioButton}}" />
         <Setter Property="FontWeight" Value="Medium" />
+        <Setter Property="FontFamily" Value="Arial" />
         <Setter Property="FontSize" Value="14" />
         <Setter Property="VerticalAlignment" Value="Center" />
     </Style>
@@ -38,15 +39,15 @@
             <!-- Mouse Over Style -->
             <Trigger Property="IsMouseOver" Value="True">
                 <Setter Property="Margin" Value="0,0,0,5" />
-                <Setter Property="Background" Value="#281269" />
-                <Setter Property="Foreground" Value="#BCBEE0" />
+                <Setter Property="Background" Value="#716B49" />
+                <Setter Property="Foreground" Value="#CDC07E" />
                 <Setter Property="BorderBrush" Value="{Binding Path=Tag, RelativeSource={RelativeSource Self}}" />
             </Trigger>
 
             <!-- Activated Style -->
             <Trigger Property="IsChecked" Value="True">
                 <Setter Property="Margin" Value="0,0,0,5" />
-                <Setter Property="Background" Value="#2B1372" />
+                <Setter Property="Background" Value="#716B49" />
                 <Setter Property="Foreground" Value="{Binding Path=Tag, RelativeSource={RelativeSource Self}}" />
                 <Setter Property="BorderBrush" Value="{Binding Path=Tag, RelativeSource={RelativeSource Self}}" />
             </Trigger>
