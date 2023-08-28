@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_CS"
         mc:Ignorable="d"
-        Title="Application Settings" Height="400" Width="400"
+        Title="Application Settings" Height="450" Width="400"
         Icon="/global.png" WindowStartupLocation="CenterScreen" WindowState="Normal" WindowStyle="SingleBorderWindow"
         ResizeMode="NoResize">
     <Grid>
@@ -19,6 +19,7 @@
         <Label Content="Email:" Margin="20, 240, 0, 0"  Height="30" VerticalAlignment="Top"/>
         <Label Content="Web Site:" Margin="20, 270, 0, 0"  Height="30" VerticalAlignment="Top"/>
         <Label Content="Address:" Margin="20, 300, 0, 0"  Height="30" VerticalAlignment="Top"/>
+        <Label Content="Language:" Margin="20, 330, 0, 0"  Height="30" VerticalAlignment="Top"/>
 
         <TextBox Height="20" Width="240" Margin="80,35,0,0" VerticalAlignment="Top"/>
         <TextBox Height="20" Width="240" Margin="80,65,0,0" VerticalAlignment="Top"/>
@@ -30,6 +31,13 @@
         <TextBox Height="20" Width="240" Margin="80,245,0,0" VerticalAlignment="Top"/>
         <TextBox Height="20" Width="240" Margin="80,275,0,0" VerticalAlignment="Top"/>
         <TextBox Height="20" Width="240" Margin="80,305,0,0" VerticalAlignment="Top"/>
+        <ComboBox Height="20" Width="240" Margin="80,335,0,0" VerticalAlignment="Top" SelectedIndex="1">
+            <ComboBoxItem Content="English"/>
+            <ComboBoxItem Content="Korean"/>
+        </ComboBox>
+
+
+        <Button Content="Save Changes F5" Height="40" Width="140" Margin="80,365,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

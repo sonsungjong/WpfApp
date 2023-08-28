@@ -106,7 +106,8 @@
                             Orientation="Vertical"
                             Margin="0, 65, 0, 0">
 
-                    <TextBlock Text="철매-II 성능개량 훈련장비"
+                    <TextBlock Text="철매-II 성능개량 
+                               훈련장비"
                                Foreground="Black"
                                FontSize="32"
                                FontWeight="Bold"

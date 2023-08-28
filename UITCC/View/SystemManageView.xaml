@@ -88,19 +88,19 @@
                     
                     <RadioButton Style="{StaticResource menuButton}" IsEnabled="False">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="Training Disable" Style="{StaticResource Text_Style}" Foreground="Red"/>
+                            <TextBlock Text="Training&#x0a;Disable" Style="{StaticResource Text_Style}" Foreground="Red"/>
                         </StackPanel>
                     </RadioButton>
                     
                     <RadioButton Style="{StaticResource menuButton}" IsEnabled="False">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="Training Disable" Style="{StaticResource Text_Style}" Foreground="Red"/>
+                            <TextBlock Text="Training&#x0a;Disable" Style="{StaticResource Text_Style}" Foreground="Red"/>
                         </StackPanel>
                     </RadioButton>
                     
                     <RadioButton Style="{StaticResource menuButton}" IsEnabled="False">
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="Training Disable" Style="{StaticResource Text_Style}" Foreground="Red"/>
+                            <TextBlock Text="Training&#x0a;Disable" Style="{StaticResource Text_Style}" Foreground="Red"/>
                         </StackPanel>
                     </RadioButton>
                     

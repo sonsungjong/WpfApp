@@ -27,9 +27,99 @@
         
         <Border Background="#282828" Grid.Row="1">
             <Canvas>
-                <Polyline Points="640,420 740,420 740,200 1040,200" Stroke="Red" StrokeThickness="6"/>
+                <Polyline Points="640,420 740,420 740,180 1040,180" Stroke="Red" StrokeThickness="6"/>
                 <Line X1="640" Y1="460" X2="1040" Y2="460" Stroke="Red" StrokeThickness="6"/>
                 <Polyline Points="640,500 740,500 740,720 1040,720" Stroke="Red" StrokeThickness="6"/>
+                
+                <Rectangle Fill="LightGray" Canvas.Left="100" Canvas.Top="320" Width="550" Height="250"/>
+                <TextBlock Text="Teacher Station 1" FontSize="28" Foreground="Blue" Canvas.Left="115" Canvas.Top="325" FontFamily="Arial"/>
+                <Line X1="110" X2="640" Y1="360" Y2="360" Stroke="Gray"/>
+                <TextBlock Text="ITCC" FontSize="36" Foreground="Black" Canvas.Left="220" Canvas.Top="440" FontFamily="Arial"/>
+                <Image Source="/Images/ITCC.png" Width="180" Height="180" Canvas.Left="330" Canvas.Top="380"/>
+
+                <Rectangle Fill="LightGray" Canvas.Left="1000" Canvas.Top="40" Width="550" Height="250"/>
+                <TextBlock Text="Student Station 1" FontSize="28" Foreground="Blue" Canvas.Left="1010" Canvas.Top="50" FontFamily="Arial"/>
+                <Line X1="1010" X2="1540" Y1="90" Y2="90" Stroke="Gray"/>
+                <RadioButton GroupName="student_station1" IsChecked="True" Canvas.Left="1290" Canvas.Top="42" Style="{StaticResource menuButton}" Background="Gray" 
+                             Height="45">
+                    <TextBlock Text=" None " Foreground="#CDC07E" FontSize="28" FontFamily="Arial"/>
+                </RadioButton>
+                <RadioButton GroupName="student_station1" Canvas.Left="1385" Canvas.Top="42" Style="{StaticResource menuButton}" Background="#C0C0C0" Height="45">
+                    <TextBlock Text=" Join " Foreground="White" FontSize="28" FontFamily="Arial"/>
+                </RadioButton>
+                <RadioButton GroupName="student_station1" Canvas.Left="1457" Canvas.Top="42" Style="{StaticResource menuButton}" Background="#C0C0C0" Height="45">
+                    <TextBlock Text=" Out " Foreground="White" FontSize="28" FontFamily="Arial"/>
+                </RadioButton>
+                <Rectangle Fill="#716B49" Canvas.Left="1300" Canvas.Top="90" Width="225" Height="30" Stroke="White"/>
+                <TextBlock Text="Status" Foreground="Black" FontSize="24" FontFamily="Arial" Canvas.Left="1310" Canvas.Top="90"/>
+                <Rectangle Fill="LightGray" Canvas.Left="1300" Canvas.Top="120" Width="225" Height="135" Stroke="White"/>
+                <TextBlock Text="Training : " Foreground="Black" FontSize="24" FontFamily="Arial" Canvas.Left="1310" Canvas.Top="120"/>
+                <TextBlock Text="Enable" Foreground="Black" FontSize="24" FontFamily="Arial" Canvas.Left="1430" Canvas.Top="120"/>
+                <TextBlock Text="Training : " Foreground="Black" FontSize="24" FontFamily="Arial" Canvas.Left="1310" Canvas.Top="155"/>
+                <TextBlock Text="Enable" Foreground="Black" FontSize="24" FontFamily="Arial" Canvas.Left="1430" Canvas.Top="155"/>
+                <TextBlock Text="Training : " Foreground="Black" FontSize="24" FontFamily="Arial" Canvas.Left="1310" Canvas.Top="190"/>
+                <TextBlock Text="Disable" Foreground="Crimson" FontSize="24" FontFamily="Arial" Canvas.Left="1430" Canvas.Top="190"/>
+                <TextBlock Text="Training : " Foreground="Black" FontSize="24" FontFamily="Arial" Canvas.Left="1310" Canvas.Top="225"/>
+                <TextBlock Text="Disable" Foreground="Crimson" FontSize="24" FontFamily="Arial" Canvas.Left="1430" Canvas.Top="225"/>
+                <Button Content="View Details" Width="231" Height="30" Canvas.Left="1297" Canvas.Top="255" FontFamily="Arial" FontSize="24"/>
+                <TextBlock Text="Student Console" Foreground="Black" FontFamily="Arial" FontSize="14" Canvas.Left="1020" Canvas.Top="265"/>
+                <TextBlock Text="Student Contoller" Foreground="Black" FontFamily="Arial" FontSize="14" Canvas.Left="1170" Canvas.Top="265"/>
+
+                <Rectangle Fill="LightGray" Canvas.Left="1000" Canvas.Top="320" Width="550" Height="250"/>
+                <TextBlock Text="Student Station 2" FontSize="28" Foreground="Blue" Canvas.Left="1010" Canvas.Top="330" FontFamily="Arial"/>
+                <Line X1="1010" X2="1540" Y1="370" Y2="370" Stroke="Gray"/>
+                
+                <RadioButton GroupName="student_station1" IsChecked="True" Canvas.Left="1290" Canvas.Top="322" Style="{StaticResource menuButton}" Background="Gray" Height="45">
+                    <TextBlock Text=" None " Foreground="#CDC07E" FontSize="28" FontFamily="Arial"/>
+                </RadioButton>
+                <RadioButton GroupName="student_station1" Canvas.Left="1385" Canvas.Top="322" Style="{StaticResource menuButton}" Background="#C0C0C0" Height="45">
+                    <TextBlock Text=" Join " Foreground="White" FontSize="28" FontFamily="Arial"/>
+                </RadioButton>
+                <RadioButton GroupName="student_station1" Canvas.Left="1457" Canvas.Top="322" Style="{StaticResource menuButton}" Background="#C0C0C0" Height="45">
+                    <TextBlock Text=" Out " Foreground="White" FontSize="28" FontFamily="Arial"/>
+                </RadioButton>
+                <Rectangle Fill="#716B49" Canvas.Left="1300" Canvas.Top="370" Width="225" Height="30" Stroke="White"/>
+                <TextBlock Text="Status" Foreground="Black" FontSize="24" FontFamily="Arial" Canvas.Left="1310" Canvas.Top="370"/>
+                <Rectangle Fill="LightGray" Canvas.Left="1300" Canvas.Top="400" Width="225" Height="135" Stroke="White"/>
+                <TextBlock Text="Training : " Foreground="Black" FontSize="24" FontFamily="Arial" Canvas.Left="1310" Canvas.Top="400"/>
+                <TextBlock Text="Enable" Foreground="Black" FontSize="24" FontFamily="Arial" Canvas.Left="1430" Canvas.Top="400"/>
+                <TextBlock Text="Training : " Foreground="Black" FontSize="24" FontFamily="Arial" Canvas.Left="1310" Canvas.Top="435"/>
+                <TextBlock Text="Enable" Foreground="Black" FontSize="24" FontFamily="Arial" Canvas.Left="1430" Canvas.Top="435"/>
+                <TextBlock Text="Training : " Foreground="Black" FontSize="24" FontFamily="Arial" Canvas.Left="1310" Canvas.Top="470"/>
+                <TextBlock Text="Disable" Foreground="Crimson" FontSize="24" FontFamily="Arial" Canvas.Left="1430" Canvas.Top="470"/>
+                <TextBlock Text="Training : " Foreground="Black" FontSize="24" FontFamily="Arial" Canvas.Left="1310" Canvas.Top="505"/>
+                <TextBlock Text="Disable" Foreground="Crimson" FontSize="24" FontFamily="Arial" Canvas.Left="1430" Canvas.Top="505"/>
+                <Button Content="View Details" Width="231" Height="30" Canvas.Left="1297" Canvas.Top="535" FontFamily="Arial" FontSize="24"/>
+                <TextBlock Text="Student Console" Foreground="Black" FontFamily="Arial" FontSize="14" Canvas.Left="1020" Canvas.Top="545"/>
+                <TextBlock Text="Student Contoller" Foreground="Black" FontFamily="Arial" FontSize="14" Canvas.Left="1170" Canvas.Top="545"/>
+
+                <Rectangle Fill="LightGray" Canvas.Left="1000" Canvas.Top="600" Width="550" Height="250"/>
+                <TextBlock Text="Student Station 3" FontSize="28" Foreground="Blue" Canvas.Left="1010" Canvas.Top="610" FontFamily="Arial"/>
+                <Line X1="1010" X2="1540" Y1="650" Y2="650" Stroke="Gray"/>
+                <RadioButton GroupName="student_station1" IsChecked="True" Canvas.Left="1290" Canvas.Top="602" Style="{StaticResource menuButton}" Background="Gray" Height="45">
+                    <TextBlock Text=" None " Foreground="#CDC07E" FontSize="28" FontFamily="Arial"/>
+                </RadioButton>
+                <RadioButton GroupName="student_station1" Canvas.Left="1385" Canvas.Top="602" Style="{StaticResource menuButton}" Background="#C0C0C0" Height="45">
+                    <TextBlock Text=" Join " Foreground="White" FontSize="28" FontFamily="Arial"/>
+                </RadioButton>
+                <RadioButton GroupName="student_station1" Canvas.Left="1457" Canvas.Top="602" Style="{StaticResource menuButton}" Background="#C0C0C0" Height="45">
+                    <TextBlock Text=" Out " Foreground="White" FontSize="28" FontFamily="Arial"/>
+                </RadioButton>
+                <Rectangle Fill="#716B49" Canvas.Left="1300" Canvas.Top="650" Width="225" Height="30" Stroke="White"/>
+                <TextBlock Text="Status" Foreground="Black" FontSize="24" FontFamily="Arial" Canvas.Left="1310" Canvas.Top="650"/>
+                <Rectangle Fill="LightGray" Canvas.Left="1300" Canvas.Top="680" Width="225" Height="135" Stroke="White"/>
+                <TextBlock Text="Training : " Foreground="Black" FontSize="24" FontFamily="Arial" Canvas.Left="1310" Canvas.Top="680"/>
+                <TextBlock Text="Enable" Foreground="Black" FontSize="24" FontFamily="Arial" Canvas.Left="1430" Canvas.Top="680"/>
+                <TextBlock Text="Training : " Foreground="Black" FontSize="24" FontFamily="Arial" Canvas.Left="1310" Canvas.Top="715"/>
+                <TextBlock Text="Enable" Foreground="Black" FontSize="24" FontFamily="Arial" Canvas.Left="1430" Canvas.Top="715"/>
+                <TextBlock Text="Training : " Foreground="Black" FontSize="24" FontFamily="Arial" Canvas.Left="1310" Canvas.Top="750"/>
+                <TextBlock Text="Disable" Foreground="Crimson" FontSize="24" FontFamily="Arial" Canvas.Left="1430" Canvas.Top="750"/>
+                <TextBlock Text="Training : " Foreground="Black" FontSize="24" FontFamily="Arial" Canvas.Left="1310" Canvas.Top="785"/>
+                <TextBlock Text="Disable" Foreground="Crimson" FontSize="24" FontFamily="Arial" Canvas.Left="1430" Canvas.Top="785"/>
+                <Button Content="View Details" Width="231" Height="30" Canvas.Left="1297" Canvas.Top="815" FontFamily="Arial" FontSize="24"/>
+                <TextBlock Text="Student Console" Foreground="Black" FontFamily="Arial" FontSize="14" Canvas.Left="1020" Canvas.Top="825"/>
+                <TextBlock Text="Student Contoller" Foreground="Black" FontFamily="Arial" FontSize="14" Canvas.Left="1170" Canvas.Top="825"/>
+
             </Canvas>
         </Border>
 
