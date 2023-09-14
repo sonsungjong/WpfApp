@@ -40,8 +40,8 @@
 
             <Border.Background>
                 <LinearGradientBrush StartPoint="0, 1" EndPoint="1, 0">
-                    <GradientStop Color="{StaticResource primaryBackColor1}" Offset="0"/>
-                    <GradientStop Color="{StaticResource primaryBackColor2}" Offset="0.75"/>
+                    <GradientStop Color="Indigo" Offset="0"/>
+                    <GradientStop Color="#C71585" Offset="0.95"/>
                 </LinearGradientBrush>
             </Border.Background>
 
@@ -107,14 +107,16 @@
                             FontFamily="Montserrat"
                             Cursor="Hand"
                             Grid.Column="2"
-                            Click="btnClose_Click">
+                            Click="btnClose_Click"
+                            Height="30"
+                            VerticalAlignment="Top">
 
                         <Button.Style>
                             <Style TargetType="Button">
-                                <Setter Property="Background" Value="#DA34AE" />
+                                <Setter Property="Background" Value="CornflowerBlue" />
                                 <Style.Triggers>
                                     <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Background" Value="#C62DAE" />
+                                        <Setter Property="Background" Value="RoyalBlue" />
                                     </Trigger>
                                 </Style.Triggers>
                             </Style>
@@ -134,14 +136,14 @@
 
                 <StackPanel Width="250" Grid.Row="2" Orientation="Vertical" Margin="0,35,0,0">
                     <Image Source="/Images/Logo.png" Width="100" Height="100" />
-                    <TextBlock Text="Son Sungjong"
+                    <TextBlock Text="카페 키오스크"
                                Foreground="White"
                                FontSize="25"
                                FontWeight="Medium"
                                FontFamily="Montserrat"
                                HorizontalAlignment="Center"/>
 
-                    <TextBlock Text="Learning to code is useful no matter what your career ambitions are."
+                    <TextBlock Text="키오스크를 사용하기 위해선 로그인이 필요합니다."
                                Foreground="LightGray"
                                FontSize="12"
                                FontWeight="Medium"
@@ -209,15 +211,17 @@
                             FontFamily="Montserrat"
                             Cursor="Hand"
                             Grid.Column="2"
-                            Margin="0,30,0,0"
-                            >
+                            Margin="0,30,0,0">
 
                         <Button.Style>
                             <Style TargetType="Button">
-                                <Setter Property="Background" Value="#462AD8" />
+                                <Setter Property="Background"
+                                        Value="#462AD8" />
                                 <Style.Triggers>
-                                    <Trigger Property="IsMouseOver" Value="True">
-                                        <Setter Property="Background" Value="#28AEED" />
+                                    <Trigger Property="IsMouseOver"
+                                             Value="True">
+                                        <Setter Property="Background"
+                                                Value="#28AEED" />
                                     </Trigger>
                                 </Style.Triggers>
                             </Style>
@@ -225,29 +229,17 @@
 
                         <Button.Template>
                             <ControlTemplate TargetType="Button">
-                                <Border Width="150" Height="40" CornerRadius="20" Background="{TemplateBinding Background}">
-                                    <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center" />
+                                <Border Width="150"
+                                        Height="40"
+                                        CornerRadius="20"
+                                        Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center" />
                                 </Border>
                             </ControlTemplate>
                         </Button.Template>
 
                     </Button>
-
-                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,15,0,0">
-                        <TextBlock Text="Forgot Password?"
-                                   Foreground="DarkGray"
-                                   FontSize="12"
-                                   FontWeight="Medium"
-                                   FontFamily="Montserrat"/>
-
-                        <TextBlock Text="Reset"
-                                   Foreground="White"
-                                   FontSize="12"
-                                   FontWeight="Medium"
-                                   FontFamily="Montserrat"
-                                   Cursor="Hand"
-                                   Margin="8,0,0,0"/>
-                    </StackPanel>
 
                 </StackPanel>
                 
