@@ -13,7 +13,7 @@ namespace ConsoleApp
     {
         private Label lb;
 
-        public static void Main187()
+        public static void Main()
         {
             Application.Run(new P187_Event());
         }

@@ -86,7 +86,7 @@ namespace UITCC.ViewModel
             OperationControlCommand = new ViewModelCommand(ExecuteOperationControlCommand);
             TeamTrainingCommand = new ViewModelCommand(ExecuteTeamTrainingCommand);
             
-            m_select_mode_model.LanguageMode = 1;           // 기본은 영어
+            m_select_mode_model.LanguageMode = 0;           // 0 : 한글, 1 : 영어
 
             if(m_select_mode_model.LanguageMode == 0)
             {
