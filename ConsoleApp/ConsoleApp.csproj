@@ -90,6 +90,17 @@
     <Compile Include="P187_Event.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="P191_ButtonEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P193_CursorEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P195_KeyboardEvent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P201_Event1.cs" />
+    <Compile Include="P201_Event2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

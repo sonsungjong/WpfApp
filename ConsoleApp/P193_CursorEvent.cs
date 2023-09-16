@@ -1,40 +1,44 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 namespace ConsoleApp
 {
-    public class P187_Event : Form
+    public class P193_CursorEvent : Form
     {
         private Label lb;
 
-        public static void Main_187()
+        public static void Main_P193_CursorEvent()
         {
-            Application.Run(new P187_Event());
+            Application.Run(new P193_CursorEvent());
         }
 
-        public P187_Event()
+        public P193_CursorEvent()
         {
             this.Text = "샘플";
             this.Width = 250;
             this.Height = 200;
+
             lb = new Label();
             lb.Text = "어서 오세요";
 
             lb.Parent = this;
 
-            // 이벤트 등록
-            this.Click += new EventHandler(fm_Click);
+            this.MouseEnter += new EventHandler(fm_MouseEnter);
+            this.MouseLeave += new EventHandler(fm_MouseLeave);
         }
 
-        public void fm_Click(Object sender, EventArgs e)
+        public void fm_MouseEnter(object sender, EventArgs e)
         {
             lb.Text = "안녕하세요";
+        }
+
+        public void fm_MouseLeave(Object sender, EventArgs e)
+        {
+            lb.Text = "안녕히 가세요";
         }
     }
 }
