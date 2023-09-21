@@ -24,27 +24,31 @@ namespace WPF_RJ.ViewModel
 
         private IUserRepository userRepository;
 
-        public string Username { get => _username;
+        public string Username { 
+            get => _username;
             set
             {
                 _username = value;
                 OnPropertyChanged(nameof(Username));
             }
         }
-        public SecureString Password { get => _password; 
+        public SecureString Password { 
+            get => _password; 
             set { 
                 _password = value;
                 OnPropertyChanged(nameof(Password));
             }
         }
-        public string ErrorMessage { get => _errorMessage; 
+        public string ErrorMessage { 
+            get => _errorMessage; 
             set
             {
                 _errorMessage = value;
                 OnPropertyChanged(nameof(ErrorMessage));
             }
         }
-        public bool IsViewVisible { get => _isViewVisible;
+        public bool IsViewVisible { 
+            get => _isViewVisible;
             set
             {
                 _isViewVisible = value;

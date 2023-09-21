@@ -16,9 +16,6 @@ using System.Windows.Shapes;
 
 namespace WPF_RJ.CustomControls
 {
-    /// <summary>
-    /// Interaction logic for BindablePasswordBox.xaml
-    /// </summary>
     public partial class BindablePasswordBox : UserControl
     {
         public static readonly DependencyProperty PasswordProperty = DependencyProperty.Register("Password", typeof(SecureString), typeof(BindablePasswordBox));
