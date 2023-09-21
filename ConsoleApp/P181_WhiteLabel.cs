@@ -18,7 +18,7 @@ namespace ConsoleApp
             get { return backColor; }
         }
 
-        public static void Main181()
+        public static void Main181White()
         {
             Form fm = new Form();
             fm.Text = "샘플";
