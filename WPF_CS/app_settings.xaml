@@ -5,38 +5,128 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPF_CS"
         mc:Ignorable="d"
-        Title="Application Settings" Height="460" Width="400"
-        Icon="/global.png" WindowStartupLocation="CenterScreen" WindowState="Normal" WindowStyle="SingleBorderWindow"
+        Title="Application Settings"
+        Height="465"
+        Width="431"
+        Icon="/global.png"
+        WindowStartupLocation="CenterScreen"
+        WindowState="Normal"
+        WindowStyle="SingleBorderWindow"
         ResizeMode="NoResize">
     <Grid>
-        <Label Content="Company Title:" Margin="20, 30, 0, 0" Height="30" VerticalAlignment="Top"/>
-        <Label Content="Manager:" Margin="20, 60, 0, 0"  Height="30" VerticalAlignment="Top"/>
-        <Label Content="Ads:" Margin="20, 90, 0, 0"  Height="30" VerticalAlignment="Top"/>
-        <Label Content="Tel:" Margin="20, 120, 0, 0"  Height="30" VerticalAlignment="Top"/>
-        <Label Content="Cell:" Margin="20, 150, 0, 0"  Height="30" VerticalAlignment="Top"/>
-        <Label Content="Fax:" Margin="20, 180, 0, 0"  Height="30" VerticalAlignment="Top"/>
-        <Label Content="Activity:" Margin="20, 210, 0, 0"  Height="30" VerticalAlignment="Top"/>
-        <Label Content="Email:" Margin="20, 240, 0, 0"  Height="30" VerticalAlignment="Top"/>
-        <Label Content="Web Site:" Margin="20, 270, 0, 0"  Height="30" VerticalAlignment="Top"/>
-        <Label Content="Address:" Margin="20, 300, 0, 0"  Height="30" VerticalAlignment="Top"/>
-        <Label Content="Language:" Margin="20, 330, 0, 0"  Height="30" VerticalAlignment="Top"/>
+        <Label Content="Company Title:"
+               Margin="20, 30, 0, 0"
+               Height="30"
+               VerticalAlignment="Top" />
+        <Label Content="Manager:"
+               Margin="20, 60, 0, 0"
+               Height="30"
+               VerticalAlignment="Top" />
+        <Label Content="Ads:"
+               Margin="20, 90, 0, 0"
+               Height="30"
+               VerticalAlignment="Top" />
+        <Label Content="Tel:"
+               Margin="20, 120, 0, 0"
+               Height="30"
+               VerticalAlignment="Top" />
+        <Label Content="Cell:"
+               Margin="20, 150, 0, 0"
+               Height="30"
+               VerticalAlignment="Top" />
+        <Label Content="Fax:"
+               Margin="20, 180, 0, 0"
+               Height="30"
+               VerticalAlignment="Top" />
+        <Label Content="Activity:"
+               Margin="20, 210, 0, 0"
+               Height="30"
+               VerticalAlignment="Top" />
+        <Label Content="Email:"
+               Margin="20, 240, 0, 0"
+               Height="30"
+               VerticalAlignment="Top" />
+        <Label Content="Web Site:"
+               Margin="20, 270, 0, 0"
+               Height="30"
+               VerticalAlignment="Top" />
+        <Label Content="Address:"
+               Margin="20, 300, 0, 0"
+               Height="30"
+               VerticalAlignment="Top" />
+        <Label Content="Language:"
+               Margin="20, 330, 0, 0"
+               Height="30"
+               VerticalAlignment="Top" />
 
-        <TextBox Height="20" Width="240" Margin="80,35,0,0" VerticalAlignment="Top" TextWrapping="Wrap" TabIndex="0"/>
-        <TextBox Height="20" Width="240" Margin="80,65,0,0" VerticalAlignment="Top" TextWrapping="Wrap" TabIndex="1"/>
-        <TextBox Height="20" Width="240" Margin="80,95,0,0" VerticalAlignment="Top" TextWrapping="Wrap" TabIndex="2"/>
-        <TextBox Height="20" Width="240" Margin="80,125,0,0" VerticalAlignment="Top" TextWrapping="Wrap" TabIndex="3"/>
-        <TextBox Height="20" Width="240" Margin="80,155,0,0" VerticalAlignment="Top" TextWrapping="Wrap" TabIndex="4"/>
-        <TextBox Height="20" Width="240" Margin="80,185,0,0" VerticalAlignment="Top" TextWrapping="Wrap" TabIndex="5"/>
-        <TextBox Height="20" Width="240" Margin="80,215,0,0" VerticalAlignment="Top" TextWrapping="Wrap" TabIndex="6"/>
-        <TextBox Height="20" Width="240" Margin="80,245,0,0" VerticalAlignment="Top" TextWrapping="Wrap" TabIndex="7"/>
-        <TextBox Height="20" Width="240" Margin="80,275,0,0" VerticalAlignment="Top" TextWrapping="Wrap" TabIndex="8"/>
-        <TextBox Height="20" Width="240" Margin="80,305,0,0" VerticalAlignment="Top" TextWrapping="Wrap" TabIndex="9"/>
-        <ComboBox Height="20" Width="240" Margin="80,335,0,0" VerticalAlignment="Top" SelectedIndex="1" TabIndex="10" IsTabStop="False" Cursor="Hand">
-            <ComboBoxItem Content="English"/>
-            <ComboBoxItem Content="Korean"/>
+        <TextBox Height="20"
+                 Margin="120,35,40,0"
+                 VerticalAlignment="Top"
+                 TextWrapping="Wrap"
+                 TabIndex="0" />
+        <TextBox Height="20"
+                 Margin="120,65,40,0"
+                 VerticalAlignment="Top"
+                 TextWrapping="Wrap"
+                 TabIndex="1" />
+        <TextBox Height="20"
+                 Margin="120,95,40,0"
+                 VerticalAlignment="Top"
+                 TextWrapping="Wrap"
+                 TabIndex="2" />
+        <TextBox Height="20"
+                 Margin="120,125,40,0"
+                 VerticalAlignment="Top"
+                 TextWrapping="Wrap"
+                 TabIndex="3" />
+        <TextBox Height="20"
+                 Margin="120,155,40,0"
+                 VerticalAlignment="Top"
+                 TextWrapping="Wrap"
+                 TabIndex="4" />
+        <TextBox Height="20"
+                 Margin="120,185,40,0"
+                 VerticalAlignment="Top"
+                 TextWrapping="Wrap"
+                 TabIndex="5" />
+        <TextBox Height="20"
+                 Margin="120,215,40,0"
+                 VerticalAlignment="Top"
+                 TextWrapping="Wrap"
+                 TabIndex="6" />
+        <TextBox Height="20"
+                 Margin="120,245,40,0"
+                 VerticalAlignment="Top"
+                 TextWrapping="Wrap"
+                 TabIndex="7" />
+        <TextBox Height="20"
+                 Margin="120,275,40,0"
+                 VerticalAlignment="Top"
+                 TextWrapping="Wrap"
+                 TabIndex="8" />
+        <TextBox Height="20"
+                 Margin="120,305,40,0"
+                 VerticalAlignment="Top"
+                 TextWrapping="Wrap"
+                 TabIndex="9" />
+        <ComboBox Height="20"
+                  Margin="121,335,40,0"
+                  VerticalAlignment="Top"
+                  SelectedIndex="1"
+                  TabIndex="10"
+                  IsTabStop="False"
+                  Cursor="Hand">
+            <ComboBoxItem Content="English" />
+            <ComboBoxItem Content="Korean" />
         </ComboBox>
 
-        <Button Content="Save Changes F5" Height="40" Margin="120,375,40,0" VerticalAlignment="Top" Cursor="Hand" TabIndex="11" RenderTransformOrigin="0.5,0.5">
+        <Button Content="Save Changes F5"
+                Margin="120,0,40,29"
+                Cursor="Hand"
+                TabIndex="11"
+                RenderTransformOrigin="0.5,0.5"
+                Height="40"
+                VerticalAlignment="Bottom">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform />
