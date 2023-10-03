@@ -1,0 +1,34 @@
+﻿<Window x:Class="WPF_CS.image_opf"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_CS"
+        mc:Ignorable="d"
+        Title="image_opf"
+        Height="360"
+        Width="509">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.15*"/>
+            <RowDefinition Height="0.85*"/>
+        </Grid.RowDefinitions>
+        
+        <Button Content="Load Image" x:Name="load_image_button" Grid.Row="0" HorizontalAlignment="Left" Margin="10,3,0,0" VerticalAlignment="Top" Height="20" Width="85" Click="load_image_button_Click" />
+        <Button Content="Fill" x:Name="fill_image_button" Grid.Row="0" Margin="120, 3, 0, 0" Width="85" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Click="fill_image_button_Click"/>
+        <Button Content="Zoom" x:Name="zoom_image_button" Grid.Row="0" Margin="230, 3, 0, 0" Width="85" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Click="zoom_image_button_Click"/>
+        <Button Content="Browse Image" x:Name="browse_image_button" Grid.Row="0" Margin="340, 3, 0, 0" Width="85" Height="20" HorizontalAlignment="Left" VerticalAlignment="Top" Click="browse_image_button_Click"/>
+        <Label x:Name="path_label" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10, 0, 0, 0" />
+
+        <Image Stretch="Uniform"
+               x:Name="image_ctrl"
+               Source="/koala_resized.jpg"
+               Grid.Row="1" >
+            <Image.Effect>
+                <BlurEffect Radius="4" />
+            </Image.Effect>
+        </Image>
+        
+
+    </Grid>
+</Window>
