@@ -1,0 +1,139 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net7.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<None Remove="Images\img_about.png" />
+		<None Remove="Images\img_acoustic.png" />
+		<None Remove="Images\img_album.png" />
+		<None Remove="Images\img_arrow.png" />
+		<None Remove="Images\img_artist.png" />
+		<None Remove="Images\img_electronic.png" />
+		<None Remove="Images\img_exit.png" />
+		<None Remove="Images\img_folder.png" />
+		<None Remove="Images\img_genre.png" />
+		<None Remove="Images\img_hiphop.png" />
+		<None Remove="Images\img_history.png" />
+		<None Remove="Images\img_home.png" />
+		<None Remove="Images\img_hotkey.png" />
+		<None Remove="Images\img_input.png" />
+		<None Remove="Images\img_jazz.png" />
+		<None Remove="Images\img_metal.png" />
+		<None Remove="Images\img_movies.png" />
+		<None Remove="Images\img_music.png" />
+		<None Remove="Images\img_playlist.png" />
+		<None Remove="Images\img_pop.png" />
+		<None Remove="Images\img_rock.png" />
+		<None Remove="Images\img_search.png" />
+		<None Remove="Images\img_setting.png" />
+		<None Remove="Images\img_songs.png" />
+		<None Remove="Images\max_def.png" />
+		<None Remove="Images\max_mo.png" />
+		<None Remove="Images\shutdown_def.png" />
+		<None Remove="Images\shutdown_mo.png" />
+		<None Remove="Fonts\Orbitron-Medium.ttf" />
+		<None Remove="Fonts\Roboto-Light.ttf" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Resource Include="Images\img_acoustic.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+	</ItemGroup>
+
+	<ItemGroup>
+		<Resource Include="Images\img_about.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Images\img_album.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Images\img_arrow.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Images\img_artist.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Images\img_electronic.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Images\img_exit.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Images\img_folder.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Images\img_genre.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Images\img_hiphop.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Images\img_history.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Images\img_home.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Images\img_hotkey.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Images\img_input.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Images\img_jazz.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Images\img_metal.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Images\img_movies.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Images\img_music.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Images\img_playlist.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Images\img_pop.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Images\img_rock.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Images\img_search.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Images\img_setting.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Images\img_songs.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Images\max_def.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Images\max_mo.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Images\shutdown_def.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Images\shutdown_mo.png">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Fonts\Orbitron-Medium.ttf">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+		<Resource Include="Fonts\Roboto-Light.ttf">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+		</Resource>
+	</ItemGroup>
+
+</Project>
