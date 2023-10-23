@@ -31,7 +31,8 @@ namespace WPF_RJ.ViewModel
             }
         }
 
-        public ViewModelBase CurrentChildView { get => _currentChildView;
+        public ViewModelBase CurrentChildView { 
+            get => _currentChildView;
             set { _currentChildView = value;
                 OnPropertyChanged(nameof(CurrentChildView));
             }
@@ -41,7 +42,8 @@ namespace WPF_RJ.ViewModel
                 OnPropertyChanged(nameof(Caption));
             }
         }
-        public IconChar Icon { get => _icon; set { _icon = value;
+        public IconChar Icon { get => _icon; 
+            set { _icon = value;
                 OnPropertyChanged(nameof(Icon));
             }
         }
