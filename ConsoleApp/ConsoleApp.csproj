@@ -101,6 +101,12 @@
     </Compile>
     <Compile Include="P201_Event1.cs" />
     <Compile Include="P201_Event2.cs" />
+    <Compile Include="P204_Panel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P207_Panel.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
