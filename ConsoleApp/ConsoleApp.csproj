@@ -107,6 +107,12 @@
     <Compile Include="P207_Panel.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="P210_Label.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P214_Font.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

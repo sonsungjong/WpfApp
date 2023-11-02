@@ -12,7 +12,7 @@ namespace ConsoleApp
         private Button[] m_btn = new Button[6];
         private TableLayoutPanel m_tlp;             // 격자(그리드)로 배치하는 패널
 
-        public static void Main()
+        public static void Main207()
         {
             P207_Panel app = new P207_Panel();
             Application.Run(app);
