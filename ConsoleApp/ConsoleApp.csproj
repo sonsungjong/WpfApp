@@ -113,6 +113,36 @@
     <Compile Include="P214_Font.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="P218_Button.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P220_CheckBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P224_RadioButton.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P227_TextBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P229_ListBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P233_Menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P237_MessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P241_Modal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P244_Modaless.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P249_RadioButton.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

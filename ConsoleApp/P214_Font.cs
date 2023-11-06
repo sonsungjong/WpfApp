@@ -13,7 +13,7 @@ namespace ConsoleApp
         private Label[] m_lb = new Label[3];
         private TableLayoutPanel m_tlp;
 
-        public static void Main()
+        public static void Main214()
         {
             P214_Font app = new P214_Font();
             Application.Run(app);
