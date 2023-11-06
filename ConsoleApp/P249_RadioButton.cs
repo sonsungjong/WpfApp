@@ -13,7 +13,7 @@ namespace ConsoleApp
         RadioButton m_radio_button1, m_radio_button2, m_radio_button3;
         Label m_label;
         GroupBox m_group_box;
-        public static void Main()
+        public static void Main249()
         {
             Application.Run(new P249_RadioButton());
         }

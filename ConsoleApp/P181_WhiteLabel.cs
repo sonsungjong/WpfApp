@@ -12,7 +12,7 @@ namespace ConsoleApp
     {
         private Color backColor;
 
-        public Color BackColor
+        public Color _BackColor
         {
             set { backColor = value; }
             get { return backColor; }

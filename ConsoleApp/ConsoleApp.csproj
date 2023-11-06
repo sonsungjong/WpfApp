@@ -143,6 +143,15 @@
     <Compile Include="P249_RadioButton.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="P253_ImageRotation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P257_ImageZoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P262_RGB.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
