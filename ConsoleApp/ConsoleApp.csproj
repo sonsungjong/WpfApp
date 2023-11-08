@@ -152,6 +152,18 @@
     <Compile Include="P262_RGB.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="P266_DrawCircle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P272_Cliping.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P275_Random.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P279_Timer.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

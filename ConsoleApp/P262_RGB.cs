@@ -14,7 +14,7 @@ namespace ConsoleApp
         private Bitmap m_bmp1, m_bmp2;
         private int m_num;
 
-        public static void Main()
+        public static void Main262()
         {
             Application.Run(new P262_RGB());
         }
