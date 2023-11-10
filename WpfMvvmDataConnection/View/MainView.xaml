@@ -1,0 +1,48 @@
+﻿<Window x:Class="WpfMvvmDataConnection.View.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfMvvmDataConnection.View"
+        xmlns:vm="clr-namespace:WpfMvvmDataConnection.ViewModel"
+        mc:Ignorable="d"
+        Title="MainView" Height="450" Width="800" Background="LightGray">
+
+    <!-- ViewModel 연결 -->
+    <Window.DataContext>
+        <vm:MainViewModel/>
+    </Window.DataContext>
+
+    <!-- UserControl 연결 및 ViewModel 반영 -->
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type vm:UserControl1ViewModel}">
+            <local:UserControl1/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type vm:UserControl2ViewModel}">
+            <local:UserControl2/>
+        </DataTemplate>
+    </Window.Resources>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="300"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="0">
+            <Button Content="UserControl1 보기" Width="200" HorizontalAlignment="Left" Command="{Binding ShowUserControl1}"/>
+            <Button Content="UserControl2 보기" Width="200" HorizontalAlignment="Left" Command="{Binding ShowUserControl2}"/>
+            <Button Content="모달리스 창띄우기" Width="200" HorizontalAlignment="Left" Command="{Binding ShowSecondWindow}"/>
+        </StackPanel>
+
+        <ContentControl Content="{Binding CurrentUserControl}" Grid.Row="1"/>
+
+        <StackPanel Grid.Row="2">
+            <TextBlock Text="{Binding MyString}"/>
+            <TextBlock Text="{Binding MyInt}"/>
+            <Button Content="MainView 버튼" Command="{Binding MainButtonCommand}" Width="300"/>
+        </StackPanel>
+    </Grid>
+</Window>

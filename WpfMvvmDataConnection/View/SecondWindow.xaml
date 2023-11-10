@@ -1,0 +1,27 @@
+﻿<Window x:Class="WpfMvvmDataConnection.View.SecondWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfMvvmDataConnection.View"
+        xmlns:vm="clr-namespace:WpfMvvmDataConnection.ViewModel"
+        mc:Ignorable="d"
+        Title="SecondWindow" Height="250" Width="400">
+
+    <!-- ViewModel 연결 -->
+    <Window.DataContext>
+        <vm:SecondWindowViewModel/>
+    </Window.DataContext>
+    
+    <Grid>
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal">
+                <TextBox Width="250" Height="30" Text="{Binding TextBoxString}"/>
+                <Button Width="120" Height="30" Content="MainView에 전송" Command="{Binding SendStringCommand}"/>
+            </StackPanel>
+            <TextBlock Text="{Binding TextBlockString}"/>
+            <Button Content="MainView에 Int값 50 전송" Height="30" Command="{Binding SendIntCommand}"/>
+            <TextBlock Text="{Binding IntValue}"/>
+        </StackPanel>
+    </Grid>
+</Window>
