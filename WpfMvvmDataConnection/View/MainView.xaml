@@ -32,13 +32,13 @@
         </Grid.RowDefinitions>
 
         <StackPanel Orientation="Horizontal" Grid.Row="0">
-            <Button Content="UserControl1 보기" Width="200" HorizontalAlignment="Left" Command="{Binding ShowUserControl1}"/>
-            <Button Content="UserControl2 보기" Width="200" HorizontalAlignment="Left" Command="{Binding ShowUserControl2}"/>
-            <Button Content="모달리스 창띄우기" Width="200" HorizontalAlignment="Left" Command="{Binding ShowSecondWindow}"/>
+            <Button Content="UserControl1 보기" Width="200" Command="{Binding ShowUserControl1}"/>
+            <Button Content="UserControl2 보기" Width="200" Command="{Binding ShowUserControl2}"/>
+            <Button Content="모달리스 창띄우기" Width="200" Command="{Binding ShowSecondWindow}"/>
         </StackPanel>
 
         <ContentControl Content="{Binding CurrentUserControl}" Grid.Row="1"/>
-
+        
         <StackPanel Grid.Row="2">
             <TextBlock Text="{Binding MyString}"/>
             <TextBlock Text="{Binding MyInt}"/>

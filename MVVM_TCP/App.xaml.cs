@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVVM_TCP.View;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +14,19 @@ namespace MVVM_TCP
     /// </summary>
     public partial class App : Application
     {
+        protected void ApplicationStart(object sender, StartupEventArgs e)
+        {
+            var mainView = new MainView();
+            mainView.Show();
+            mainView.IsVisibleChanged += (s, ev) =>
+            {
+                if (mainView.IsVisible == false && mainView.IsLoaded)
+                {
+                    var secondView = new SecondWindowView();
+                    secondView.Show();
+                    mainView.Close();
+                }
+            };
+        }
     }
 }

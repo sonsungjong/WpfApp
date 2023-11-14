@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVVM_TCP.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,15 @@ namespace MVVM_TCP.View
         public SecondWindowView()
         {
             InitializeComponent();
+        }
+
+        private void Close_Button_Click(object sender, RoutedEventArgs e)
+        {
+            var new_window = new MainView();
+
+            new_window.Show();
+
+            this.Close();
         }
     }
 }

@@ -4,9 +4,24 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MVVM_TCP.View"
+        xmlns:vm="clr-namespace:MVVM_TCP.ViewModel"
         mc:Ignorable="d"
-        Title="SecondWindowView" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        Title="SecondWindowView" Height="450" Width="800"
+        WindowState="Maximized">
+
+    <Window.DataContext>
+        <vm:SecondWindowViewModel/>
+    </Window.DataContext>
+
+    <StackPanel>
+
+        <StackPanel Orientation="Horizontal">
+            <!-- 입력값을 프로퍼티에 자동저장 -->
+            <TextBox Text="{Binding Second_TextBoxMsg, UpdateSourceTrigger=PropertyChanged}" Width="250"/>
+            <Button Content="서버에 보내기" Command="{Binding Second_SendMessageCommand}"/>
+        </StackPanel>
+        <TextBlock Text="{Binding Second_UIMsg}"/>
+
+        <Button Content="첫번째 창으로 이동" Click="Close_Button_Click"/>
+    </StackPanel>
 </Window>

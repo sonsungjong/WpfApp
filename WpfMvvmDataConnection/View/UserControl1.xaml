@@ -8,11 +8,9 @@
              d:DesignHeight="300" d:DesignWidth="800" Background="SkyBlue">
     <Grid>
         <StackPanel>
-            <StackPanel Orientation="Horizontal">
-                <TextBox Width="300" Height="30" Text="{Binding StringProperty, UpdateSourceTrigger=PropertyChanged}"/>
-            </StackPanel>
-            
-            <StackPanel Orientation="Horizontal">
+            <TextBox Height="30" Text="{Binding StringProperty, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <StackPanel Orientation="Horizontal">
                 <TextBox Width="300" Height="30" Text="{Binding IntProperty}"/>
                 <Button Content="숫자 입력" Height="30" Width="100" Command="{Binding IntButtonCommand}"/>
             </StackPanel>

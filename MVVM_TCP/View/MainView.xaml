@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:MVVM_TCP.View"
         xmlns:vm="clr-namespace:MVVM_TCP.ViewModel"
         mc:Ignorable="d"
-        Title="MainView" Height="450" Width="400">
+        Title="MainView" Height="450" Width="400"
+        WindowState="Maximized">
 
     <Window.DataContext>
         <vm:MainViewModel/>
@@ -21,5 +22,7 @@
             <Button Content="서버에 보내기" Command="{Binding SendMessageCommand}"/>
         </StackPanel>
         <TextBlock Text="{Binding UIMsg}"/>
+
+        <Button Content="두번째 창으로 이동" Click="Close_Button_Click"/>
     </StackPanel>
 </Window>

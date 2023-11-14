@@ -34,23 +34,19 @@ namespace MVVM_TCP.Model
 
         public async Task<string> ReceiveAsync()
         {
-            const int buffer_size = 50000;
-            byte[] buffer = new byte[buffer_size];
+            byte[] buffer = new byte[16384];
             StringBuilder recv_msg = new StringBuilder();
-            int bytes_read;
+            int bytes_read = 0;
 
-            do
-            {
-                bytes_read = await m_stream.ReadAsync(buffer, 0, buffer.Length);
-                recv_msg.Append(Encoding.Unicode.GetString(buffer, 0, bytes_read));
-            } while (bytes_read > 0); // 더 이상 읽을 데이터가 없을 때 루프를 종료
+            bytes_read = await m_stream.ReadAsync(buffer, 0, buffer.Length);
+            recv_msg.Append(Encoding.Default.GetString(buffer, 0, bytes_read));
 
             return recv_msg.ToString();
         }
 
         public async Task SendAsync(string a_msg)
         {
-            byte[] data = Encoding.Unicode.GetBytes(a_msg);
+            byte[] data = Encoding.Default.GetBytes(a_msg);
             await m_stream.WriteAsync(data, 0, data.Length);
         }
 

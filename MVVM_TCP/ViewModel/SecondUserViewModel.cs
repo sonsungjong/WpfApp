@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MVVM_TCP.ViewModel
 {
-    internal class SecondUserViewModel
+    public class SecondUserViewModel : ViewModelBase
     {
     }
 }
