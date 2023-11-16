@@ -65,6 +65,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfMvvmDataConnection", "Wp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVVM_TCP", "MVVM_TCP\MVVM_TCP.csproj", "{7417C459-E38E-4046-B05C-8E6BC49AD04B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCP_Service", "TCP_Service\TCP_Service.csproj", "{BD039413-6556-4A43-9B9E-C438D49FF07A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -447,6 +449,18 @@ Global
 		{7417C459-E38E-4046-B05C-8E6BC49AD04B}.Release|x64.Build.0 = Release|Any CPU
 		{7417C459-E38E-4046-B05C-8E6BC49AD04B}.Release|x86.ActiveCfg = Release|Any CPU
 		{7417C459-E38E-4046-B05C-8E6BC49AD04B}.Release|x86.Build.0 = Release|Any CPU
+		{BD039413-6556-4A43-9B9E-C438D49FF07A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD039413-6556-4A43-9B9E-C438D49FF07A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD039413-6556-4A43-9B9E-C438D49FF07A}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{BD039413-6556-4A43-9B9E-C438D49FF07A}.Debug|x64.Build.0 = Debug|Any CPU
+		{BD039413-6556-4A43-9B9E-C438D49FF07A}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BD039413-6556-4A43-9B9E-C438D49FF07A}.Debug|x86.Build.0 = Debug|Any CPU
+		{BD039413-6556-4A43-9B9E-C438D49FF07A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD039413-6556-4A43-9B9E-C438D49FF07A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD039413-6556-4A43-9B9E-C438D49FF07A}.Release|x64.ActiveCfg = Release|Any CPU
+		{BD039413-6556-4A43-9B9E-C438D49FF07A}.Release|x64.Build.0 = Release|Any CPU
+		{BD039413-6556-4A43-9B9E-C438D49FF07A}.Release|x86.ActiveCfg = Release|Any CPU
+		{BD039413-6556-4A43-9B9E-C438D49FF07A}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

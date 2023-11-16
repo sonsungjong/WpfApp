@@ -1,0 +1,27 @@
+﻿<Window x:Class="TCP_Service.View.SecondView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TCP_Service.View"
+        xmlns:vm="clr-namespace:TCP_Service.ViewModel"
+        mc:Ignorable="d"
+        Title="SecondView" Height="450" Width="800"
+        WindowState="Maximized">
+
+    <Window.DataContext>
+        <vm:SecondViewModel/>
+    </Window.DataContext>
+    <StackPanel>
+
+        <StackPanel Orientation="Horizontal">
+            <!-- 입력값을 프로퍼티에 자동저장 -->
+            <TextBox Text="{Binding Second_TextBoxMsg, UpdateSourceTrigger=PropertyChanged}" Width="250"/>
+            <Button Content="서버에 보내기" Command="{Binding Second_SendMsgCommand}"/>
+        </StackPanel>
+        <TextBlock Text="{Binding Second_UIMsg}"/>
+
+        <Button Content="첫번째 창으로 이동" Command="{Binding GoMainViewCommand}"
+                CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}}"/>
+    </StackPanel>
+</Window>
