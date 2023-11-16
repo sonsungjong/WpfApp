@@ -17,12 +17,17 @@ namespace TCP_Service
     {
         protected void ApplicationStart(object sender, StartupEventArgs e)
         {
+            // 전체 설정값 초기화
+            MainModel.Instance.Num = 1;
+            MainModel.Instance.UIMsg = "";
+
             // TCP 비동기 연결을 백그라운드 태스크로 실행
             Task.Run(async () =>
             {
                 await TCPService.Instance.ConnectToServer("localhost", 8888);
             });
 
+            // 첫화면 실행
             MainView main_view = new MainView();
             main_view.Show();
         }

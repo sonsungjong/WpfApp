@@ -14,7 +14,6 @@ namespace TCP_Service.ViewModel
 {
     public class MainViewModel : ViewModelBase
     {
-
         // 생성자
         public MainViewModel()
         {
@@ -28,17 +27,15 @@ namespace TCP_Service.ViewModel
             // TCP 통신 관련
             SendMsgCommand = new ViewModelCommand(ExecuteSendMsgCommand);
             GoSecondViewCommand = new ViewModelCommand(ExecuteGoSecondViewCommand);
-
             TCPService.Instance.MessageReceived += OnMessageReceived;           // 구독
+
         }
 
-        // 메뉴 관련
-        private int m_num = 1;
         public Visibility Menu2Visibility
         {
             get
             {
-                if (m_num == 1)
+                if (MainModel.Instance.Num == 1)
                 {
                     return Visibility.Visible;                  // 보임
                 }
@@ -91,7 +88,6 @@ namespace TCP_Service.ViewModel
 
         // TCP통신 관련
         private string m_text_box_msg;
-        private string m_ui_msg;
 
         public ICommand SendMsgCommand { get; set; }
         public ICommand GoSecondViewCommand { get; set; }
@@ -106,10 +102,10 @@ namespace TCP_Service.ViewModel
         }
         public string UIMsg
         {
-            get => m_ui_msg;
+            get => MainModel.Instance.UIMsg;
             set
             {
-                m_ui_msg = value;
+                MainModel.Instance.UIMsg = value;
                 OnPropertyChanged(nameof(UIMsg));
             }
         }

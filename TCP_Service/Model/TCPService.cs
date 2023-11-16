@@ -69,8 +69,11 @@ namespace TCP_Service.Model
 
         public async Task SendToServer(string a_msg)
         {
-            byte[] data = Encoding.Default.GetBytes(a_msg);
-            await m_stream.WriteAsync(data, 0, data.Length);
+            if(a_msg != null)
+            {
+                byte[] data = Encoding.Default.GetBytes(a_msg);
+                await m_stream.WriteAsync(data, 0, data.Length);
+            }
         }
 
         public void ParseHeaderAfterRecv()

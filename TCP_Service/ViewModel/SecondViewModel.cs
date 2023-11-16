@@ -21,7 +21,7 @@ namespace TCP_Service.ViewModel
         }
 
         private string m_second_text_box_msg;
-        private string m_second_ui_msg;
+        //private string m_second_ui_msg;
 
         public ICommand Second_SendMsgCommand { get; set; }
         public ICommand GoMainViewCommand { get; set; }
@@ -38,10 +38,10 @@ namespace TCP_Service.ViewModel
 
         public string Second_UIMsg
         {
-            get => m_second_ui_msg;
+            get => MainModel.Instance.UIMsg;
             set
             {
-                m_second_ui_msg = value;
+                MainModel.Instance.UIMsg = value;
                 OnPropertyChanged(nameof(Second_UIMsg));
             }
         }
