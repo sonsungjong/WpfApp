@@ -42,6 +42,7 @@ namespace TCP_Service.Model
             MessageReceived?.Invoke(this, msg);
         }
 
+        // TCP 메시지 수신
         public async Task RecvMsg()
         {
             byte[] buffer = new byte[16384];
@@ -54,7 +55,7 @@ namespace TCP_Service.Model
                     // 수신된 바이트를 문자열로 변환
                     string receivedMessage = Encoding.Default.GetString(buffer, 0, bytes_read);
 
-                    // 헤더를 나눠서 분기문을 태우고 수신받을 메서드 정의
+                    // 공통 헤더를 분리하여 식별자를 통해 분기문을 태우고 사용할 메서드 사용
                     OnMessageReceived(receivedMessage);
                 }
             }
@@ -66,11 +67,13 @@ namespace TCP_Service.Model
             }
         }
 
-
+        // TCP 메시지 송신
         public async Task SendToServer(string a_msg)
         {
             if(a_msg != null)
             {
+                // 공통 헤더를 붙이는 작업 필요
+
                 byte[] data = Encoding.Default.GetBytes(a_msg);
                 await m_stream.WriteAsync(data, 0, data.Length);
             }
@@ -78,12 +81,12 @@ namespace TCP_Service.Model
 
         public void ParseHeaderAfterRecv()
         {
-
+            // 공통 헤더를 분리
         }
 
         public void AddHeaderBeforeSend(string a_msg)
         {
-
+            // 송신메시지에 공통 헤더를 붙임
         }
 
         // 서버와 연결 해제
