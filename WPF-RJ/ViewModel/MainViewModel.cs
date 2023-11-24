@@ -20,6 +20,18 @@ namespace WPF_RJ.ViewModel
         private string _caption;
         private IconChar _icon;
         private IUserRepository userRepository;
+        private int m_price;
+        public int Price
+        {
+            get => m_price;
+            set
+            {
+                m_price = value;
+                OnPropertyChanged(nameof(Price));
+            }
+        }
+
+
 
         public UserAccountModel CurrentUserAccount
         {

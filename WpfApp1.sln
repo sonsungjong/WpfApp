@@ -67,6 +67,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVVM_TCP", "MVVM_TCP\MVVM_T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TCP_Service", "TCP_Service\TCP_Service.csproj", "{BD039413-6556-4A43-9B9E-C438D49FF07A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dance", "Dance\Dance.csproj", "{7FBEDD34-0148-48D8-996E-F160BD88F0FD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -461,6 +463,18 @@ Global
 		{BD039413-6556-4A43-9B9E-C438D49FF07A}.Release|x64.Build.0 = Release|Any CPU
 		{BD039413-6556-4A43-9B9E-C438D49FF07A}.Release|x86.ActiveCfg = Release|Any CPU
 		{BD039413-6556-4A43-9B9E-C438D49FF07A}.Release|x86.Build.0 = Release|Any CPU
+		{7FBEDD34-0148-48D8-996E-F160BD88F0FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FBEDD34-0148-48D8-996E-F160BD88F0FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FBEDD34-0148-48D8-996E-F160BD88F0FD}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{7FBEDD34-0148-48D8-996E-F160BD88F0FD}.Debug|x64.Build.0 = Debug|Any CPU
+		{7FBEDD34-0148-48D8-996E-F160BD88F0FD}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7FBEDD34-0148-48D8-996E-F160BD88F0FD}.Debug|x86.Build.0 = Debug|Any CPU
+		{7FBEDD34-0148-48D8-996E-F160BD88F0FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FBEDD34-0148-48D8-996E-F160BD88F0FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FBEDD34-0148-48D8-996E-F160BD88F0FD}.Release|x64.ActiveCfg = Release|Any CPU
+		{7FBEDD34-0148-48D8-996E-F160BD88F0FD}.Release|x64.Build.0 = Release|Any CPU
+		{7FBEDD34-0148-48D8-996E-F160BD88F0FD}.Release|x86.ActiveCfg = Release|Any CPU
+		{7FBEDD34-0148-48D8-996E-F160BD88F0FD}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
