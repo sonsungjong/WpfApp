@@ -1,0 +1,13 @@
+﻿<Window x:Class="MapControl48.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:m="clr-namespace:Microsoft.Maps.MapControl.WPF;assembly=Microsoft.Maps.MapControl.WPF"
+        xmlns:local="clr-namespace:MapControl48"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="600">
+    <Grid>
+        <m:Map Name="map" CredentialsProvider="SHL9y4WLRAOPG9nqiJEN~uSdBrtqVfCFh5jl8QxAVzQ~AlWL30AH9tDNk7PplCbfbUGVUi2tFoPsaaQzJ4nHFKUkoTZfNfo2X_qJs5X9i2hP" />
+    </Grid>
+</Window>

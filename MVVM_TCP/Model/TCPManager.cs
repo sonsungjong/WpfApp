@@ -16,9 +16,14 @@ namespace MVVM_TCP.Model
             GC.SuppressFinalize(this);
         }
 
+        ~TCPManager()
+        {
+            Dispose(false);
+        }
+
         protected virtual void Dispose(bool disposing)
         {
-            if (disposing)
+            if (disposing == true)
             {
                 // 관리 리소스 정리
                 m_stream?.Dispose();
