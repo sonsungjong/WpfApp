@@ -28,23 +28,35 @@ namespace GMapNet48
             InitializeComponent();
 
             gMapControl.MapProvider = GMapProviders.OpenStreetMap;
-            gMapControl.MinZoom = 1;
-            gMapControl.MaxZoom = 17;
-            gMapControl.Zoom = 9;
+            gMapControl.MinZoom = 5;
+            gMapControl.MaxZoom = 10;
+            gMapControl.Zoom = 7;
             gMapControl.ShowCenter = false;
             gMapControl.DragButton = MouseButton.Left;              // 지도 드래그 이동
             //RectLatLng bounds = new RectLatLng(85, -180, 360, 170);
             //GoogleMapProvider.Instance.ApiKey = "AIzaSyCXJrDpszuNQfMEXKIifx5zYzhSq3Irpyg";        // (OpenStreetMap)
+            gMapControl.MouseRightButtonDown += gMapControl_MouseRightButtonDown;
 
 
-
-            GMaps.Instance.Mode = AccessMode.ServerOnly;
+            GMaps.Instance.Mode = AccessMode.ServerAndCache;
 
             // 초기 위치
-            gMapControl.Position = new PointLatLng(37.7749, -122.4194);
-
+            gMapControl.Position = new PointLatLng(24.5, 54.5);
 
         }
+        private void gMapControl_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            // 마우스 위치를 지도 좌표로 변환
+            var point = e.GetPosition(gMapControl);
+            var latLng = gMapControl.FromLocalToLatLng((int)point.X, (int)point.Y);
 
+            // 메시지 박스로 위도와 경도 표시
+            MessageBox.Show("위도: " + latLng.Lat + "\n경도: " + latLng.Lng, "위치 좌표");
+        }
+
+        private void MapButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("버튼이 클릭되었습니다!", "알림");
+        }
     }
 }
