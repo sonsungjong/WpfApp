@@ -8,8 +8,27 @@ using System.Threading.Tasks;
 
 namespace MVVM_TCP.Model
 {
-    internal class TCPManager
+    public class TCPManager : IDisposable
     {
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                // 관리 리소스 정리
+                m_stream?.Dispose();
+            }
+
+            // 비관리 리소스 정리
+            m_tcp_client?.Close();
+            m_tcp_client?.Dispose();
+        }
+
         private static readonly TCPManager m_instance = new TCPManager();
         private TcpClient m_tcp_client;
         private NetworkStream m_stream;
@@ -59,6 +78,7 @@ namespace MVVM_TCP.Model
         {
 
         }
+
 
     }
 }
