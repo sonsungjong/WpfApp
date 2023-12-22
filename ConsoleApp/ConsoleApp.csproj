@@ -162,6 +162,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="P279_Timer.cs" />
+    <Compile Include="P283_ImageTimer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P286_DigitalClock.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

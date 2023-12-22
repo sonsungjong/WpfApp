@@ -10,7 +10,7 @@ namespace ConsoleApp
 {
     internal class P279_Timer
     {
-        public static void Main()
+        public static void Main279()
         {
             TimerSample279 ts = new TimerSample279();
             Application.Run(ts);
