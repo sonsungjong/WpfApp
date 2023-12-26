@@ -15,7 +15,7 @@ namespace ConsoleApp
         private int m_circle_width = 40;
         private int m_circle_height = 30;
 
-        public static void Main()
+        public static void Main290TimerCircle()
         {
             var app = new P290_TimerCircle();
             Application.Run(app);
