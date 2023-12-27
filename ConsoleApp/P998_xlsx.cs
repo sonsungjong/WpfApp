@@ -22,7 +22,7 @@ namespace ConsoleApp
             }
         }
 
-        public static void Main()
+        public static void Main998xlsx()
         {
             P998_xlsx app = new P998_xlsx();
 
