@@ -8,27 +8,38 @@ using System.Windows;
 
 namespace ReadInitTxtWPF.Model
 {
+    public enum Language
+    {
+        // 0 : 영어
+        English,
+        // 1: 한글
+        Korean
+    }
+
     public class LangModel
     {
         private static readonly LangModel m_instance = new LangModel();
-        public int Num {get; set;}
         public static LangModel Instance
         {
             get { return m_instance; }
         }
+
+        // enum
+        public Language enumLang { get; set; }
+
         private LangModel() 
         {
-            Num = 1;
+            enumLang = Language.Korean;
         }
 
         /*
         설정파일에서 언어를 읽어 변수에 저장하는 함수
         0: 영어 / 1: 한글
          */
-        public void langFile(int a_num = 1)
+        public void langFile(Language a_enumLang = Language.Korean)
         {
-            Num = a_num;
-            string langTxt = Num == 0 ? "C:\\UITCC\\Data\\Eng.txt" : "C:\\UITCC\\Data\\Kor.txt";
+            enumLang = a_enumLang;
+            string langTxt = enumLang == Language.English ? "C:\\UITCC\\Data\\Eng.txt" : "C:\\UITCC\\Data\\Kor.txt";
 
             try
             {

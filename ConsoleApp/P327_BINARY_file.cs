@@ -59,7 +59,7 @@ namespace ConsoleApp
 
         private void btn_Click(Object sender, EventArgs e)
         {
-            if(sender == m_btn1)
+            if(sender == m_btn1)                // 읽기 버튼
             {
                 OpenFileDialog openFileDialog = new OpenFileDialog();
                 openFileDialog.Filter = "바이너리 파일|*.bin";
@@ -75,7 +75,7 @@ namespace ConsoleApp
                     br.Close();
                 }
             }
-            else if(sender == m_btn2)
+            else if(sender == m_btn2)               // 저장 버튼
             {
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
                 saveFileDialog.Filter = "바이너리 파일|*.bin";

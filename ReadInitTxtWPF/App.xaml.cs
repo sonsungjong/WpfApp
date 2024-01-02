@@ -18,7 +18,7 @@ namespace ReadInitTxtWPF
     {
         protected void ApplicationStart(object sender, StartupEventArgs e)
         {
-            LangModel.Instance.langFile(1);
+            LangModel.Instance.langFile(Language.Korean);
             var view = new LangView();
             view.Show();
             

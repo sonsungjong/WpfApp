@@ -21,13 +21,13 @@ namespace ReadInitTxtWPF.ViewModel
 
         private void ExecuteExchangeLangCommand(object obj)
         {
-            if(LangModel.Instance.Num == 0)
+            if(LangModel.Instance.enumLang == Language.Korean)
             {
-                LangModel.Instance.langFile(1);
+                LangModel.Instance.langFile(Language.English);
             }
-            else if(LangModel.Instance.Num == 1)
+            else if(LangModel.Instance.enumLang == Language.English)
             {
-                LangModel.Instance.langFile(0);
+                LangModel.Instance.langFile(Language.Korean);
             }
             else
             {
