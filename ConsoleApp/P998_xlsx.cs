@@ -5,7 +5,7 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.Office.Interop.Excel;                           // Microsoft Excel 16.0 Object Library (COM 느림)
+//using Microsoft.Office.Interop.Excel;                           // Microsoft Excel 16.0 Object Library (COM 느림)
 
 
 namespace ConsoleApp
@@ -13,7 +13,13 @@ namespace ConsoleApp
     public class P998_xlsx
     {
         ObservableCollection<string> m_xlsx_content;
-        public P998_xlsx()
+        public static void Main998xlsx()
+        {
+            P998_xlsx app = new P998_xlsx();
+
+        }
+
+/*    public P998_xlsx()
         {
             InitExcel();
             foreach (string str in m_xlsx_content)
@@ -22,11 +28,6 @@ namespace ConsoleApp
             }
         }
 
-        public static void Main998xlsx()
-        {
-            P998_xlsx app = new P998_xlsx();
-
-        }
 
         public void InitExcel()
         {
@@ -54,6 +55,7 @@ namespace ConsoleApp
             System.Runtime.InteropServices.Marshal.ReleaseComObject(excel_app);
 
         }
+*/
 
 
     }
