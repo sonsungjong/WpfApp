@@ -11,8 +11,8 @@ namespace WpfMvvmDataConnection.ViewModel
     public class UserControl2ViewModel : ViewModelBase
     {
         // 다른 ViewModel에 구독시킬 핸들러
-        public event EventHandler<int> UserControl2IntPropChanged;
-        public event EventHandler<string> UserControl2StringPropChanged;
+        public event EventHandler UserControl2IntPropChanged;
+        public event EventHandler UserControl2StringPropChanged;
 
         public ICommand User2Btn1Command { get; set; }
         public ICommand User2Btn2Command { get; set; }
@@ -27,18 +27,18 @@ namespace WpfMvvmDataConnection.ViewModel
 
         private void ExecuteBtn1(object obj)
         {
-            UserControl2IntPropChanged?.Invoke(this, 10000);
-            UserControl2StringPropChanged?.Invoke(this, "유저2 - 버튼1");
+            UserControl2IntPropChanged?.Invoke(10000, EventArgs.Empty);
+            UserControl2StringPropChanged?.Invoke("유저2 - 버튼1", EventArgs.Empty);
         }
 
         private void ExecuteBtn2(object obj)
         {
-            UserControl2IntPropChanged?.Invoke(this, 20000);
+            UserControl2IntPropChanged?.Invoke(20000, EventArgs.Empty);
         }
 
         private void ExecuteBtn3(object obj)
         {
-            UserControl2IntPropChanged?.Invoke(this, 30000);
+            UserControl2IntPropChanged?.Invoke(30000, EventArgs.Empty);
         }
 
     }

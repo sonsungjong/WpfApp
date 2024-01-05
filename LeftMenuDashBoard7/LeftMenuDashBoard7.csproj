@@ -5,6 +5,7 @@
     <TargetFramework>net7.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+    <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
 
 <ItemGroup>
@@ -47,9 +48,9 @@
 	<None Remove="Images\Music_Icon.png" />
 	<None Remove="Images\Movies_Icon.png" />
 	<None Remove="Images\Trash_Icon.png" />
-	<None Remove="Fonts\Cairo-SemiBold.ttf"/>
-	<None Remove="Fonts\OpenSans-Regular.ttf"/>
-	<None Remove="Fonts\Roboto-Regular.ttf"/>
+	<None Remove="Fonts\Cairo-SemiBold.ttf" />
+	<None Remove="Fonts\OpenSans-Regular.ttf" />
+	<None Remove="Fonts\Roboto-Regular.ttf" />
 </ItemGroup>
 
 	<ItemGroup>

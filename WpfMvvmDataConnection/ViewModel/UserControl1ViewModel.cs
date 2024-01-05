@@ -10,8 +10,8 @@ namespace WpfMvvmDataConnection.ViewModel
 {
     public class UserControl1ViewModel : ViewModelBase
     {
-        public event EventHandler<int> IntPropertyChanged;
-        public event EventHandler<int> SendSecondWindow33333;
+        public event EventHandler IntPropertyChanged;
+        public event EventHandler SendSecondWindow33333;
         private string m_str;
         private int m_int;
 
@@ -23,12 +23,12 @@ namespace WpfMvvmDataConnection.ViewModel
 
         private void ExecuteIntButtonCommand(object obj)
         {
-            IntPropertyChanged?.Invoke(this, IntProperty);
+            IntPropertyChanged?.Invoke(IntProperty, EventArgs.Empty);
         }
 
         private void ExecuteSendSecondWindowCommand(object obj)
         {
-            SendSecondWindow33333?.Invoke(this, 33333);
+            SendSecondWindow33333?.Invoke(33333, EventArgs.Empty);
         }
 
         public ICommand IntButtonCommand { get; set; }

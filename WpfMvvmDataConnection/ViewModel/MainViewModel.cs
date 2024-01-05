@@ -62,14 +62,20 @@ namespace WpfMvvmDataConnection.ViewModel
             }
         }
 
-        private void SecondWindowVM_Send50(object sender, int newValue)
+        private void SecondWindowVM_Send50(object sender, EventArgs e)
         {
-            MyInt = newValue;
+            if(sender is int newValue)
+            {
+                MyInt = newValue;
+            }
         }
 
-        private void SecondWindowVM_SendString(object sender, string newValue)
+        private void SecondWindowVM_SendString(object sender, EventArgs e)
         {
-            MyString = newValue;
+            if(sender is string newValue)
+            {
+                MyString = newValue;
+            }
         }
 
         private void ExecuteShowUserControl1(object obj)
@@ -89,10 +95,13 @@ namespace WpfMvvmDataConnection.ViewModel
             CurrentUserControl = userControl2VM;
         }
 
-        private void UserControl1VM_IntPropertyChanged(object sender, int newValue)
+        private void UserControl1VM_IntPropertyChanged(object sender, EventArgs e)
         {
-            MyInt = newValue;
-            //MyInt += newValue;
+            if(sender is int newValue)
+            {
+                MyInt = newValue;
+                //MyInt += newValue;
+            }
         }
 
         private void UserControl1VM_PropertyChanged(object sender, PropertyChangedEventArgs e)
@@ -107,14 +116,20 @@ namespace WpfMvvmDataConnection.ViewModel
             }
         }
 
-        private void UserControl2VM_IntPropChanged(object sender, int newValue)
+        private void UserControl2VM_IntPropChanged(object sender, EventArgs e)
         {
-            MyInt = newValue;                   // MyInt 프로퍼티 업데이트
+            if(sender is int newValue)
+            {
+                MyInt = newValue;                   // MyInt 프로퍼티 업데이트
+            }
         }
 
-        private void UserControl2VM_StringPropChanged(object sender, string newValue)
+        private void UserControl2VM_StringPropChanged(object sender, EventArgs e)
         {
-            MyString = newValue;                 // MyString 프로퍼티 업데이트
+            if(sender is string newValue)
+            {
+                MyString = newValue;                 // MyString 프로퍼티 업데이트
+            }
         }
 
         public ICommand ShowUserControl1 { get; set; }
@@ -159,11 +174,14 @@ namespace WpfMvvmDataConnection.ViewModel
         }
 
         // MainViewModel(UserControl1ViewModel) -> MainViewModel -> SecondWindowViewModel
-        private void UserControl1VM_Send33333(object sender, int newValue)
+        private void UserControl1VM_Send33333(object sender, EventArgs e)
         {
             if (m_secondWindowVM != null)
             {
-                m_secondWindowVM.OnUpdateIntValue33333(newValue);
+                if(sender is int newValue)
+                {
+                    m_secondWindowVM.OnUpdateIntValue33333(newValue);
+                }
             }
         }
     }

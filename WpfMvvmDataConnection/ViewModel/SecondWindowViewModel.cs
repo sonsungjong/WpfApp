@@ -13,11 +13,11 @@ namespace WpfMvvmDataConnection.ViewModel
         private string m_text_box_string;                   // 에디트컨트롤 문자열 저장
         private string m_text_block_string;                     // 텍스트 문자열 저장
         private int m_int_value;                  // 텍스트 정수 저장
-        public event EventHandler<int> m_Send50;
-        public event EventHandler<string> m_SendString;
+        public event EventHandler m_Send50;
+        public event EventHandler m_SendString;
 
         // MainViewModel(UserControl1ViewModel) -> MainViewModel -> SecondWindowViewModel
-        public event EventHandler<int> UpdateIntValue33333;
+        public event EventHandler UpdateIntValue33333;
 
         public SecondWindowViewModel()
         {
@@ -28,7 +28,13 @@ namespace WpfMvvmDataConnection.ViewModel
             m_text_block_string = "MainView에서 전달받는 값을 전시";
             m_int_value = 3000;
 
-            UpdateIntValue33333 += (sender, value) => IntValue = value;
+            UpdateIntValue33333 += (sender, value) =>
+            {
+                if(sender is int intValue)
+                {
+                    IntValue = intValue;
+                }
+            };
         }
 
         public string TextBoxString
@@ -70,21 +76,21 @@ namespace WpfMvvmDataConnection.ViewModel
         private void ExecuteSendStringCommand(object obj)
         {
             //MessageBox.Show(TextBoxString+"을 MainView의 MyString에 전달하자");
-            m_SendString?.Invoke(this, TextBoxString);
+            m_SendString?.Invoke(TextBoxString, EventArgs.Empty);
             TextBlockString = TextBoxString + "을(를) 보냈다";
         }
 
         private void ExecuteSendIntCommand(object obj)
         {
             //MessageBox.Show("MainView의 MyInt에 50을 전달하자");
-            m_Send50?.Invoke(this, 50);
+            m_Send50?.Invoke(50, EventArgs.Empty);
             TextBlockString = "50을 보냈다";
         }
 
         // MainViewModel(UserControl1ViewModel) -> MainViewModel -> SecondWindowViewModel
         public void OnUpdateIntValue33333(int value)
         {
-            UpdateIntValue33333?.Invoke(this, value);
+            UpdateIntValue33333?.Invoke(value, EventArgs.Empty);
         }
     }
 }
