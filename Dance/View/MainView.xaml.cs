@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dance.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,5 +24,21 @@ namespace Dance.View
         {
             InitializeComponent();
         }
+
+        private void Add_Button_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedItems = LeftListBox.SelectedItems.Cast<string>().ToList();
+            var viewModel = DataContext as MainViewModel;
+            viewModel?.LeftToRight(selectedItems);
+        }
+
+        private void Remove_Button_Click(object sender, RoutedEventArgs e)
+        {
+            var selectedItems = RightListBox.SelectedItems.Cast<string>().ToList();
+            var viewModel = DataContext as MainViewModel;
+            viewModel?.RightToLeft(selectedItems);
+        }
+
+
     }
 }
