@@ -195,6 +195,10 @@
     <Compile Include="P376_Web_InternetExplorer.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="P381_TCPServer.cs" />
+    <Compile Include="P383_TCPClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="P998_xlsx.cs" />
     <Compile Include="P999_csv.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
