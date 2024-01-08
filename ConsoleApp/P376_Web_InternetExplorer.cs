@@ -12,7 +12,7 @@ namespace ConsoleApp
         private TextBox m_textBox;
         private WebBrowser m_webBrowser;
         private ToolStrip m_toolStrip;
-        private ToolStripButton[] m_toolStripButton = new ToolStripButton[2];
+        private ToolStripButton[] m_toolStripButton = new ToolStripButton[4];
 
         [STAThread]
         public static void Main376()
@@ -44,8 +44,13 @@ namespace ConsoleApp
             m_toolStripButton[1].Text = "←";
             m_toolStripButton[0].ToolTipText = "이동";
             m_toolStripButton[1].ToolTipText = "돌아간다";
+            m_toolStripButton[2].Text = "→";
+            m_toolStripButton[3].Text = "Home";
+            m_toolStripButton[2].ToolTipText = "다음 페이지로 진행한다";
+            m_toolStripButton[3].ToolTipText = "홈으로 이동한다";
 
             m_toolStripButton[1].Enabled = false;
+            m_toolStripButton[2].Enabled = false;
 
             for(int i=0;i<m_toolStripButton.Length; ++i)
             {
@@ -62,6 +67,7 @@ namespace ConsoleApp
             }
 
             m_webBrowser.CanGoBackChanged += new EventHandler(wb_CanGoBackChanged);
+            m_webBrowser.CanGoForwardChanged += new EventHandler(wb_CanGoForwardChanged);
         }
 
         private void btn_Click(Object sender, EventArgs e)
@@ -78,11 +84,28 @@ namespace ConsoleApp
                     MessageBox.Show("URL을 입력하세요");
                 }
             }
+            else if(sender == m_toolStripButton[1])
+            {
+                m_webBrowser.GoBack();
+            }
+            else if(sender == m_toolStripButton[2])
+            {
+                m_webBrowser.GoForward();
+            }
+            else if(sender == m_toolStripButton[3])
+            {
+                m_webBrowser.GoHome();
+            }
         }
 
         private void wb_CanGoBackChanged(Object sender, EventArgs e)
         {
             m_toolStripButton[1].Enabled = m_webBrowser.CanGoBack;
+        }
+
+        private void wb_CanGoForwardChanged(Object sender, EventArgs e)
+        {
+            m_toolStripButton[2].Enabled = m_webBrowser.CanGoForward;
         }
     }
 }
