@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net;
+using System.Net.Sockets;
 
 namespace ConsoleApp
 {
@@ -74,6 +75,10 @@ namespace ConsoleApp
 
                 m_labels[2].Text = ih.HostName;
                 m_labels[4].Text = ip_address.ToString();
+            }
+            catch (SocketException ex)
+            {
+                MessageBox.Show(ex.ToString());
             }
             catch
             {
