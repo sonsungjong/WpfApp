@@ -18,7 +18,7 @@ namespace ConsoleApp
         private FlowLayoutPanel m_flowLayoutPanel;
 
         [STAThread]
-        public static void Main335()
+        public static void Main3352222()
         {
             Application.Run(new P335_TextEditor());
         }

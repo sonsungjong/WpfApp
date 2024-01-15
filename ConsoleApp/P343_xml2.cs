@@ -12,7 +12,7 @@ namespace ConsoleApp
     {
         private TreeView m_treeView;
 
-        public static void Main()
+        public static void Main343()
         {
             Application.Run(new P343_xml2());
         }

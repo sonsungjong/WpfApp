@@ -195,6 +195,12 @@
     <Compile Include="P343_xml2.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="P347_TabControlFileLoad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P349_xml3.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="P369_Network.cs">
       <SubType>Form</SubType>
     </Compile>
