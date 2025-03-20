@@ -136,14 +136,14 @@
 
                 <StackPanel Width="250" Grid.Row="2" Orientation="Vertical" Margin="0,35,0,0">
                     <Image Source="/Images/Logo.png" Width="100" Height="100" />
-                    <TextBlock Text="카페 키오스크"
+                    <TextBlock Text="WPF MVVM"
                                Foreground="White"
                                FontSize="25"
                                FontWeight="Medium"
                                FontFamily="Montserrat"
                                HorizontalAlignment="Center"/>
 
-                    <TextBlock Text="키오스크를 사용하기 위해선 로그인이 필요합니다."
+                    <TextBlock Text="로그인이 필요합니다."
                                Foreground="LightGray"
                                FontSize="12"
                                FontWeight="Medium"

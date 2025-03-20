@@ -19,16 +19,22 @@ namespace WPF_RJ.Repositories
 
         public bool AuthenticateUser(NetworkCredential credential)
         {
-            bool validUser;
-            using (var connection = GetConnection())
-            using (var command = new SqlCommand())
+            bool validUser = false;
+            try
             {
-                connection.Open();
-                command.Connection = connection;
-                command.CommandText = "select * from [User] where username=@username and [password]=@password";
-                command.Parameters.Add("@username", System.Data.SqlDbType.NVarChar).Value = credential.UserName;
-                command.Parameters.Add("@password", System.Data.SqlDbType.NVarChar).Value = credential.Password;
-                validUser = command.ExecuteScalar() == null ? false : true;
+                using (var connection = GetConnection())
+                using (var command = new SqlCommand())
+                {
+                    connection.Open();
+                    command.Connection = connection;
+                    command.CommandText = "select * from [User] where username=@username and [password]=@password";
+                    command.Parameters.Add("@username", System.Data.SqlDbType.NVarChar).Value = credential.UserName;
+                    command.Parameters.Add("@password", System.Data.SqlDbType.NVarChar).Value = credential.Password;
+                    validUser = command.ExecuteScalar() == null ? false : true;
+                }
+            }catch(Exception ex)
+            {
+
             }
             return validUser;
         }

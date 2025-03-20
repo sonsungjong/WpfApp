@@ -94,17 +94,23 @@ namespace WPF_RJ.ViewModel
 
         private void LoadCurrentUserData()
         {
-            var user = userRepository.GetByUsername(Thread.CurrentPrincipal.Identity.Name);
-            if(user != null)
+            try
             {
-                CurrentUserAccount.Username = user.Username;
-                CurrentUserAccount.DisplayName = $"{user.Name} {user.LastName}";
-                CurrentUserAccount.ProfilePicture = null;
-            }
-            else
+                var user = userRepository.GetByUsername(Thread.CurrentPrincipal.Identity.Name);
+                if(user != null)
+                {
+                    CurrentUserAccount.Username = user.Username;
+                    CurrentUserAccount.DisplayName = $"{user.Name} {user.LastName}";
+                    CurrentUserAccount.ProfilePicture = null;
+                }
+                else
+                {
+                    CurrentUserAccount.DisplayName = "Invalid user, not logged in";
+                    // Hide child views.
+                }
+            }catch(Exception ex)
             {
-                CurrentUserAccount.DisplayName = "Invalid user, not logged in";
-                // Hide child views.
+
             }
         }
     }

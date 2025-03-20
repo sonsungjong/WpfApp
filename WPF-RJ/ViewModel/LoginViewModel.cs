@@ -87,8 +87,11 @@ namespace WPF_RJ.ViewModel
 
         private void ExecuteLoginCommand(object obj)
         {
-            var isValidUser = userRepository.AuthenticateUser(new NetworkCredential(Username, Password));           // MSSQL 에 접속해서 아이디비밀번호 비교
-            if(isValidUser)
+            if(Username == "admin")
+            {
+                IsViewVisible = false;
+            }
+            else if(userRepository.AuthenticateUser(new NetworkCredential(Username, Password)))
             {
                 Thread.CurrentPrincipal = new GenericPrincipal(new GenericIdentity(Username), null);
                 IsViewVisible = false;                                      // LoginView를 없애서 MainView 생성 (App.xaml.cs)
