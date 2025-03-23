@@ -69,7 +69,7 @@ namespace WPF_RJ.ViewModel
                 //newDict[3] = new List<TableDataModel>();
                 var newOnlyDict = new Dictionary<int, TableDataModel>();
 
-                int total = 100;
+                int total = 100000;
                 int rank1 = total / 3;
                 int rank2 = (2*total) / 3;
 
