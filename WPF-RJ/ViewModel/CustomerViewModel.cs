@@ -59,8 +59,6 @@ namespace WPF_RJ.ViewModel
             }
             else
             {
-                TableDataList.Clear();
-
                 //Stopwatch sw = Stopwatch.StartNew();                // 디버깅 : Stopwatch 시작
 
                 //var newList = new List<TableDataModel>();
@@ -106,8 +104,8 @@ namespace WPF_RJ.ViewModel
                 }
 
                 // 일괄 적용한다
-                //TableDataList.AddRange(newList);                  // 리스트 사용시
-                TableDataList.AddRange(newDict);                    // 딕셔너리 사용 시 (SortedDictionary 포함)
+                //TableDataList.ChangeRange(newList);                  // 리스트 사용시
+                TableDataList.ChangeRange(newDict);                    // 딕셔너리 사용 시 (SortedDictionary 포함)
 
                 //sw.Stop();                // 디버깅 : Stopwatch 정지
 

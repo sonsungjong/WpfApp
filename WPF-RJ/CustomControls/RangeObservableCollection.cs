@@ -43,6 +43,42 @@ public class RangeObservableCollection<T> : ObservableCollection<T>
         }
     }
 
+    // 리스트를 매개변수로 할 때
+    public void ChangeRange(IEnumerable<T> items)
+    {
+        if (items != null)
+        {
+            m_suppressNotification = true;
+            Items.Clear();
+            foreach (var item in items)
+            {
+                Items.Add(item);
+            }
+            m_suppressNotification = false;
+            OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
+        }
+    }
+
+    // 딕셔너리를 매개변수로 할 때
+    public void ChangeRange<TKey>(IEnumerable<KeyValuePair<TKey, List<T>>> items)
+    {
+        if (items != null)
+        {
+            m_suppressNotification = true;
+            Items.Clear();
+            foreach (var group in items)
+            {
+                foreach (var item in group.Value)
+                {
+                    Items.Add(item);
+                }
+            }
+
+            m_suppressNotification = false;
+            OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
+        }
+    }
+
     protected override void OnCollectionChanged(NotifyCollectionChangedEventArgs e)
     {
         if (!m_suppressNotification)
