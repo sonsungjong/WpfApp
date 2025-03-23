@@ -25,13 +25,13 @@ namespace SortedDicThread
     class Program
     {
         public interface IMsg {
-            ulong Time { get; set; }
+            //ulong Time { get; set; }
         }
 
         // 처리시간 0.2초
         public struct msg1 : IMsg
         {
-            public ulong Time { get; set; }               // 스레드풀에 담은 현재시간
+            public ulong time;               // 스레드풀에 담은 현재시간
             public uint id;                     // 멤버변수값을 저장 (저장 후 멤버변수는 ++)
             public string msg;              // 안녕하세요
             public byte dump;
@@ -40,7 +40,7 @@ namespace SortedDicThread
         // 처리시간 0.3초
         public struct msg2 : IMsg
         {
-            public ulong Time { get; set; }               // 스레드풀에 담은 현재시간
+            public ulong time;               // 스레드풀에 담은 현재시간
             public uint id;                     // 멤버변수값을 저장 (저장 후 멤버변수는 ++)
             public string msg;              // 반갑습니다
             public short dump;
@@ -49,7 +49,7 @@ namespace SortedDicThread
         // 처리시간 0.1초
         public struct msg3 : IMsg
         {
-            public ulong Time { get; set; }               // 스레드풀에 담은 현재시간
+            public ulong time;               // 스레드풀에 담은 현재시간
             public uint id;                     // 멤버변수값을 저장 (저장 후 멤버변수는 ++)
             public string msg;              // 좋은하루되세요
             public int dump;
@@ -119,7 +119,7 @@ namespace SortedDicThread
             {
                 lock (_lock)
                 {
-                    ulong key = ((msg1)msg).Time;
+                    ulong key = ((msg1)msg).time;
                     _dict.Add(key, msg);
                 }
             }
@@ -128,7 +128,7 @@ namespace SortedDicThread
             {
                 lock (_lock)
                 {
-                    ulong key = ((msg2)msg).Time;
+                    ulong key = ((msg2)msg).time;
                     _dict.Add(key, msg);
                 }
             }
@@ -137,7 +137,7 @@ namespace SortedDicThread
             {
                 lock (_lock)
                 {
-                    ulong key = ((msg3)msg).Time;
+                    ulong key = ((msg3)msg).time;
                     _dict.Add(key, msg);
                 }
             }
@@ -170,7 +170,22 @@ namespace SortedDicThread
 
             public static ulong GetTime(IMsg msg)
             {
-                return msg.Time;
+                if (msg is msg1 m1)
+                {
+                    return m1.time;
+                }
+                else if (msg is msg2 m2)
+                {
+                    return m2.time;
+                }
+                else if (msg is msg3 m3)
+                {
+                    return m3.time;
+                }
+                else
+                {
+                    throw new ArgumentException("알 수 없는 메시지 타입입니다.", nameof(msg));
+                }
             }
 
         }
@@ -206,21 +221,21 @@ namespace SortedDicThread
                             // 메시지 타입별 전처리 지연시간 적용
                             if (msg is msg1 m1)
                             {
-                                sortedTimeList.Add(m1.Time);                // 처리 전에 가장 먼저 시간을 기록한다 (공통)
+                                sortedTimeList.Add(m1.time);                // 처리 전에 가장 먼저 시간을 기록한다 (공통)
                                 Thread.Sleep(150);                      // 0.15초 처리
                                 sortedDict.Add1(m1);
                                 m_eventNewDictMessage.Set();
                             }
                             else if (msg is msg2 m2)
                             {
-                                sortedTimeList.Add(m2.Time);                // 처리 전에 가장 먼저 시간을 기록한다 (공통)
+                                sortedTimeList.Add(m2.time);                // 처리 전에 가장 먼저 시간을 기록한다 (공통)
                                 Thread.Sleep(300);                      // 0.30초 처리
                                 sortedDict.Add2(m2);
                                 m_eventNewDictMessage.Set();
                             }
                             else if (msg is msg3 m3)
                             {
-                                sortedTimeList.Add(m3.Time);                // 처리 전에 가장 먼저 시간을 기록한다 (공통)
+                                sortedTimeList.Add(m3.time);                // 처리 전에 가장 먼저 시간을 기록한다 (공통)
                                 Thread.Sleep(100);                      // 0.10초 처리
                                 sortedDict.Add3(m3);
                                 m_eventNewDictMessage.Set();
@@ -327,7 +342,7 @@ namespace SortedDicThread
                     if (_id == 0)
                     {
                         msg1 m = new msg1();
-                        m.Time = now;
+                        m.time = now;
                         m.id = _id;
                         m.msg = "안녕하세요";
                         m.dump = 0;
@@ -336,7 +351,7 @@ namespace SortedDicThread
                     else if (_id == 1)
                     {
                         msg2 m = new msg2();
-                        m.Time = now;
+                        m.time = now;
                         m.id = _id;
                         m.msg = "반갑습니다    ";
                         m.dump = 0;
@@ -345,7 +360,7 @@ namespace SortedDicThread
                     else
                     {
                         msg3 m = new msg3();
-                        m.Time = now;
+                        m.time = now;
                         m.id = _id;
                         m.msg = "행복하세요        ";
                         m.dump = 0;
