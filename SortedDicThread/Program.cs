@@ -29,7 +29,7 @@ namespace SortedDicThread
         }
 
         // 처리시간 0.2초
-        public struct msg1 : IMsg
+        public struct ST_Msg1 : IMsg
         {
             public ulong time;               // 스레드풀에 담은 현재시간
             public uint id;                     // 멤버변수값을 저장 (저장 후 멤버변수는 ++)
@@ -38,7 +38,7 @@ namespace SortedDicThread
         }               // 가장 먼저 쓰레드풀에 넣는다 (x % 3 == 0)
 
         // 처리시간 0.3초
-        public struct msg2 : IMsg
+        public struct ST_Msg2 : IMsg
         {
             public ulong time;               // 스레드풀에 담은 현재시간
             public uint id;                     // 멤버변수값을 저장 (저장 후 멤버변수는 ++)
@@ -47,7 +47,7 @@ namespace SortedDicThread
         }               // 두번째로 쓰레드풀에 넣는다 (x % 3 == 1)
 
         // 처리시간 0.1초
-        public struct msg3 : IMsg
+        public struct ST_Msg3 : IMsg
         {
             public ulong time;               // 스레드풀에 담은 현재시간
             public uint id;                     // 멤버변수값을 저장 (저장 후 멤버변수는 ++)
@@ -119,7 +119,7 @@ namespace SortedDicThread
             {
                 lock (_lock)
                 {
-                    ulong key = ((msg1)msg).time;
+                    ulong key = ((ST_Msg1)msg).time;
                     _dict.Add(key, msg);
                 }
             }
@@ -128,7 +128,7 @@ namespace SortedDicThread
             {
                 lock (_lock)
                 {
-                    ulong key = ((msg2)msg).time;
+                    ulong key = ((ST_Msg2)msg).time;
                     _dict.Add(key, msg);
                 }
             }
@@ -137,7 +137,7 @@ namespace SortedDicThread
             {
                 lock (_lock)
                 {
-                    ulong key = ((msg3)msg).time;
+                    ulong key = ((ST_Msg3)msg).time;
                     _dict.Add(key, msg);
                 }
             }
@@ -170,15 +170,15 @@ namespace SortedDicThread
 
             public static ulong GetTime(IMsg msg)
             {
-                if (msg is msg1 m1)
+                if (msg is ST_Msg1 m1)
                 {
                     return m1.time;
                 }
-                else if (msg is msg2 m2)
+                else if (msg is ST_Msg2 m2)
                 {
                     return m2.time;
                 }
-                else if (msg is msg3 m3)
+                else if (msg is ST_Msg3 m3)
                 {
                     return m3.time;
                 }
@@ -219,21 +219,21 @@ namespace SortedDicThread
                         if (safeQueue.TryDequeue(out IMsg msg))
                         {
                             // 메시지 타입별 전처리 지연시간 적용
-                            if (msg is msg1 m1)
+                            if (msg is ST_Msg1 m1)
                             {
                                 sortedTimeList.Add(m1.time);                // 처리 전에 가장 먼저 시간을 기록한다 (공통)
                                 Thread.Sleep(150);                      // 0.15초 처리
                                 sortedDict.Add1(m1);
                                 m_eventNewDictMessage.Set();
                             }
-                            else if (msg is msg2 m2)
+                            else if (msg is ST_Msg2 m2)
                             {
                                 sortedTimeList.Add(m2.time);                // 처리 전에 가장 먼저 시간을 기록한다 (공통)
                                 Thread.Sleep(300);                      // 0.30초 처리
                                 sortedDict.Add2(m2);
                                 m_eventNewDictMessage.Set();
                             }
-                            else if (msg is msg3 m3)
+                            else if (msg is ST_Msg3 m3)
                             {
                                 sortedTimeList.Add(m3.time);                // 처리 전에 가장 먼저 시간을 기록한다 (공통)
                                 Thread.Sleep(100);                      // 0.10초 처리
@@ -244,7 +244,12 @@ namespace SortedDicThread
                         else
                         {
                             // 메시지가 없으면 대기
-                            m_eventNewQueueMessage.WaitOne();
+                            //m_eventNewQueueMessage.WaitOne();
+                            int signaledIndex = WaitHandle.WaitAny(new WaitHandle[] { m_eventNewQueueMessage, cts_threadpool.Token.WaitHandle });
+                            if (signaledIndex == 1)
+                            {
+                                break;
+                            }
                         }
                     }
                 }, cts_threadpool.Token);
@@ -268,7 +273,12 @@ namespace SortedDicThread
                     }
                     else
                     {
-                        m_eventNewDictMessage.WaitOne();
+                        //m_eventNewDictMessage.WaitOne();
+                        int signaledIndex = WaitHandle.WaitAny(new WaitHandle[] { m_eventNewDictMessage, cts_ui.Token.WaitHandle });
+                        if (signaledIndex == 1)
+                        {
+                            break;
+                        }
                         continue;
                     }
 
@@ -296,9 +306,9 @@ namespace SortedDicThread
 
                         uint id = 0;
                         string text = "";
-                        if (msg is msg1 m1) { id = m1.id; text = m1.msg; }
-                        else if (msg is msg2 m2) { id = m2.id; text = m2.msg; }
-                        else if (msg is msg3 m3) { id = m3.id; text = m3.msg; }
+                        if (msg is ST_Msg1 m1) { id = m1.id; text = m1.msg; }
+                        else if (msg is ST_Msg2 m2) { id = m2.id; text = m2.msg; }
+                        else if (msg is ST_Msg3 m3) { id = m3.id; text = m3.msg; }
                         Console.WriteLine($"[{id}] {text}{actualTime}");
                         Thread.Sleep(50); // 0.05초 간격 출력
                     }
@@ -311,9 +321,7 @@ namespace SortedDicThread
                         Thread.Sleep(20);
                     }
 
-                    //Thread.Sleep(300);          // 가장 오래 걸리는 파싱 시간
-
-                    // 디버깅
+                    // 사이즈 확인
                     int sizeQueue = safeQueue.Count;
                     int sizeDict = consumerBuffer.Count;
                     if (sizeQueue >= 8)
@@ -341,7 +349,7 @@ namespace SortedDicThread
                     uint _id = counter % 3;
                     if (_id == 0)
                     {
-                        msg1 m = new msg1();
+                        ST_Msg1 m = new ST_Msg1();
                         m.time = now;
                         m.id = _id;
                         m.msg = "안녕하세요";
@@ -350,7 +358,7 @@ namespace SortedDicThread
                     }
                     else if (_id == 1)
                     {
-                        msg2 m = new msg2();
+                        ST_Msg2 m = new ST_Msg2();
                         m.time = now;
                         m.id = _id;
                         m.msg = "반갑습니다    ";
@@ -359,7 +367,7 @@ namespace SortedDicThread
                     }
                     else
                     {
-                        msg3 m = new msg3();
+                        ST_Msg3 m = new ST_Msg3();
                         m.time = now;
                         m.id = _id;
                         m.msg = "행복하세요        ";
@@ -389,6 +397,7 @@ namespace SortedDicThread
             {
                 m_eventNewQueueMessage.Set();
                 m_eventNewDictMessage.Set();
+                //Environment.Exit(0);                    // 강제 종료
                 Task.WaitAll(new Task[] { producerTask, consumerTask }.Concat(processingTasks).ToArray());
             }
             catch (AggregateException) 
