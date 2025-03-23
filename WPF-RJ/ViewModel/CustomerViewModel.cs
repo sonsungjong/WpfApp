@@ -63,19 +63,51 @@ namespace WPF_RJ.ViewModel
 
                 //Stopwatch sw = Stopwatch.StartNew();                // 디버깅 : Stopwatch 시작
 
-                var newList = new List<TableDataModel>();
-                for (int i = 1; i <= 100000; i++)
+                //var newList = new List<TableDataModel>();
+                var newDict = new SortedDictionary<int, List<TableDataModel>>(Comparer<int>.Create((x, y) => y.CompareTo(x)));              // 특정키로 정렬이 필요할 때 (오름차순)
+                //var newDict = new SortedDictionary<int, List<TableDataModel>>();                // 특정키로 정렬이 필요할 때 (내림차순)
+                newDict[1] = new List<TableDataModel>();
+                newDict[2] = new List<TableDataModel>();
+                newDict[3] = new List<TableDataModel>();
+
+                int total = 100000;
+                int rank1 = total / 3;
+                int rank2 = (2*total) / 3;
+
+                for (int i = 1; i <= total; i++)
                 {
+                    int rank = 0;
+                    if(i <= rank1)
+                    {
+                        rank = 1;
+                    }
+                    else if(i <= rank2)
+                    {
+                        rank = 2;
+                    }
+                    else
+                    {
+                        rank = 3;
+                    }
+
                     string no = i.ToString();
                     string name = "데이터 " + no;
                     string info = "샘플 " + no;
+
+                    // ObservableCollection
                     //TableDataModel newData = new TableDataModel { No = no, Name = name, Info = info };
                     //TableDataList.Add(newData);
-                    newList.Add(new TableDataModel { No = no, Name = name, Info = info });              // 테이블에 담아놓고
+
+                    // RangeObservableCollection
+                    // 리스트
+                    //newList.Add(new TableDataModel { No = no, Name = name, Info = info });              // 리스트에 담아놓고
+                    // 딕셔너리 (rank로 정렬)
+                    newDict[rank].Add(new TableDataModel { No = no, Name = name, Info = info });                // 딕셔너리에 담아놓고
                 }
 
                 // 일괄 적용한다
-                TableDataList.AddRange(newList);
+                //TableDataList.AddRange(newList);                  // 리스트 사용시
+                TableDataList.AddRange(newDict);                    // 딕셔너리 사용 시 (SortedDictionary 포함)
 
                 //sw.Stop();                // 디버깅 : Stopwatch 정지
 
@@ -84,34 +116,4 @@ namespace WPF_RJ.ViewModel
             }
         }
     }
-
-
-    /*
-    public class RangeObservableCollection<T> : ObservableCollection<T>
-    {
-        private bool m_suppressNotification = false;
-
-        public void AddRange(IEnumerable<T> items)
-        {
-            if (items != null)
-            {
-                m_suppressNotification = true;
-                foreach (var item in items)
-                {
-                    Items.Add(item);
-                }
-                m_suppressNotification = false;
-                OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
-            }
-        }
-
-        protected override void OnCollectionChanged(NotifyCollectionChangedEventArgs e)
-        {
-            if (!m_suppressNotification)
-            {
-                base.OnCollectionChanged(e);
-            }
-        }
-    }
-    */
 }
