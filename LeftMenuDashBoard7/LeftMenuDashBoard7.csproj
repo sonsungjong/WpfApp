@@ -53,6 +53,10 @@
 	<None Remove="Fonts\Roboto-Regular.ttf" />
 </ItemGroup>
 
+<ItemGroup>
+  <PackageReference Include="EntityFramework" Version="6.5.1" />
+</ItemGroup>
+
 	<ItemGroup>
 		<Resource Include="Images\img_acoustic.png">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

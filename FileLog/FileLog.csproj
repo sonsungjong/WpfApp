@@ -9,6 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="EntityFramework" Version="6.5.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="LogLib">
       <HintPath>C:\common\LogLib.dll</HintPath>
     </Reference>

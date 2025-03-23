@@ -8,8 +8,8 @@ namespace WPF_RJ.Model
 {
     public class TableDataModel
     {
-        public string A { get; set; }
-        public string B { get; set; }
-        public string C { get; set; }
+        public string No { get; set; }
+        public string Name { get; set; }
+        public string Info { get; set; }
     }
 }
