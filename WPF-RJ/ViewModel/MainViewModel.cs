@@ -75,7 +75,7 @@ namespace WPF_RJ.ViewModel
 
             ExecuteShowHomeViewCommand(null);
 
-            LoadCurrentUserData();
+            //LoadCurrentUserData();
         }
 
         private void ExecuteShowCustomerViewCommand(object obj)

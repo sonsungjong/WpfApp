@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Threading;
 using WPF_RJ.Model;
 
 namespace WPF_RJ.ViewModel
@@ -51,15 +52,15 @@ namespace WPF_RJ.ViewModel
             }
         }
 
+        public int test_count = 10;
+        
+
         private void ExecuteImageButtonCommand(object obj)
         {
-            if(TableDataList.Count > 0)
+            test_count++;
+            for (int test=0; test<test_count; test++)
             {
-                TableDataList.Clear();
-            }
-            else
-            {
-                Stopwatch sw = Stopwatch.StartNew();                // 디버깅 : Stopwatch 시작
+                //Stopwatch sw = Stopwatch.StartNew();                // 디버깅 : Stopwatch 시작
 
                 //var newList = new List<TableDataModel>();
                 //var newDict = new SortedDictionary<int, List<TableDataModel>>(Comparer<int>.Create((x, y) => y.CompareTo(x)));              // 특정키로 정렬이 필요할 때 (오름차순)
@@ -70,28 +71,39 @@ namespace WPF_RJ.ViewModel
                 var newOnlyDict = new Dictionary<int, TableDataModel>();
 
                 int total = 100000;
-                int rank1 = total / 3;
-                int rank2 = (2*total) / 3;
+                //int rank1 = total / 3;
+                //int rank2 = (2*total) / 3;
 
                 for (int i = 1; i <= total; i++)
                 {
-                    int rank = 0;
-                    if(i <= rank1)
+                    //int rank = 0;
+                    //if(i <= rank1)
+                    //{
+                    //    rank = 1;
+                    //}
+                    //else if(i <= rank2)
+                    //{
+                    //    rank = 2;
+                    //}
+                    //else
+                    //{
+                    //    rank = 3;
+                    //}
+
+                    string no = i.ToString();
+                    string name;
+                    string info;
+
+                    if(test_count % 2 == 0)
                     {
-                        rank = 1;
-                    }
-                    else if(i <= rank2)
-                    {
-                        rank = 2;
+                        name = "DATA " + no;
+                        info = "SAMPLE " + no;
                     }
                     else
                     {
-                        rank = 3;
+                        name = "데이터 " + no;
+                        info = "샘플 " + no;
                     }
-
-                    string no = i.ToString();
-                    string name = "데이터 " + no;
-                    string info = "샘플 " + no;
 
                     // ObservableCollection
                     //TableDataModel newData = new TableDataModel { No = no, Name = name, Info = info };
@@ -104,19 +116,24 @@ namespace WPF_RJ.ViewModel
                     //newDict[rank].Add(new TableDataModel { No = no, Name = name, Info = info });                // 딕셔너리에 담아놓고
                     // 그냥 딕셔너리
                     newOnlyDict[i] = new TableDataModel { No = no, Name = name, Info = info };               // 딕셔너리에 담고
-
-
                 }
-
                 // 일괄 적용한다
-                //TableDataList.ChangeRange(newList);                  // 리스트 사용시
-                //TableDataList.ChangeRange(newDict);                    // 딕셔너리 사용 시 (SortedDictionary 포함)
-                TableDataList.ChangeRange(newOnlyDict);                    // 딕셔너리 사용 시 (SortedDictionary 포함)
+                //Application.Current.Dispatcher.Invoke(() =>
+                //{
+                    //TableDataList.ChangeRange(newList);                  // 리스트 사용시
+                    //TableDataList.ChangeRange(newDict);                    // 딕셔너리 사용 시 (SortedDictionary 포함)
+                    //TableDataList.ChangeRange(newOnlyDict);                    // 딕셔너리 사용 시 (SortedDictionary 포함)
+
+                    var tempList = new RangeObservableCollection<TableDataModel>();
+                    tempList.AddRange(newOnlyDict);
+                    TableDataList = tempList;
+                //});
+
 
 
                 // 소요 시간 출력
-                sw.Stop();                // 디버깅 : Stopwatch 정지
-                MessageBox.Show($"데이터 추가에 걸린 시간: {sw.ElapsedMilliseconds} ms", "성능 측정");                // 디버깅 : 성능 측정
+                //sw.Stop();                // 디버깅 : Stopwatch 정지
+                //MessageBox.Show($"데이터 추가에 걸린 시간: {sw.ElapsedMilliseconds} ms", "성능 측정");                // 디버깅 : 성능 측정
             }
         }
     }
