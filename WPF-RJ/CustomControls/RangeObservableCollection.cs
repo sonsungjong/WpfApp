@@ -18,8 +18,9 @@ public class RangeObservableCollection<T> : ObservableCollection<T>
             {
                 Items.Add(item);
             }
+
             m_suppressNotification = false;
-            OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
+            //OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));               // 자체리셋하지말고 대입형식으로
         }
     }
 
@@ -38,7 +39,7 @@ public class RangeObservableCollection<T> : ObservableCollection<T>
         }
 
         m_suppressNotification = false;
-        OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
+        //OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));               // 자체리셋하지말고 대입형식으로
     }
 
     // 딕셔너리<int, List>를 매개변수로 할 때 : 동일한 키에 여러개 넣어야할 때
@@ -57,7 +58,7 @@ public class RangeObservableCollection<T> : ObservableCollection<T>
             }
 
             m_suppressNotification = false;
-            OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
+            //OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
         }
     }
 

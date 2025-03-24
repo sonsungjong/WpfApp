@@ -58,7 +58,7 @@ namespace WPF_RJ.ViewModel
         private void ExecuteImageButtonCommand(object obj)
         {
             test_count++;
-            for (int test=0; test<test_count; test++)
+            //for (int test=0; test<test_count; test++)
             {
                 //Stopwatch sw = Stopwatch.StartNew();                // 디버깅 : Stopwatch 시작
 
