@@ -32,14 +32,60 @@ namespace WPF_RJ.ViewModel
             }
         }
 
+        private string _headerNo = "No";
+        public string HeaderNo
+        {
+            get => _headerNo;
+            set { _headerNo = value; OnPropertyChanged(nameof(HeaderNo)); }
+        }
+
+        private string _headerName = "Name";
+        public string HeaderName
+        {
+            get => _headerName;
+            set { _headerName = value; OnPropertyChanged(nameof(HeaderName)); }
+        }
+
+        private string _headerInfo = "Info";
+        public string HeaderInfo
+        {
+            get => _headerInfo;
+            set {
+                _headerInfo = value; 
+                OnPropertyChanged(nameof(HeaderInfo)); }
+        }
+
+        public int test_count = 10;
+        private bool m_isKoreanHeader = false;
+
+        // 헤더 정보를 바꿈
+        private void ExecuteImageButtonChangeHeaderCommand(object obj)
+        {
+            if (!m_isKoreanHeader)
+            {
+                HeaderNo = "번호";
+                HeaderName = "이름";
+                HeaderInfo = "정보";
+            }
+            else
+            {
+                HeaderNo = "No";
+                HeaderName = "Name";
+                HeaderInfo = "Info";
+            }
+            m_isKoreanHeader = !m_isKoreanHeader;
+        }
+
         // 버튼 ICommand 생성
         public ICommand ImageButtonCommand { get; set; }
+        public ICommand ImageButtonChangeHeaderCommand { get; set; }
 
         // 생성자
         public CustomerViewModel()
         {
             // ICommand 적용
             ImageButtonCommand = new ViewModelCommand(ExecuteImageButtonCommand);           // 다이아몬드 버튼 (임시)
+            ImageButtonChangeHeaderCommand = new ViewModelCommand(ExecuteImageButtonChangeHeaderCommand);           // 다이아몬드 버튼 (임시)
 
             // 데이터그리드 생성
             //TableDataList = new ObservableCollection<TableDataModel>();
@@ -52,9 +98,9 @@ namespace WPF_RJ.ViewModel
             }
         }
 
-        public int test_count = 10;
         
 
+        // 데이터를 바꿈
         private void ExecuteImageButtonCommand(object obj)
         {
             test_count++;
@@ -125,7 +171,7 @@ namespace WPF_RJ.ViewModel
                     //TableDataList.ChangeRange(newOnlyDict);                    // 딕셔너리 사용 시 (SortedDictionary 포함)
 
                     var tempList = new RangeObservableCollection<TableDataModel>();
-                    tempList.AddRange(newOnlyDict);
+                    tempList.ChangeRange(newOnlyDict);
                     TableDataList = tempList;
                 //});
 
