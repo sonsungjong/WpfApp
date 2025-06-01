@@ -239,15 +239,45 @@
                                 </Style>
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
-        
-                        <DataGridTextColumn Header="EE_Column4" Binding="{Binding EE_Column4}" Width="100">
-                            <DataGridTextColumn.ElementStyle>
-                                <Style TargetType="TextBlock">
-                                    <Setter Property="TextAlignment" Value="Center"/>
-                                    <Setter Property="VerticalAlignment" Value="Center"/>
-                                </Style>
-                            </DataGridTextColumn.ElementStyle>
-                        </DataGridTextColumn>
+                        
+                        <!-- 컬럼 배경색 적용 
+                        <DataGridTemplateColumn Header="EE_Column4" Width="100">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding EE_Column4}"
+                                               TextAlignment="Center"
+                                               VerticalAlignment="Center"
+                                               Background="{Binding EE_Column4_Bk, TargetNullValue=Transparent}" 
+                                    />
+
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+            -->
+                        
+                        <DataGridTemplateColumn Header="EE_Column4" Width="100">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <!-- 컬럼 Width의 0~100 만큼 배경색 박스 -->
+                                        <Rectangle HorizontalAlignment="Left"
+                                                   VerticalAlignment="Stretch"
+                                                   Width="{Binding EE_Column4_Percentage}" 
+                                                   Fill="{Binding EE_Column4_Bk}" />
+
+                                        <!-- 텍스트 -->
+                                        <TextBlock Text="{Binding EE_Column4}"
+                                                   HorizontalAlignment="Center"
+                                                   VerticalAlignment="Center"
+                                                   Background="Transparent"
+                                                   TextAlignment="Center"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        
+                        
         
                         <DataGridTextColumn Header="EE_Column5" Binding="{Binding EE_Column5}" Width="50">
                             <DataGridTextColumn.ElementStyle>
@@ -463,15 +493,40 @@
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
         
-                        <DataGridTextColumn Header="IE_Column4" Binding="{Binding IE_Column4}" Width="100">
-                            <DataGridTextColumn.ElementStyle>
-                                <Style TargetType="TextBlock">
-                                    <Setter Property="TextAlignment" Value="Center"/>
-                                    <Setter Property="VerticalAlignment" Value="Center"/>
-                                </Style>
-                            </DataGridTextColumn.ElementStyle>
-                        </DataGridTextColumn>
-    
+                        <!-- 컬럼 배경색 적용
+                        <DataGridTemplateColumn Header="IE_Column4" Width="100">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding IE_Column4}"
+                                               TextAlignment="Center"
+                                               VerticalAlignment="Center"
+                                               Background="{Binding IE_Column4_Bk, TargetNullValue=Transparent}"
+                                               />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        -->
+                        <DataGridTemplateColumn Header="IE_Column4" Width="100">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid Width="100" Height="30">
+                                        <Rectangle 
+                                            HorizontalAlignment="Left"
+                                            Height="30"
+                                            Width="{Binding IE_Column4_Percentage}" 
+                                            Fill="{Binding IE_Column4_Bk, TargetNullValue=Transparent}" />
+                                        <TextBlock 
+                                            Text="{Binding IE_Column4}"
+                                            HorizontalAlignment="Center"
+                                            VerticalAlignment="Center"
+                                            TextAlignment="Center"
+                                            Background="Transparent" />
+                                    </Grid>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+
                     </DataGrid.Columns>
     
                     <DataGrid.Resources>
