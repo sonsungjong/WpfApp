@@ -12,6 +12,6 @@ namespace WPF_RJ.Model
         public string No { get; set; }
         public string Name { get; set; }
         public string Info { get; set; }
-
+        public string dump { get; set; }
     }
 }

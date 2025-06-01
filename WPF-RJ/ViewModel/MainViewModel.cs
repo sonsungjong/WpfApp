@@ -63,6 +63,7 @@ namespace WPF_RJ.ViewModel
         // --> 커맨드
         public ICommand ShowHomeViewCommand { get; }
         public ICommand ShowCustomerViewCommand { get; }
+        public ICommand ShowOrderViewCommand { get; }
 
         public MainViewModel()
         {
@@ -72,6 +73,7 @@ namespace WPF_RJ.ViewModel
             // 커맨드 초기화
             ShowHomeViewCommand = new ViewModelCommand(ExecuteShowHomeViewCommand);
             ShowCustomerViewCommand = new ViewModelCommand(ExecuteShowCustomerViewCommand);
+            ShowOrderViewCommand = new ViewModelCommand(ExecuteShowOrderViewCommand);
 
             ExecuteShowHomeViewCommand(null);
 
@@ -83,6 +85,13 @@ namespace WPF_RJ.ViewModel
             CurrentChildView = new CustomerViewModel();
             Caption = "Customers";
             Icon = IconChar.UserGroup;
+        }
+
+        private void ExecuteShowOrderViewCommand(object obj)
+        {
+            CurrentChildView = new OrderViewModel();
+            Caption = "Order";
+            Icon = IconChar.Truck;
         }
 
         private void ExecuteShowHomeViewCommand(object obj)

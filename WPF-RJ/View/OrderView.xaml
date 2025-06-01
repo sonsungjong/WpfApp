@@ -1,0 +1,490 @@
+﻿<UserControl x:Class="WPF_RJ.View.OrderView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WPF_RJ.View"
+             xmlns:viewModel="clr-namespace:WPF_RJ.ViewModel"
+             xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    
+        <UserControl.DataContext>
+            <viewModel:OrderViewModel />
+        </UserControl.DataContext>
+    
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="120"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+    
+            <Button Grid.Row="0" Width="80" Height="80" Background="Transparent" BorderBrush="Transparent" VerticalAlignment="Top" HorizontalAlignment="Left"
+                    Margin="10, 10, 0, 0"
+                    Command="{Binding ChangeETButtonCommand}">
+                <Image Source="/Images/logo.png"/>
+            </Button>
+    
+            <Button Grid.Row="0" Width="80" Height="80" Background="Transparent" BorderBrush="Transparent" VerticalAlignment="Top" HorizontalAlignment="Left"
+                    Margin="110, 10, 0, 0"
+                Command="{Binding ChangeEEButtonCommand}">
+                <Image Source="/Images/logo.png"/>
+            </Button>
+    
+            <Button Grid.Row="0" Width="80" Height="80" Background="Transparent" BorderBrush="Transparent" VerticalAlignment="Top" HorizontalAlignment="Left"
+                    Margin="210, 10, 0, 0"
+                Command="{Binding ChangeITButtonCommand}">
+                <Image Source="/Images/logo.png"/>
+            </Button>
+    
+            <Button Grid.Row="0" Width="80" Height="80" Background="Transparent" BorderBrush="Transparent" VerticalAlignment="Top" HorizontalAlignment="Left"
+                    Margin="310, 10, 0, 0"
+                Command="{Binding ChangeIEButtonCommand}">
+                <Image Source="/Images/logo.png"/>
+            </Button>
+            
+            <Button Grid.Row="0" Width="80" Height="80" Background="Transparent" BorderBrush="Transparent" VerticalAlignment="Top" HorizontalAlignment="Left"
+                    Margin="410, 10, 0, 0"
+                Command="{Binding ChangeAllButtonCommand}">
+                <Image Source="/Images/logo.png"/>
+            </Button>
+            
+            <!-- 2x2 그리드 -->
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                <DataGrid
+                    x:Name="dataGrid_ET"
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Height="165"
+                    Width="375"
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center" 
+                    RowHeight="30"
+                    FontSize="15"
+                    IsReadOnly="True"
+                    RowHeaderWidth="0"
+                    HeadersVisibility="None"
+                    HorizontalGridLinesBrush="Gray"
+                    VerticalGridLinesBrush="Gray"
+                    HorizontalScrollBarVisibility="Auto"
+                    ScrollViewer.VerticalScrollBarVisibility="Auto"
+                    AutoGenerateColumns="False"
+                    SelectionMode="Single"
+                    SelectionUnit="FullRow"
+                    Background="Transparent"
+                    
+                    ItemsSource="{Binding TableETList}"
+                    >
+    
+                    <DataGrid.RowStyle>
+                        <Style TargetType="DataGridRow">
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="Foreground" Value="{Binding ET_Row_Color}" />
+                        </Style>
+                    </DataGrid.RowStyle>
+    
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ET_No" Binding="{Binding ET_No}" Width="35">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="TextAlignment" Value="Center"/>
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+        
+                        <DataGridTextColumn Header="ET_Column1" Binding="{Binding ET_Column1}" Width="70">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="TextAlignment" Value="Center"/>
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+        
+                        <DataGridTextColumn Header="ET_Column2" Binding="{Binding ET_Column2}" Width="45">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="TextAlignment" Value="Center"/>
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+        
+                        <DataGridTextColumn Header="ET_Column3" Binding="{Binding ET_Column3}" Width="40">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="TextAlignment" Value="Center"/>
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+        
+                        <DataGridTextColumn Header="ET_Column4" Binding="{Binding ET_Column4}" Width="55">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="TextAlignment" Value="Center"/>
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+        
+                        <DataGridTextColumn Header="ET_Column5" Binding="{Binding ET_Column5}" Width="55">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="TextAlignment" Value="Center"/>
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+        
+                        <DataGridTextColumn Header="ET_Column6" Binding="{Binding ET_Column6}" Width="55">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="TextAlignment" Value="Center"/>
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+    
+                    </DataGrid.Columns>
+                    
+                    <DataGrid.Resources>
+                    <!-- 스크롤바 스타일 -->
+                        
+                    <Style TargetType="{x:Type ScrollBar}">
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="BorderBrush" Value="Gray"/>                        
+                    </Style>
+                    
+                    </DataGrid.Resources>
+                </DataGrid>
+                
+                
+            
+            <DataGrid
+                    x:Name="dataGrid_EE"
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Height="165"
+                    Width="375"
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center" 
+                    RowHeight="30"
+                    FontSize="15"
+                    IsReadOnly="True"
+                    RowHeaderWidth="0"
+                    HeadersVisibility="None"
+                    HorizontalGridLinesBrush="Gray"
+                    VerticalGridLinesBrush="Gray"
+                    HorizontalScrollBarVisibility="Auto"
+                    ScrollViewer.VerticalScrollBarVisibility="Auto"
+                    AutoGenerateColumns="False"
+                    SelectionMode="Single"
+                    SelectionUnit="FullRow"
+                    Background="Transparent"
+    
+                    ItemsSource="{Binding TableEEList}"
+                    >
+    
+                    <DataGrid.RowStyle>
+                        <Style TargetType="DataGridRow">
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="Foreground" Value="White"/>
+                        </Style>
+                    </DataGrid.RowStyle>
+    
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="EE_No" Binding="{Binding EE_No}" Width="35">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="TextAlignment" Value="Center"/>
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+        
+                        <DataGridTextColumn Header="EE_Column1" Binding="{Binding EE_Column1}" Width="70">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="TextAlignment" Value="Center"/>
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+        
+                        <DataGridTextColumn Header="EE_Column2" Binding="{Binding EE_Column2}" Width="50">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="TextAlignment" Value="Center"/>
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+        
+                        <DataGridTextColumn Header="EE_Column3" Binding="{Binding EE_Column3}" Width="50">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="TextAlignment" Value="Center"/>
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+        
+                        <DataGridTextColumn Header="EE_Column4" Binding="{Binding EE_Column4}" Width="100">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="TextAlignment" Value="Center"/>
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+        
+                        <DataGridTextColumn Header="EE_Column5" Binding="{Binding EE_Column5}" Width="50">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="TextAlignment" Value="Center"/>
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+    
+                    </DataGrid.Columns>
+    
+                    <DataGrid.Resources>
+                    <!-- 스크롤바 스타일 -->
+        
+                    <Style TargetType="{x:Type ScrollBar}">
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="BorderBrush" Value="Gray"/>                        
+                    </Style>
+    
+                    </DataGrid.Resources>
+                </DataGrid>
+        
+        
+                
+                <DataGrid
+                    x:Name="dataGrid_IT"
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Height="165"
+                    Width="375"
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center" 
+                    RowHeight="30"
+                    FontSize="15"
+                    IsReadOnly="True"
+                    RowHeaderWidth="0"
+                    HeadersVisibility="None"
+                    HorizontalGridLinesBrush="Gray"
+                    VerticalGridLinesBrush="Gray"
+                    HorizontalScrollBarVisibility="Auto"
+                    ScrollViewer.VerticalScrollBarVisibility="Auto"
+                    AutoGenerateColumns="False"
+                    SelectionMode="Single"
+                    SelectionUnit="FullRow"
+                    Background="Transparent"
+    
+                    ItemsSource="{Binding TableITList}"
+                    >
+    
+                    <DataGrid.RowStyle>
+                        <Style TargetType="DataGridRow">
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="Foreground" Value="{Binding IT_Row_Color}" />
+                        </Style>
+                    </DataGrid.RowStyle>
+    
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="IT_No" Binding="{Binding IT_No}" Width="35">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="TextAlignment" Value="Center"/>
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+        
+                        <DataGridTextColumn Header="IT_Column1" Binding="{Binding IT_Column1}" Width="60">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="TextAlignment" Value="Center"/>
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+        
+                        <DataGridTextColumn Header="IT_Column2" Binding="{Binding IT_Column2}" Width="40">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="TextAlignment" Value="Center"/>
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+        
+                        <DataGridTextColumn Header="IT_Column3" Binding="{Binding IT_Column3}" Width="40">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="TextAlignment" Value="Center"/>
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+        
+                        <DataGridTextColumn Header="IT_Column4" Binding="{Binding IT_Column4}" Width="55">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="TextAlignment" Value="Center"/>
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+        
+                        <DataGridTextColumn Header="IT_Column5" Binding="{Binding IT_Column5}" Width="55">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="TextAlignment" Value="Center"/>
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+        
+                        <DataGridTextColumn Header="IT_Column6" Binding="{Binding IT_Column6}" Width="70">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="TextAlignment" Value="Center"/>
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+                        
+                        <DataGridTextColumn Header="IT_Column7" Binding="{Binding IT_Column7}" Width="70">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="TextAlignment" Value="Center"/>
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+    
+                    </DataGrid.Columns>
+    
+                    <DataGrid.Resources>
+                    <!-- 스크롤바 스타일 -->
+        
+                    <Style TargetType="{x:Type ScrollBar}">
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="BorderBrush" Value="Gray"/>                        
+                    </Style>
+    
+                    </DataGrid.Resources>
+                </DataGrid>
+                
+                
+                
+                
+                <DataGrid
+                    x:Name="dataGrid_IE"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Height="165"
+                    Width="375"
+                    HorizontalAlignment="Center" 
+                    VerticalAlignment="Center" 
+                    RowHeight="30"
+                    FontSize="15"
+                    IsReadOnly="True"
+                    RowHeaderWidth="0"
+                    HeadersVisibility="None"
+                    HorizontalGridLinesBrush="Gray"
+                    VerticalGridLinesBrush="Gray"
+                    HorizontalScrollBarVisibility="Auto"
+                    ScrollViewer.VerticalScrollBarVisibility="Auto"
+                    AutoGenerateColumns="False"
+                    SelectionMode="Single"
+                    SelectionUnit="FullRow"
+                    Background="Transparent"
+    
+                    ItemsSource="{Binding TableIEList}"
+                    >
+    
+                    <DataGrid.RowStyle>
+                        <Style TargetType="DataGridRow">
+                            <Setter Property="Background" Value="Transparent"/>
+                            <Setter Property="Foreground" Value="White"/>
+                        </Style>
+                    </DataGrid.RowStyle>
+    
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="IE_No" Binding="{Binding IE_No}" Width="35">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="TextAlignment" Value="Center"/>
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+        
+                        <DataGridTextColumn Header="IE_Column1" Binding="{Binding IE_Column1}" Width="70">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="TextAlignment" Value="Center"/>
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+        
+                        <DataGridTextColumn Header="IE_Column2" Binding="{Binding IE_Column2}" Width="100">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="TextAlignment" Value="Center"/>
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+        
+                        <DataGridTextColumn Header="IE_Column3" Binding="{Binding IE_Column3}" Width="50">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="TextAlignment" Value="Center"/>
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+        
+                        <DataGridTextColumn Header="IE_Column4" Binding="{Binding IE_Column4}" Width="100">
+                            <DataGridTextColumn.ElementStyle>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="TextAlignment" Value="Center"/>
+                                    <Setter Property="VerticalAlignment" Value="Center"/>
+                                </Style>
+                            </DataGridTextColumn.ElementStyle>
+                        </DataGridTextColumn>
+    
+                    </DataGrid.Columns>
+    
+                    <DataGrid.Resources>
+                    <!-- 스크롤바 스타일 -->
+        
+                    <Style TargetType="{x:Type ScrollBar}">
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="BorderBrush" Value="Gray"/>                        
+                    </Style>
+    
+                    </DataGrid.Resources>
+                </DataGrid>
+                
+            </Grid>
+    </Grid>
+</UserControl>
