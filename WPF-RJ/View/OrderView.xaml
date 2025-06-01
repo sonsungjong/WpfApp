@@ -240,21 +240,7 @@
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
                         
-                        <!-- 컬럼 배경색 적용 
-                        <DataGridTemplateColumn Header="EE_Column4" Width="100">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <TextBlock Text="{Binding EE_Column4}"
-                                               TextAlignment="Center"
-                                               VerticalAlignment="Center"
-                                               Background="{Binding EE_Column4_Bk, TargetNullValue=Transparent}" 
-                                    />
-
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-            -->
-                        
+                        <!-- 컬럼 배경색 적용 -->
                         <DataGridTemplateColumn Header="EE_Column4" Width="100">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
@@ -493,28 +479,18 @@
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
         
-                        <!-- 컬럼 배경색 적용
+                        <!-- 컬럼 배경색 적용 -->
                         <DataGridTemplateColumn Header="IE_Column4" Width="100">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Text="{Binding IE_Column4}"
-                                               TextAlignment="Center"
-                                               VerticalAlignment="Center"
-                                               Background="{Binding IE_Column4_Bk, TargetNullValue=Transparent}"
-                                               />
-                                </DataTemplate>
-                            </DataGridTemplateColumn.CellTemplate>
-                        </DataGridTemplateColumn>
-                        -->
-                        <DataGridTemplateColumn Header="IE_Column4" Width="100">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
+                                    <!-- 컬럼 Width의 0~100 만큼 배경색 박스 -->
                                     <Grid Width="100" Height="30">
                                         <Rectangle 
                                             HorizontalAlignment="Left"
                                             Height="30"
                                             Width="{Binding IE_Column4_Percentage}" 
                                             Fill="{Binding IE_Column4_Bk, TargetNullValue=Transparent}" />
+                                        <!-- 텍스트 -->
                                         <TextBlock 
                                             Text="{Binding IE_Column4}"
                                             HorizontalAlignment="Center"
