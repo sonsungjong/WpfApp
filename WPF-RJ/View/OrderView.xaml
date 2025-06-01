@@ -315,7 +315,7 @@
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
         
-                        <DataGridTextColumn Header="IT_Column1" Binding="{Binding IT_Column1}" Width="60">
+                        <DataGridTextColumn Header="IT_Column1" Binding="{Binding IT_Column1}" Width="70">
                             <DataGridTextColumn.ElementStyle>
                                 <Style TargetType="TextBlock">
                                     <Setter Property="TextAlignment" Value="Center"/>
@@ -324,7 +324,7 @@
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
         
-                        <DataGridTextColumn Header="IT_Column2" Binding="{Binding IT_Column2}" Width="40">
+                        <DataGridTextColumn Header="IT_Column2" Binding="{Binding IT_Column2}" Width="30">
                             <DataGridTextColumn.ElementStyle>
                                 <Style TargetType="TextBlock">
                                     <Setter Property="TextAlignment" Value="Center"/>
@@ -333,7 +333,7 @@
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
         
-                        <DataGridTextColumn Header="IT_Column3" Binding="{Binding IT_Column3}" Width="40">
+                        <DataGridTextColumn Header="IT_Column3" Binding="{Binding IT_Column3}" Width="30">
                             <DataGridTextColumn.ElementStyle>
                                 <Style TargetType="TextBlock">
                                     <Setter Property="TextAlignment" Value="Center"/>
@@ -342,7 +342,7 @@
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
         
-                        <DataGridTextColumn Header="IT_Column4" Binding="{Binding IT_Column4}" Width="55">
+                        <DataGridTextColumn Header="IT_Column4" Binding="{Binding IT_Column4}" Width="40">
                             <DataGridTextColumn.ElementStyle>
                                 <Style TargetType="TextBlock">
                                     <Setter Property="TextAlignment" Value="Center"/>
@@ -351,7 +351,7 @@
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
         
-                        <DataGridTextColumn Header="IT_Column5" Binding="{Binding IT_Column5}" Width="55">
+                        <DataGridTextColumn Header="IT_Column5" Binding="{Binding IT_Column5}" Width="40">
                             <DataGridTextColumn.ElementStyle>
                                 <Style TargetType="TextBlock">
                                     <Setter Property="TextAlignment" Value="Center"/>
@@ -360,7 +360,7 @@
                             </DataGridTextColumn.ElementStyle>
                         </DataGridTextColumn>
         
-                        <DataGridTextColumn Header="IT_Column6" Binding="{Binding IT_Column6}" Width="70">
+                        <DataGridTextColumn Header="IT_Column6" Binding="{Binding IT_Column6}" Width="40">
                             <DataGridTextColumn.ElementStyle>
                                 <Style TargetType="TextBlock">
                                     <Setter Property="TextAlignment" Value="Center"/>
