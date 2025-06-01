@@ -168,11 +168,11 @@ namespace WPF_RJ.ViewModel
                 //{
                     //TableDataList.ChangeRange(newList);                  // 리스트 사용시
                     //TableDataList.ChangeRange(newDict);                    // 딕셔너리 사용 시 (SortedDictionary 포함)
-                    //TableDataList.ChangeRange(newOnlyDict);                    // 딕셔너리 사용 시 (SortedDictionary 포함)
+                    TableDataList.ChangeRange(newOnlyDict);                    // 딕셔너리 사용 시 (SortedDictionary 포함)
 
-                    var tempList = new RangeObservableCollection<TableDataModel>();
-                    tempList.ChangeRange(newOnlyDict);
-                    TableDataList = tempList;
+                    //var tempList = new RangeObservableCollection<TableDataModel>();
+                    //tempList.ChangeRange(newOnlyDict);
+                    //TableDataList = tempList;
                 //});
 
 
