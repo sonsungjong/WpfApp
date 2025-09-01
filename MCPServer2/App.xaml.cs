@@ -77,26 +77,83 @@ public static class UiTools
 }
 
 [McpServerToolType]
-public static class RpaTools
+public static class MyTools
 {
-    public record LoginArgs(string username, string password);
-
-    [McpServerTool(Name = "login_groupware"), Description("LIG 그룹웨어 로그인")]
-    public static async Task<string> LoginGroupware(LoginArgs args)
+    // 내부에서만 쓰는 Playwright 실행 로직 (static)
+    private static async Task RunLoginAsync(string id, string pw)
     {
-        using var pw = await Playwright.CreateAsync();
-        var browser = await pw.Chromium.LaunchAsync(new() { Channel = "msedge", Headless = false });
-        var page = await (await browser.NewContextAsync(new() { ViewportSize = null })).NewPageAsync();
+        try
+        {
+            var pwrt = await Playwright.CreateAsync();
+            var browser = await pwrt.Chromium.LaunchAsync(new()
+            {
+                Channel = "msedge",   // Edge 브라우저
+                Headless = false
+            });
 
-        await page.GotoAsync("https://groupware.lig.kr/login", new() { WaitUntil = WaitUntilState.NetworkIdle });
-        await page.FillAsync("#username", args.username);
-        await page.FillAsync("#password", args.password);
-        await page.ClickAsync("#login_submit, .btn_login");
-        await page.WaitForLoadStateAsync(LoadState.NetworkIdle);
+            var context = await browser.NewContextAsync(new() { ViewportSize = null });
+            var page = await context.NewPageAsync();
 
-        // 로그인 성공/실패 간단 판별(필요 시 더 정교하게)
-        if (page.Url.Contains("/login"))
-            return "login_failed";
-        return "ok";
+            await page.GotoAsync("https://groupware.lig.kr/", new() { WaitUntil = WaitUntilState.NetworkIdle });
+
+            bool onLoginUrl = page.Url.Contains("/login", StringComparison.OrdinalIgnoreCase);
+            bool hasLoginDom = await page.Locator("#username, #password, #login_submit, .btn_login").CountAsync() > 0;
+            bool needLogin = onLoginUrl || hasLoginDom;
+
+            if (needLogin)
+            {
+                await page.Locator("#username").WaitForAsync(new() { Timeout = 10000 });
+                await page.FillAsync("#username", id);
+                await page.FillAsync("#password", pw);
+                await page.ClickAsync("#login_submit, .btn_login");
+                await page.WaitForLoadStateAsync(LoadState.NetworkIdle);
+            }
+        }
+        catch (Exception ex)
+        {
+            // MCP 툴은 보통 MessageBox 안 띄우고 string 반환하는 게 낫습니다.
+            throw new Exception($"로그인 실패: {ex.Message}", ex);
+        }
+    }
+
+    [McpServerTool, Description("에이전트에서 그룹웨어 로그인을 실행합니다")]
+    public static async Task<string> login_company(string id, string pw)
+    {
+        await RunLoginAsync(id, pw);
+        return "로그인 시도 완료";
     }
 }
+
+
+/*
+
+# pip install "mcp[cli]"
+
+import asyncio
+from mcp.client.session import ClientSession
+from mcp.client.streamable_http import streamablehttp_client
+
+MCP_URL = "http://127.0.0.1:5000/mcp"
+
+async def main():
+    # 서버와 스트림 연결
+    async with streamablehttp_client(MCP_URL) as (read_stream, write_stream, _):
+        # 세션 생성 및 초기화
+        async with ClientSession(read_stream, write_stream) as session:
+            await session.initialize()
+
+            # 툴 목록 확인
+            tools = await session.list_tools()
+            print("TOOLS:", [t.name for t in tools.tools])
+
+            # 툴 호출 (C#에서 함수 이름으로 변경)
+            result = await session.call_tool("login_company", {"id": "sungjong.son", "pw":"lig@1010719!"})
+            for c in result.content:
+                if c.type == "text":
+                    print("RESULT:", c.text)
+
+if __name__ == "__main__":
+    asyncio.run(main()) 
+ 
+ 
+*/

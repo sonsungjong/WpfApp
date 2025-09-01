@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using MCPServer2.Model;
+using MCPServer2.ViewModel;
 using Microsoft.Playwright;
 using ModelContextProtocol.Server;
 
@@ -79,22 +80,3 @@ namespace MCPServer2.ViewModel
     }
 }
 
-[McpServerToolType]
-public static class MyTools
-{
-
-
-
-
-    public record LoginArgs(string username, string password);
-    [McpServerTool, Description("에이전트에서 로그인을 합니다")]
-    public static async Task<string> login_company(LoginArgs args)
-    {
-        var id = args.username;
-        var pw = args.password;
-
-        
-
-        return "C#에서 완료해서 리턴했다";
-    }
-}
