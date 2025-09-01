@@ -1,0 +1,20 @@
+﻿<Window x:Class="MCPServer2.View.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MCPServer2.View"
+        xmlns:viewModel="clr-namespace:MCPServer2.ViewModel"
+        WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d"
+        Title="MainView" Height="450" Width="800">
+    <Window.DataContext>
+        <viewModel:MainViewModel />
+    </Window.DataContext>
+    
+    
+    <Grid>
+        <Button Width="150" Height="80"
+                Command="{Binding RunButtonCommand}">로그인 버튼</Button>
+    </Grid>
+</Window>
